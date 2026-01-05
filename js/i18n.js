@@ -92,17 +92,25 @@ const i18n = {
                            !currentPath.includes('/pages/es/') && 
                            !currentPath.includes('/pages/pt/') && 
                            !currentPath.includes('/pages/de/');
-        const isInLangFolder = currentPath.includes('/pages/en/') || 
-                               currentPath.includes('/pages/es/') || 
-                               currentPath.includes('/pages/pt/') || 
-                               currentPath.includes('/pages/de/');
+        const isInEnFolder = currentPath.includes('/pages/en/');
+        const isInEsFolder = currentPath.includes('/pages/es/');
+        const isInPtFolder = currentPath.includes('/pages/pt/');
+        const isInDeFolder = currentPath.includes('/pages/de/');
+        const isInLangFolder = isInEnFolder || isInEsFolder || isInPtFolder || isInDeFolder;
         
         // Si on est sur l'index, pas de redirection
         if (!currentPage || currentPage === 'index.html' || currentPage === '') {
             return;
         }
         
-        // Si on est sur une page de contenu
+        // Vérifier si on est DÉJÀ sur la bonne version de la page
+        if (lang === 'fr' && isInFrPages) return; // Déjà sur FR
+        if (lang === 'en' && isInEnFolder) return; // Déjà sur EN
+        if (lang === 'es' && isInEsFolder) return; // Déjà sur ES
+        if (lang === 'pt' && isInPtFolder) return; // Déjà sur PT
+        if (lang === 'de' && isInDeFolder) return; // Déjà sur DE
+        
+        // Si on est sur une page de contenu et qu'on doit changer
         if (isInFrPages || isInLangFolder) {
             let newPath = currentPath;
             let targetPage = currentPage;
