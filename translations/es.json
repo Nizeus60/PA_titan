@@ -1,0 +1,62 @@
+{
+  "lang": "es",
+  "lang_name": "Español",
+  
+  "nav": {
+    "home": "Inicio",
+    "beginner": "Principiante",
+    "shortcuts": "Atajos",
+    "units": "Unidades",
+    "structures": "Estructuras",
+    "strategies": "Estrategias",
+    "lexicon": "Glosario"
+  },
+  
+  "home": {
+    "title": "PLANETARY ANNIHILATION: TITANS",
+    "subtitle": "Guía Táctica Completa",
+    "description": "Domina la guerra planetaria con esta guía detallada.",
+    "welcome_title": "Bienvenido Comandante",
+    "welcome_subtitle": "Esta guía te acompañará desde tus primeros pasos hasta el dominio total",
+    
+    "card_beginner_title": "🎮 Guía para Principiantes",
+    "card_beginner_badge": "¡Empieza aquí!",
+    "card_beginner_desc": "¿Nuevo en PA:Titans? Lista mental, fases del juego, cómo atacar y defender.",
+    
+    "card_shortcuts_title": "⌨️ Atajos de Teclado",
+    "card_shortcuts_badge": "Esencial",
+    "card_shortcuts_desc": "Todos los atajos ordenados por prioridad. ¡Duplica tu eficiencia!",
+    
+    "card_units_title": "⚔️ Guía de Unidades",
+    "card_units_badge": "Importante",
+    "card_units_desc": "Análisis completo de cada unidad: rol, fortalezas, debilidades y counters.",
+    
+    "card_structures_title": "🏗️ Estructuras",
+    "card_structures_badge": "Importante",
+    "card_structures_desc": "Economía, defensas, producción y superarmas explicadas.",
+    
+    "card_strategies_title": "🎯 Estrategias",
+    "card_strategies_badge": "Avanzado",
+    "card_strategies_desc": "Build orders, composiciones de ejército y tácticas avanzadas.",
+    
+    "card_lexicon_title": "📚 Glosario",
+    "card_lexicon_badge": "Referencia",
+    "card_lexicon_desc": "Todos los términos y jerga del juego explicados.",
+    
+    "stats_title": "📊 Contenido de la Guía",
+    "stats_units": "Unidades",
+    "stats_structures": "Estructuras",
+    "stats_shortcuts": "Atajos",
+    "stats_terms": "Términos"
+  },
+  
+  "search": {
+    "placeholder": "🔍 Buscar una unidad, estrategia, atajo..."
+  },
+  
+  "footer": {
+    "title": "Guía PA:Titans",
+    "text": "Guía completa creada por la comunidad.",
+    "copyright": "© 2026 Guía PA:Titans 🎮"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "lang": "en",
+  "lang_name": "English",
+  
+  "nav": {
+    "home": "Home",
+    "beginner": "Beginner",
+    "shortcuts": "Shortcuts",
+    "units": "Units",
+    "structures": "Structures",
+    "strategies": "Strategies",
+    "lexicon": "Glossary"
+  },
+  
+  "home": {
+    "title": "PLANETARY ANNIHILATION: TITANS",
+    "subtitle": "Complete Tactical Guide",
+    "description": "Master planetary warfare with this detailed guide.",
+    "welcome_title": "Welcome Commander",
+    "welcome_subtitle": "This guide will take you from your first steps to total mastery",
+    
+    "card_beginner_title": "🎮 Beginner Guide",
+    "card_beginner_badge": "Start here!",
+    "card_beginner_desc": "New to PA:Titans? Mental checklist, game phases, how to attack and defend.",
+    
+    "card_shortcuts_title": "⌨️ Keyboard Shortcuts",
+    "card_shortcuts_badge": "Essential",
+    "card_shortcuts_desc": "All shortcuts sorted by priority. Double your efficiency!",
+    
+    "card_units_title": "⚔️ Units Guide",
+    "card_units_badge": "Important",
+    "card_units_desc": "Complete analysis of each unit: role, strengths, weaknesses and counters.",
+    
+    "card_structures_title": "🏗️ Structures",
+    "card_structures_badge": "Important",
+    "card_structures_desc": "Economy, defenses, production and super-weapons explained.",
+    
+    "card_strategies_title": "🎯 Strategies",
+    "card_strategies_badge": "Advanced",
+    "card_strategies_desc": "Build orders, army compositions and advanced tactics.",
+    
+    "card_lexicon_title": "📚 Glossary",
+    "card_lexicon_badge": "Reference",
+    "card_lexicon_desc": "All terms and game jargon explained.",
+    
+    "stats_title": "📊 Guide Contents",
+    "stats_units": "Units",
+    "stats_structures": "Structures",
+    "stats_shortcuts": "Shortcuts",
+    "stats_terms": "Terms"
+  },
+  
+  "search": {
+    "placeholder": "🔍 Search for a unit, strategy, shortcut..."
+  },
+  
+  "footer": {
+    "title": "PA:Titans Guide",
+    "text": "Complete guide created by the community.",
+    "copyright": "© 2026 PA:Titans Guide 🎮"
+  }
+}

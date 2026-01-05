@@ -1789,3 +1789,106 @@ header.header-home .site-description {
     margin: 0 auto;
     font-size: 1rem;
 }
+
+/* ==================== LANGUAGE SELECTOR ==================== */
+.lang-selector {
+    position: relative;
+    margin-left: 15px;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(30, 35, 60, 0.8);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    border-color: var(--primary-blue);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.lang-arrow {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    transition: transform 0.3s ease;
+}
+
+.lang-dropdown.active + .lang-btn .lang-arrow,
+.lang-selector:has(.lang-dropdown.active) .lang-arrow {
+    transform: rotate(180deg);
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: rgba(20, 25, 45, 0.98);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 10px;
+    min-width: 150px;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.lang-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-secondary);
+}
+
+.lang-option:hover {
+    background: rgba(0, 212, 255, 0.1);
+    color: #fff;
+}
+
+.lang-option.active {
+    color: var(--primary-blue);
+    background: rgba(0, 212, 255, 0.05);
+}
+
+.lang-flag {
+    font-size: 1.2rem;
+}
+
+.lang-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .lang-selector {
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 0;
+    }
+    
+    .lang-dropdown {
+        right: 0;
+    }
+}

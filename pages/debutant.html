@@ -388,13 +388,13 @@
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="debutant.html" class="active">Débutant</a></li>
-                <li><a href="raccourcis.html" >Raccourcis</a></li>
-                <li><a href="unites.html" >Unités</a></li>
-                <li><a href="structures.html" >Structures</a></li>
-                <li><a href="strategies.html" >Stratégies</a></li>
-                <li><a href="lexique.html" >Lexique</a></li>
+                <li><a href="../index.html" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="debutant.html" class="active" data-i18n="nav.beginner">Débutant</a></li>
+                <li><a href="raccourcis.html"  data-i18n="nav.shortcuts">Raccourcis</a></li>
+                <li><a href="unites.html"  data-i18n="nav.units">Unités</a></li>
+                <li><a href="structures.html"  data-i18n="nav.structures">Structures</a></li>
+                <li><a href="strategies.html"  data-i18n="nav.strategies">Stratégies</a></li>
+                <li><a href="lexique.html"  data-i18n="nav.lexicon">Lexique</a></li>
             </ul>
         </div>
     </nav>
@@ -403,7 +403,7 @@
     <div class="search-bar-container">
         <div class="container">
             <div class="search-wrapper">
-                <input type="text" id="global-search" class="search-input" placeholder="🔍 Rechercher...">
+                <input type="text" id="global-search" class="search-input" data-i18n-placeholder="search.placeholder" placeholder="🔍 Rechercher...">
                 <div id="search-results" class="search-results"></div>
             </div>
         </div>
@@ -850,13 +850,13 @@
                 <h3 class="footer-title">Guide PA:Titans</h3>
                 <p class="footer-text">Guide complet créé par la communauté.</p>
                 <ul class="footer-links">
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="debutant.html">Débutant</a></li>
-                    <li><a href="raccourcis.html">Raccourcis</a></li>
-                    <li><a href="unites.html">Unités</a></li>
-                    <li><a href="structures.html">Structures</a></li>
-                    <li><a href="strategies.html">Stratégies</a></li>
-                    <li><a href="lexique.html">Lexique</a></li>
+                    <li><a href="../index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="debutant.html" data-i18n="nav.beginner">Débutant</a></li>
+                    <li><a href="raccourcis.html" data-i18n="nav.shortcuts">Raccourcis</a></li>
+                    <li><a href="unites.html" data-i18n="nav.units">Unités</a></li>
+                    <li><a href="structures.html" data-i18n="nav.structures">Structures</a></li>
+                    <li><a href="strategies.html" data-i18n="nav.strategies">Stratégies</a></li>
+                    <li><a href="lexique.html" data-i18n="nav.lexicon">Lexique</a></li>
                 </ul>
                 <div class="footer-bottom">
                     <p>© 2026 Guide PA:Titans 🎮</p>
@@ -866,6 +866,7 @@
     </footer>
 
     <button class="scroll-top" aria-label="Retour en haut">↑</button>
+    <script src="../js/i18n.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

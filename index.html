@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Guide complet PA:Titans en français - Raccourcis, unités, structures, stratégies. De débutant à expert !">
-    <meta name="keywords" content="Planetary Annihilation, Titans, Guide, Stratégie, RTS, Français">
+    <meta name="description" content="Guide complet PA:Titans - Raccourcis, unités, structures, stratégies. De débutant à expert !">
+    <meta name="keywords" content="Planetary Annihilation, Titans, Guide, Stratégie, RTS">
     <meta name="robots" content="index, follow">
-    <title>Guide PA:Titans - Le Guide Complet en Français</title>
+    <title>Guide PA:Titans - Le Guide Complet</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +17,9 @@
     <!-- Header -->
     <header class="header-home">
         <div class="container">
-            <h1 class="site-title">PLANETARY ANNIHILATION: TITANS</h1>
-            <p class="site-subtitle">Guide Tactique Complet</p>
-            <p class="site-description">Maîtrisez la guerre planétaire avec ce guide détaillé en français.</p>
+            <h1 class="site-title" data-i18n="home.title">PLANETARY ANNIHILATION: TITANS</h1>
+            <p class="site-subtitle" data-i18n="home.subtitle">Guide Tactique Complet</p>
+            <p class="site-description" data-i18n="home.description">Maîtrisez la guerre planétaire avec ce guide détaillé.</p>
         </div>
     </header>
 
@@ -27,20 +27,21 @@
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-logo">PA:TITANS</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="pages/debutant.html" data-i18n="nav.beginner">Débutant</a></li>
+                <li><a href="pages/raccourcis.html" data-i18n="nav.shortcuts">Raccourcis</a></li>
+                <li><a href="pages/unites.html" data-i18n="nav.units">Unités</a></li>
+                <li><a href="pages/structures.html" data-i18n="nav.structures">Structures</a></li>
+                <li><a href="pages/strategies.html" data-i18n="nav.strategies">Stratégies</a></li>
+                <li><a href="pages/lexique.html" data-i18n="nav.lexicon">Lexique</a></li>
+            </ul>
+            <!-- Le sélecteur de langue sera injecté ici par JS -->
             <button class="nav-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="pages/debutant.html">Débutant</a></li>
-                <li><a href="pages/raccourcis.html">Raccourcis</a></li>
-                <li><a href="pages/unites.html">Unités</a></li>
-                <li><a href="pages/structures.html">Structures</a></li>
-                <li><a href="pages/strategies.html">Stratégies</a></li>
-                <li><a href="pages/lexique.html">Lexique</a></li>
-            </ul>
         </div>
     </nav>
 
@@ -48,7 +49,7 @@
     <div class="search-bar-container">
         <div class="container">
             <div class="search-wrapper">
-                <input type="text" id="global-search" class="search-input" placeholder="🔍 Rechercher une unité, stratégie, raccourci...">
+                <input type="text" id="global-search" class="search-input" data-i18n-placeholder="search.placeholder" placeholder="🔍 Rechercher une unité, stratégie, raccourci...">
                 <div id="search-results" class="search-results"></div>
             </div>
         </div>
@@ -59,20 +60,18 @@
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Bienvenue Commandant</h2>
-                    <p class="section-subtitle">Ce guide vous accompagnera de vos premiers pas jusqu'à la maîtrise totale</p>
+                    <h2 class="section-title" data-i18n="home.welcome_title">Bienvenue Commandant</h2>
+                    <p class="section-subtitle" data-i18n="home.welcome_subtitle">Ce guide vous accompagnera de vos premiers pas jusqu'à la maîtrise totale</p>
                 </div>
 
                 <div class="card-grid">
                     <!-- Guide Débutant -->
                     <div class="card" onclick="window.location.href='pages/debutant.html'" style="border: 2px solid #2ecc71;">
                         <div class="card-header">
-                            <h3 class="card-title">🎮 Guide Débutant</h3>
-                            <span class="card-badge" style="background: #2ecc71;">Commencez ici !</span>
+                            <h3 class="card-title" data-i18n="home.card_beginner_title">🎮 Guide Débutant</h3>
+                            <span class="card-badge" style="background: #2ecc71;" data-i18n="home.card_beginner_badge">Commencez ici !</span>
                         </div>
-                        <p class="card-description">
-                            Nouveau sur PA:Titans ? Checklist mentale, phases du jeu, comment attaquer et défendre.
-                        </p>
+                        <p class="card-description" data-i18n="home.card_beginner_desc">Nouveau sur PA:Titans ? Checklist mentale, phases du jeu, comment attaquer et défendre.</p>
                         <div class="stats-list">
                             <span class="stat-badge">🧠 Checklist</span>
                             <span class="stat-badge">⏰ Phases</span>
@@ -83,14 +82,12 @@
                     <!-- Raccourcis -->
                     <div class="card" onclick="window.location.href='pages/raccourcis.html'">
                         <div class="card-header">
-                            <h3 class="card-title">⌨️ Raccourcis Clavier</h3>
-                            <span class="card-badge priority-critical">Essentiel</span>
+                            <h3 class="card-title" data-i18n="home.card_shortcuts_title">⌨️ Raccourcis Clavier</h3>
+                            <span class="card-badge priority-critical" data-i18n="home.card_shortcuts_badge">Essentiel</span>
                         </div>
-                        <p class="card-description">
-                            Tous les raccourcis classés par priorité. Doublez votre efficacité !
-                        </p>
+                        <p class="card-description" data-i18n="home.card_shortcuts_desc">Tous les raccourcis classés par priorité. Doublez votre efficacité !</p>
                         <div class="stats-list">
-                            <span class="stat-badge">✅ 50+ Raccourcis</span>
+                            <span class="stat-badge">✅ 50+</span>
                             <span class="stat-badge">💡 Astuces</span>
                         </div>
                     </div>
@@ -98,12 +95,10 @@
                     <!-- Unités -->
                     <div class="card" onclick="window.location.href='pages/unites.html'">
                         <div class="card-header">
-                            <h3 class="card-title">⚔️ Guide des Unités</h3>
-                            <span class="card-badge priority-high">Important</span>
+                            <h3 class="card-title" data-i18n="home.card_units_title">⚔️ Guide des Unités</h3>
+                            <span class="card-badge priority-high" data-i18n="home.card_units_badge">Important</span>
                         </div>
-                        <p class="card-description">
-                            Analyse complète de chaque unité : rôle, forces, faiblesses et counters.
-                        </p>
+                        <p class="card-description" data-i18n="home.card_units_desc">Analyse complète de chaque unité : rôle, forces, faiblesses et counters.</p>
                         <div class="stats-list">
                             <span class="stat-badge">🤖 58 Unités</span>
                             <span class="stat-badge">🏛️ 5 Titans</span>
@@ -113,14 +108,12 @@
                     <!-- Structures -->
                     <div class="card" onclick="window.location.href='pages/structures.html'">
                         <div class="card-header">
-                            <h3 class="card-title">🏗️ Structures</h3>
-                            <span class="card-badge priority-high">Important</span>
+                            <h3 class="card-title" data-i18n="home.card_structures_title">🏗️ Structures</h3>
+                            <span class="card-badge priority-high" data-i18n="home.card_structures_badge">Important</span>
                         </div>
-                        <p class="card-description">
-                            Économie, défenses, production et super-armes expliqués.
-                        </p>
+                        <p class="card-description" data-i18n="home.card_structures_desc">Économie, défenses, production et super-armes expliqués.</p>
                         <div class="stats-list">
-                            <span class="stat-badge">💰 Économie</span>
+                            <span class="stat-badge">💰 Éco</span>
                             <span class="stat-badge">🛡️ Défenses</span>
                             <span class="stat-badge">☢️ Nukes</span>
                         </div>
@@ -129,12 +122,10 @@
                     <!-- Stratégies -->
                     <div class="card" onclick="window.location.href='pages/strategies.html'">
                         <div class="card-header">
-                            <h3 class="card-title">🎯 Stratégies</h3>
-                            <span class="card-badge priority-medium">Avancé</span>
+                            <h3 class="card-title" data-i18n="home.card_strategies_title">🎯 Stratégies</h3>
+                            <span class="card-badge priority-medium" data-i18n="home.card_strategies_badge">Avancé</span>
                         </div>
-                        <p class="card-description">
-                            Build orders, compositions d'armées et tactiques avancées.
-                        </p>
+                        <p class="card-description" data-i18n="home.card_strategies_desc">Build orders, compositions d'armées et tactiques avancées.</p>
                         <div class="stats-list">
                             <span class="stat-badge">📋 Build Orders</span>
                             <span class="stat-badge">📊 Counters</span>
@@ -144,12 +135,10 @@
                     <!-- Lexique -->
                     <div class="card" onclick="window.location.href='pages/lexique.html'">
                         <div class="card-header">
-                            <h3 class="card-title">📚 Lexique</h3>
-                            <span class="card-badge priority-low">Référence</span>
+                            <h3 class="card-title" data-i18n="home.card_lexicon_title">📚 Lexique</h3>
+                            <span class="card-badge priority-low" data-i18n="home.card_lexicon_badge">Référence</span>
                         </div>
-                        <p class="card-description">
-                            Tous les termes et le jargon du jeu expliqués.
-                        </p>
+                        <p class="card-description" data-i18n="home.card_lexicon_desc">Tous les termes et le jargon du jeu expliqués.</p>
                         <div class="stats-list">
                             <span class="stat-badge">📖 100+ Termes</span>
                         </div>
@@ -161,31 +150,31 @@
         <!-- Stats -->
         <section class="section">
             <div class="container">
-                <h2 class="subsection-title">📊 Contenu du Guide</h2>
+                <h2 class="subsection-title" data-i18n="home.stats_title">📊 Contenu du Guide</h2>
                 <div class="card-grid">
                     <div class="card text-center stat-item">
                         <div class="card-title" style="font-size: 2.5rem; color: #00d4ff;">
                             <span class="stat-number" data-value="58">0</span>
                         </div>
-                        <div class="card-description"><strong>Unités</strong></div>
+                        <div class="card-description"><strong data-i18n="home.stats_units">Unités</strong></div>
                     </div>
                     <div class="card text-center stat-item">
                         <div class="card-title" style="font-size: 2.5rem; color: #ff6b35;">
                             <span class="stat-number" data-value="38">0</span>
                         </div>
-                        <div class="card-description"><strong>Structures</strong></div>
+                        <div class="card-description"><strong data-i18n="home.stats_structures">Structures</strong></div>
                     </div>
                     <div class="card text-center stat-item">
                         <div class="card-title" style="font-size: 2.5rem; color: #2ecc71;">
                             <span class="stat-number" data-value="50">0</span>+
                         </div>
-                        <div class="card-description"><strong>Raccourcis</strong></div>
+                        <div class="card-description"><strong data-i18n="home.stats_shortcuts">Raccourcis</strong></div>
                     </div>
                     <div class="card text-center stat-item">
                         <div class="card-title" style="font-size: 2.5rem; color: #9b59b6;">
                             <span class="stat-number" data-value="100">0</span>+
                         </div>
-                        <div class="card-description"><strong>Termes</strong></div>
+                        <div class="card-description"><strong data-i18n="home.stats_terms">Termes</strong></div>
                     </div>
                 </div>
             </div>
@@ -196,25 +185,28 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <h3 class="footer-title">Guide PA:Titans</h3>
-                <p class="footer-text">Guide complet créé par la communauté pour la communauté.</p>
+                <h3 class="footer-title" data-i18n="footer.title">Guide PA:Titans</h3>
+                <p class="footer-text" data-i18n="footer.text">Guide complet créé par la communauté.</p>
                 <ul class="footer-links">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="pages/debutant.html">Débutant</a></li>
-                    <li><a href="pages/raccourcis.html">Raccourcis</a></li>
-                    <li><a href="pages/unites.html">Unités</a></li>
-                    <li><a href="pages/structures.html">Structures</a></li>
-                    <li><a href="pages/strategies.html">Stratégies</a></li>
-                    <li><a href="pages/lexique.html">Lexique</a></li>
+                    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="pages/debutant.html" data-i18n="nav.beginner">Débutant</a></li>
+                    <li><a href="pages/raccourcis.html" data-i18n="nav.shortcuts">Raccourcis</a></li>
+                    <li><a href="pages/unites.html" data-i18n="nav.units">Unités</a></li>
+                    <li><a href="pages/structures.html" data-i18n="nav.structures">Structures</a></li>
+                    <li><a href="pages/strategies.html" data-i18n="nav.strategies">Stratégies</a></li>
+                    <li><a href="pages/lexique.html" data-i18n="nav.lexicon">Lexique</a></li>
                 </ul>
                 <div class="footer-bottom">
-                    <p>© 2026 Guide PA:Titans 🎮</p>
+                    <p data-i18n="footer.copyright">© 2026 Guide PA:Titans 🎮</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <button class="scroll-top" aria-label="Retour en haut">↑</button>
+    
+    <!-- Scripts -->
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
