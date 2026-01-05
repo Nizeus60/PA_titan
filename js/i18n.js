@@ -26,9 +26,16 @@ const i18n = {
     // Charger un fichier de traduction
     loadTranslation: async function(lang) {
         try {
-            // Détecter si on est dans /pages/ ou à la racine
-            const isInPages = window.location.pathname.includes('/pages/');
-            const basePath = isInPages ? '../' : '';
+            // Détecter la profondeur du chemin
+            const path = window.location.pathname;
+            let basePath = '';
+            
+            if (path.includes('/pages/en/') || path.includes('/pages/es/') || 
+                path.includes('/pages/pt/') || path.includes('/pages/de/')) {
+                basePath = '../../';  // /pages/en/ -> 2 niveaux
+            } else if (path.includes('/pages/')) {
+                basePath = '../';     // /pages/ -> 1 niveau
+            }
             
             const response = await fetch(`${basePath}translations/${lang}.json`);
             if (!response.ok) throw new Error('Translation not found');
