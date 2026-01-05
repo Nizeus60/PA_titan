@@ -1,183 +1,125 @@
-# Guide Complet PA:Titans - TERMINÉ ✅
+# 🎮 Guide PA:Titans
+
+Guide complet en français pour **Planetary Annihilation: Titans**.
 
 ## 📁 Structure du Projet
 
 ```
-guide-pa-titans/
-├── index.html              # Page d'accueil ✅
+pa-titans-guide/
+├── index.html              # Page d'accueil
+├── favicon.svg             # Icône du site
 ├── css/
-│   └── styles.css          # Styles CSS professionnels ✅
+│   └── styles.css          # Styles globaux
 ├── js/
-│   └── main.js             # JavaScript (navigation, recherche, interactions) ✅
+│   ├── main.js             # JavaScript principal
+│   └── components.js       # Chargement nav/footer dynamique
+├── components/
+│   ├── nav.html            # Menu de navigation (MODIFIER ICI)
+│   └── footer.html         # Pied de page (MODIFIER ICI)
 └── pages/
-    ├── raccourcis.html     # Guide complet raccourcis clavier ✅
-    ├── unites.html         # Analyses détaillées des unités ✅
-    ├── structures.html     # Guide structures & économie ✅
-    ├── strategies.html     # Stratégies & tactiques avancées ✅
-    └── lexique.html        # Lexique complet avec recherche ✅
+    ├── debutant.html       # Guide débutant
+    ├── raccourcis.html     # Raccourcis clavier
+    ├── unites.html         # Guide des unités
+    ├── structures.html     # Guide des structures
+    ├── strategies.html     # Stratégies
+    └── lexique.html        # Lexique des termes
 ```
 
-## ✨ Pages Complétées
+## 🚀 Installation
 
-### ✅ index.html
-- Vue d'ensemble du guide
-- Cartes navigables vers toutes les sections
-- Design futuriste militaire
-- Stats et progression
+1. Téléchargez/clonez ce repository
+2. Uploadez sur GitHub
+3. Activez GitHub Pages (Settings → Pages → Source: main)
+4. Votre site est en ligne !
 
-### ✅ pages/raccourcis.html
-- **50+ raccourcis** classés par priorité
-- Tooltips informatifs sur termes techniques
-- Exemples tactiques concrets
-- Plan d'apprentissage 4 semaines
-- Tables comparatives
+## ➕ Ajouter une Nouvelle Page
 
-### ✅ pages/unites.html (NOUVELLE)
-- **Bots T1:** Dox, Boom Bot, Stinger
-- **Véhicules T1:** Ant, Spinner, Inferno, Stump
-- **Bots T2:** Slammer, Gil-E, Stitch
-- **Véhicules T2:** Vanguard, Leveler, Sheller
-- **Aérien:** Hummingbird, Bumblebee, Kestrel, Hornet
-- **Naval:** Narwhal, Leviathan
-- **Orbital:** Avenger, Anchor
-- **Titans:** Atlas, Zeus
-- Pour chaque unité:
-  - Stats complètes (HP, DPS, Range, Coût)
-  - Rôle tactique détaillé
-  - Fort contre / Faible contre
-  - Synergies
-  - Conseils Pro avec tips précis
+### 1. Créer la page HTML
+Copiez ce template dans `/pages/nouvelle-page.html` :
 
-### ✅ pages/structures.html (NOUVELLE)
-- **Économie:**
-  - Metal Extractor T1/T2 (ratios optimaux, timing upgrades)
-  - Energy Generator T1/T2 (gestion énergétique)
-  - Storage (quand construire)
-- **Production:**
-  - Factories T1 (Bot, Vehicle, Air, Naval)
-  - Factories T2 (Advanced)
-  - Orbital Launcher
-  - Titan Foundry
-- **Défenses:**
-  - Turrets T1/T2 (Catalyst)
-  - AA Towers et Umbrella (critique vs air)
-  - Holkins (Artillery T2)
-  - Walls (placement optimal)
-- **Super-Armes:**
-  - Nuclear Missile Launcher (stratégie nuke)
-  - Anti-Nuke Defense (protection)
-  - Halleys (planet smash)
-- **Utilitaires:**
-  - Radar T1/T2 (coverage)
-  - Teleporter (tactiques avancées)
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titre - PA:Titans</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title">Titre de la Page</h1>
+            <p class="site-subtitle">Sous-titre</p>
+        </div>
+    </header>
 
-### ✅ pages/strategies.html (NOUVELLE)
-- **Early Game (0-5min):**
-  - Vehicle Rush (opening standard)
-  - Boom Bot All-In (cheese)
-  - Dox Harass (agressif)
-  - Air First (risqué)
-- **Mid Game (5-15min):**
-  - Domination T1 (compositions optimales)
-  - Fast T2 (tech rush timing)
-  - Commander Snipe (4 méthodes)
-- **Late Game (15min+):**
-  - Vanguard Spam (steamroll)
-  - Air Dominance avec Kestrel
-  - Titan Rush (requirements massifs)
-  - Nuke Rush (saturation tactics)
-- **Erreurs Fatales à Éviter:** 10 erreurs communes expliquées
-- **Mind Games & Psychologie:** 8 tactiques psychologiques
-- **Timings Critiques:** Power spikes par tranches de temps
+    <div id="nav-placeholder"></div>
 
-### ✅ pages/lexique.html
-- **100+ termes** expliqués
-- Recherche en temps réel
-- Abréviations courantes
-- Contexte d'utilisation
+    <main>
+        <section class="section">
+            <div class="container">
+                <!-- VOTRE CONTENU ICI -->
+            </div>
+        </section>
+    </main>
 
-### ✅ css/styles.css
-- **1500+ lignes** de CSS professionnel
-- Variables CSS (couleurs, transitions)
-- Composants réutilisables
-- Animations keyframes
-- Responsive design
-- Tooltips système
+    <div id="footer-placeholder"></div>
 
-### ✅ js/main.js
-- Navigation mobile (burger menu)
-- Smooth scroll
-- Scroll-to-top button
-- Active nav highlighting
-- Intersection Observer
-- Recherche lexique
-- Tooltips positioning
+    <button class="scroll-top" aria-label="Retour en haut">↑</button>
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
+```
 
-## 🎨 Design & Fonctionnalités
+### 2. Ajouter au menu
+Éditez `components/nav.html` et ajoutez :
+```html
+<li><a href="{BASE}pages/nouvelle-page.html" data-page="nouvelle-page">Nouvelle Page</a></li>
+```
 
-### Thème Futuriste Militaire
-- **Couleurs:** Orange (#ff6b35) + Bleu (#00d4ff) + Pourpre (#8b5cf6)
-- **Typographies:** Orbitron (titres) + Rajdhani (corps)
-- **Background:** Animations subtiles, grille hexagonale
-- **Effects:** Hover effects, glow, scan lines
+### 3. Ajouter au footer (optionnel)
+Éditez `components/footer.html` et ajoutez le lien.
 
-### Composants Interactifs
-- **Tooltips:** Survol termes techniques = info contextuelle
-- **Badges:** Priorité (Critical, High, Medium, Low), Tiers (T1, T2, Titan), Rôles
-- **Cards:** Hover effects, clickable
-- **Info Boxes:** Tips, Warnings, Success
-- **Tables:** Responsive, stats comparatives
+**C'est tout !** La nouvelle page apparaîtra automatiquement sur toutes les pages.
 
-### Responsive Design
-- **Mobile:** < 768px
-- **Tablette:** 768px - 1200px
-- **Desktop:** > 1200px
-- Touch-friendly sur mobile
+## 🔧 Personnalisation
 
-## 🎯 Contenu Couvert
+### Modifier le Menu
+Éditez **uniquement** `components/nav.html`
 
-### Unités (30+ unités analysées)
-- Stats complètes
-- Rôles tactiques
-- Matchups détaillés
-- Synergies
-- Tips pro
+### Modifier le Footer
+Éditez **uniquement** `components/footer.html`
 
-### Structures (25+ structures)
-- Coûts et stats
-- Timing construction
-- Placement optimal
-- Stratégies économiques
+### Modifier les Styles
+Éditez `css/styles.css`
 
-### Stratégies (15+ stratégies)
-- Build orders détaillés
-- Timings précis
-- Conditions victoire
-- Counters et adaptations
+## 📊 Contenu
 
-## 🚀 Utilisation
+- **58 unités** documentées
+- **38 structures** détaillées
+- **50+ raccourcis** clavier
+- **100+ termes** dans le lexique
+- **Guide débutant** complet
+- **Stratégies** et compositions d'armées
 
-1. Ouvrez `index.html` dans n'importe quel navigateur moderne
-2. Naviguez via menu ou cartes cliquables
-3. Utilisez recherche dans lexique si besoin
-4. Consultez tooltips pour infos supplémentaires
+## 🌐 Déploiement
 
-## 📝 Technologies
+Le site est conçu pour GitHub Pages mais fonctionne sur :
+- GitHub Pages (gratuit)
+- Netlify (gratuit)
+- Vercel (gratuit)
+- Tout hébergement statique
 
-- HTML5 sémantique
-- CSS3 moderne (Grid, Flexbox, Animations)
-- JavaScript vanilla (pas de dépendances)
-- Google Fonts (Orbitron, Rajdhani)
+## 📝 Licence
 
-## 🎮 Crédits
-
-Guide créé pour la communauté PA:Titans
-Planetary Annihilation: Titans © Uber Entertainment
+Guide créé par la communauté pour la communauté PA:Titans.
 
 ---
 
-**Version:** 2.0 (Janvier 2025)
-**Statut:** COMPLET - Toutes pages terminées ✅
-**Pages:** 6/6 complètes (Accueil, Raccourcis, Unités, Structures, Stratégies, Lexique)
-
-🎮 **Bon jeu, Commandant !**
+**Bon jeu, Commandant !** 🎮

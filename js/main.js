@@ -409,4 +409,90 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('🎮 Guide PA:Titans chargé avec succès!');
     console.log('💡 Astuce: Essayez le Konami Code pour un easter egg...');
+    
+    // ===================================
+    // Recherche Globale
+    // ===================================
+    const globalSearch = document.getElementById('global-search');
+    const searchResults = document.getElementById('search-results');
+    
+    // Base de données de recherche
+    const searchDatabase = [
+        // Pages principales
+        { title: 'Guide Débutant', category: 'Page', url: 'pages/debutant.html', keywords: 'débutant nouveau commencer apprendre tutoriel' },
+        { title: 'Raccourcis Clavier', category: 'Page', url: 'pages/raccourcis.html', keywords: 'raccourcis clavier touches hotkeys contrôles' },
+        { title: 'Guide des Unités', category: 'Page', url: 'pages/unites.html', keywords: 'unités troupes armée combat' },
+        { title: 'Structures', category: 'Page', url: 'pages/structures.html', keywords: 'structures bâtiments construction défense' },
+        { title: 'Stratégies', category: 'Page', url: 'pages/strategies.html', keywords: 'stratégies tactiques build order composition' },
+        { title: 'Lexique', category: 'Page', url: 'pages/lexique.html', keywords: 'lexique termes définitions vocabulaire' },
+        
+        // Unités importantes
+        { title: 'Dox', category: 'Unité Bot T1', url: 'pages/unites.html#bots-t1', keywords: 'dox bot infanterie rush rapide' },
+        { title: 'Ant', category: 'Unité Véhicule T1', url: 'pages/unites.html#vehicules-t1', keywords: 'ant tank char véhicule' },
+        { title: 'Bumblebee', category: 'Unité Air T1', url: 'pages/unites.html#air-t1', keywords: 'bumblebee bomber bombardier avion' },
+        { title: 'Spinner', category: 'Unité Véhicule T1', url: 'pages/unites.html#vehicules-t1', keywords: 'spinner aa anti-air défense' },
+        { title: 'Vanguard', category: 'Unité Véhicule T2', url: 'pages/unites.html#vehicules-t2', keywords: 'vanguard tank lourd t2' },
+        { title: 'Slammer', category: 'Unité Bot T2', url: 'pages/unites.html#bots-t2', keywords: 'slammer assault bot t2 dps' },
+        { title: 'Kestrel', category: 'Unité Air T2', url: 'pages/unites.html#air-t2', keywords: 'kestrel gunship air t2' },
+        { title: 'Zeus', category: 'Titan', url: 'pages/unites.html#titans', keywords: 'zeus titan air éclair lightning' },
+        { title: 'Atlas', category: 'Titan', url: 'pages/unites.html#titans', keywords: 'atlas titan bot terrestre séisme' },
+        
+        // Structures importantes
+        { title: 'Metal Extractor', category: 'Structure Éco', url: 'pages/structures.html#economie', keywords: 'metal extractor mex économie ressources' },
+        { title: 'Energy Plant', category: 'Structure Éco', url: 'pages/structures.html#economie', keywords: 'energy plant pgen énergie power' },
+        { title: 'Factory', category: 'Structure Production', url: 'pages/structures.html#production', keywords: 'factory usine production unités' },
+        { title: 'Teleporter', category: 'Structure Utilitaire', url: 'pages/structures.html#utilitaires', keywords: 'teleporter téléporteur transport' },
+        { title: 'Anti-Nuke', category: 'Structure Défense', url: 'pages/structures.html#defense', keywords: 'anti-nuke défense nucléaire missile' },
+        { title: 'Umbrella', category: 'Structure Défense', url: 'pages/structures.html#defense', keywords: 'umbrella anti-orbital défense' },
+        
+        // Stratégies
+        { title: 'Build Order Standard', category: 'Stratégie', url: 'pages/strategies.html#build-orders', keywords: 'build order opening début standard' },
+        { title: 'Rush Dox', category: 'Stratégie', url: 'pages/strategies.html#build-orders', keywords: 'rush dox agressif early' },
+        { title: 'Compositions d\'armées', category: 'Stratégie', url: 'pages/strategies.html#compositions', keywords: 'composition armée army mix' },
+        { title: 'Multi-Planète', category: 'Stratégie', url: 'pages/strategies.html#multi-planete', keywords: 'multi planète orbital invasion' },
+        { title: 'Counters', category: 'Stratégie', url: 'pages/strategies.html#counters', keywords: 'counter contre stratégie' },
+        
+        // Raccourcis importants
+        { title: 'Attack Move (A)', category: 'Raccourci', url: 'pages/raccourcis.html', keywords: 'attack move a-move attaque' },
+        { title: 'Patrol (P)', category: 'Raccourci', url: 'pages/raccourcis.html', keywords: 'patrol patrouille p' },
+        { title: 'Stop (S)', category: 'Raccourci', url: 'pages/raccourcis.html', keywords: 'stop arrêt s' },
+        { title: 'Groupes de Contrôle', category: 'Raccourci', url: 'pages/raccourcis.html', keywords: 'groupe contrôle ctrl numéro sélection' },
+    ];
+    
+    if (globalSearch) {
+        globalSearch.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            
+            if (query.length < 2) {
+                searchResults.classList.remove('active');
+                return;
+            }
+            
+            const results = searchDatabase.filter(item => {
+                return item.title.toLowerCase().includes(query) ||
+                       item.keywords.toLowerCase().includes(query) ||
+                       item.category.toLowerCase().includes(query);
+            }).slice(0, 8); // Max 8 résultats
+            
+            if (results.length > 0) {
+                searchResults.innerHTML = results.map(item => `
+                    <div class="search-result-item" onclick="window.location.href='${item.url}'">
+                        <div class="search-result-title">${item.title}</div>
+                        <div class="search-result-category">${item.category}</div>
+                    </div>
+                `).join('');
+                searchResults.classList.add('active');
+            } else {
+                searchResults.innerHTML = '<div class="search-result-item"><div class="search-result-title">Aucun résultat</div></div>';
+                searchResults.classList.add('active');
+            }
+        });
+        
+        // Fermer les résultats au clic ailleurs
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-container')) {
+                searchResults.classList.remove('active');
+            }
+        });
+    }
 });

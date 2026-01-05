@@ -1493,3 +1493,177 @@ footer::before {
         font-size: 2rem;
     }
 }
+
+/* ==================== SEARCH BAR ==================== */
+.search-container {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto 30px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    font-size: 1rem;
+    font-family: 'Rajdhani', sans-serif;
+    background: rgba(30, 35, 60, 0.9);
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 30px;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #00d4ff;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.search-input::placeholder {
+    color: #888;
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00d4ff;
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(20, 25, 45, 0.98);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 12px;
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.search-results.active {
+    display: block;
+}
+
+.search-result-item {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.search-result-item:hover {
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-title {
+    color: #00d4ff;
+    font-weight: 600;
+}
+
+.search-result-category {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/* ==================== LANGUAGE SELECTOR ==================== */
+.lang-selector {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.lang-btn {
+    background: rgba(30, 35, 60, 0.9);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 8px;
+    padding: 8px 15px;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    border-color: #00d4ff;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(20, 25, 45, 0.98);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 8px;
+    margin-top: 5px;
+    min-width: 150px;
+    display: none;
+    z-index: 1000;
+}
+
+.lang-dropdown.active {
+    display: block;
+}
+
+.lang-option {
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s ease;
+    color: #c0c0c0;
+}
+
+.lang-option:hover {
+    background: rgba(0, 212, 255, 0.1);
+    color: #fff;
+}
+
+.lang-option.active {
+    color: #00d4ff;
+}
+
+/* ==================== SCROLL TOP BUTTON ==================== */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    border: none;
+    border-radius: 50%;
+    color: #000;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+}

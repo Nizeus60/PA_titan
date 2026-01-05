@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
     <title>Guide Débutant - PA:Titans</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -373,22 +378,8 @@
         </div>
     </header>
 
-    <nav>
-        <div class="nav-container">
-            <a href="../index.html" class="nav-logo">PA:TITANS</a>
-            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="debutant.html" class="active">Débutant</a></li>
-                <li><a href="debutant.html">Débutant</a></li>
-                <li><a href="raccourcis.html">Raccourcis</a></li>
-                <li><a href="unites.html">Unités</a></li>
-                <li><a href="structures.html">Structures</a></li>
-                <li><a href="strategies.html">Stratégies</a></li>
-                <li><a href="lexique.html">Lexique</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Navigation (chargée dynamiquement) -->
+    <div id="nav-placeholder"></div>
 
     <main>
         <section class="section">
@@ -821,27 +812,11 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h3 class="footer-title">Guide PA:Titans</h3>
-                <p class="footer-text">Guide complet créé par la communauté pour la communauté.</p>
-                <ul class="footer-links">
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="debutant.html">Débutant</a></li>
-                    <li><a href="debutant.html">Débutant</a></li>
-                <li><a href="raccourcis.html">Raccourcis</a></li>
-                    <li><a href="unites.html">Unités</a></li>
-                    <li><a href="structures.html">Structures</a></li>
-                    <li><a href="strategies.html">Stratégies</a></li>
-                    <li><a href="lexique.html">Lexique</a></li>
-                </ul>
-                <div class="footer-bottom"><p>© 2026 Guide PA:Titans 🎮</p></div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer (chargé dynamiquement) -->
+    <div id="footer-placeholder"></div>
 
     <button class="scroll-top" aria-label="Retour en haut">↑</button>
+    <script src="../js/components.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>
