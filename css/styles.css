@@ -1667,3 +1667,125 @@ footer::before {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
 }
+
+/* ==================== SEARCH BAR (sous nav) ==================== */
+.search-bar-container {
+    background: rgba(10, 11, 15, 0.8);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+}
+
+.search-bar-container .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.search-wrapper {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 45px 12px 20px;
+    font-size: 0.95rem;
+    font-family: 'Rajdhani', sans-serif;
+    background: rgba(30, 35, 60, 0.9);
+    border: 2px solid rgba(0, 212, 255, 0.2);
+    border-radius: 25px;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.search-input::placeholder {
+    color: #666;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(20, 25, 45, 0.98);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 12px;
+    margin-top: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.search-results.active {
+    display: block;
+}
+
+.search-result-item {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.search-result-item:hover {
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-title {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.search-result-category {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* ==================== HEADER COMPACT (pour pages internes) ==================== */
+header.header-compact {
+    padding: 20px 0;
+}
+
+header.header-compact .site-title {
+    font-size: 1.6rem;
+}
+
+header.header-compact .site-subtitle {
+    font-size: 0.9rem;
+}
+
+/* Header home (plus grand) */
+header.header-home {
+    padding: 40px 0;
+}
+
+header.header-home .site-title {
+    font-size: 2.5rem;
+}
+
+header.header-home .site-subtitle {
+    font-size: 1.1rem;
+    color: var(--primary-orange);
+    margin-bottom: 10px;
+}
+
+header.header-home .site-description {
+    display: block;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
+}
