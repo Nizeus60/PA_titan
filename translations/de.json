@@ -12,37 +12,40 @@
     "lexicon": "Glossar"
   },
   
+  "search": {
+    "placeholder": "🔍 Suchen..."
+  },
+  
+  "footer": {
+    "title": "PA:Titans Guide",
+    "text": "Vollständiger Guide von der Community erstellt.",
+    "copyright": "© 2026 PA:Titans Guide 🎮"
+  },
+  
   "home": {
     "title": "PLANETARY ANNIHILATION: TITANS",
     "subtitle": "Vollständiger Taktik-Guide",
     "description": "Meistere den planetaren Krieg mit diesem detaillierten Guide.",
     "welcome_title": "Willkommen Kommandant",
     "welcome_subtitle": "Dieser Guide begleitet dich von den ersten Schritten bis zur totalen Meisterschaft",
-    
     "card_beginner_title": "🎮 Anfänger-Guide",
     "card_beginner_badge": "Hier starten!",
     "card_beginner_desc": "Neu bei PA:Titans? Mentale Checkliste, Spielphasen, Angriff und Verteidigung.",
-    
     "card_shortcuts_title": "⌨️ Tastenkürzel",
     "card_shortcuts_badge": "Wichtig",
     "card_shortcuts_desc": "Alle Tastenkürzel nach Priorität sortiert. Verdopple deine Effizienz!",
-    
     "card_units_title": "⚔️ Einheiten-Guide",
     "card_units_badge": "Wichtig",
     "card_units_desc": "Vollständige Analyse jeder Einheit: Rolle, Stärken, Schwächen und Counter.",
-    
     "card_structures_title": "🏗️ Gebäude",
     "card_structures_badge": "Wichtig",
     "card_structures_desc": "Wirtschaft, Verteidigung, Produktion und Superwaffen erklärt.",
-    
     "card_strategies_title": "🎯 Strategien",
     "card_strategies_badge": "Fortgeschritten",
     "card_strategies_desc": "Build Orders, Armeezusammenstellungen und fortgeschrittene Taktiken.",
-    
     "card_lexicon_title": "📚 Glossar",
     "card_lexicon_badge": "Referenz",
     "card_lexicon_desc": "Alle Begriffe und Spieljargon erklärt.",
-    
     "stats_title": "📊 Guide-Inhalt",
     "stats_units": "Einheiten",
     "stats_structures": "Gebäude",
@@ -50,13 +53,122 @@
     "stats_terms": "Begriffe"
   },
   
-  "search": {
-    "placeholder": "🔍 Einheit, Strategie, Tastenkürzel suchen..."
+  "beginner": {
+    "title": "Anfänger-Guide",
+    "subtitle": "Vom Anfänger zum Helden",
+    "description": "Alles was du wissen musst um loszulegen.",
+    "no_unit_limit_title": "PA:Titans hat KEIN Einheitenlimit!",
+    "no_unit_limit_text": "Anders als bei vielen RTS kannst du so viele Einheiten erstellen wie du willst.",
+    "no_unit_limit_motto": "Je mehr du produzierst = Desto mehr gewinnst du.",
+    "checklist_title": "🧠 Die Mentale Checkliste",
+    "checklist_subtitle": "Überprüfe diese 5 Punkte alle 30 Sekunden",
+    "checklist_timer": "⏱️ Alle 30 Sekunden prüfen:",
+    "check_1_label": "Wirtschaft",
+    "check_1_question": "Bin ich im Grünen?",
+    "check_2_label": "Fabriken",
+    "check_2_question": "Produzieren sie?",
+    "check_3_label": "Fabbers",
+    "check_3_question": "Arbeiten sie?",
+    "check_4_label": "Armee",
+    "check_4_question": "Wo ist sie?",
+    "check_5_label": "Kommandant",
+    "check_5_question": "Ist er sicher?",
+    "tip_title": "Zu viel zu verwalten?",
+    "tip_text": "Das ist am Anfang normal! Beginne nur mit Wirtschaft und Fabriken.",
+    "phases_title": "⏰ Spielphasen",
+    "phases_subtitle": "Was zu jedem Zeitpunkt des Spiels zu tun ist",
+    "phase1_time": "0 - 3 Min",
+    "phase1_title": "🏗️ Wirtschaftsphase",
+    "phase2_time": "3 - 8 Min",
+    "phase2_title": "⚔️ Armeephase",
+    "phase3_time": "8+ Min",
+    "phase3_title": "🚀 Expansionsphase",
+    "stuck_title": "❓ \"Ich weiß nicht was ich tun soll\"",
+    "stuck_subtitle": "Der Anti-Blockade-Guide",
+    "stuck_question": "🤔 Ich weiß nicht was ich jetzt tun soll...",
+    "golden_rule_title": "⚡ Die Goldene Regel",
+    "golden_rule_text": "Wenn du nicht weißt was du tun sollst → Produziere Einheiten.",
+    "commander_title": "👑 Schütze deinen Kommandanten",
+    "commander_subtitle": "Er stirbt = Du verlierst. Punkt.",
+    "commander_good_title": "✅ Wo den Kommandanten platzieren",
+    "commander_bad_title": "❌ Fatale Fehler",
+    "defense_title": "🛡️ Richte deine Verteidigung ein",
+    "defense_subtitle": "Schichtverteidigung = solide Verteidigung",
+    "attack_title": "⚔️ Wie man angreift",
+    "attack_subtitle": "Feindliche Verteidigung durchbrechen",
+    "summary_title": "📋 Zusammenfassung: Die Goldenen Regeln",
+    "summary_subtitle": "Unbedingt merken",
+    "always_title": "✅ IMMER",
+    "never_title": "❌ NIEMALS",
+    "ready_title": "🏆 Du bist bereit!",
+    "ready_text": "Mit diesen Grundlagen kannst du bereits viele Spieler besiegen."
   },
   
-  "footer": {
-    "title": "PA:Titans Guide",
-    "text": "Vollständiger Guide von der Community erstellt.",
-    "copyright": "© 2026 PA:Titans Guide 🎮"
+  "shortcuts": {
+    "title": "Tastenkürzel",
+    "subtitle": "Wichtige Steuerung",
+    "description": "Meistere diese Tastenkürzel um dein Gameplay zu verbessern.",
+    "legend_title": "Legende",
+    "essential": "Wichtig",
+    "useful": "Nützlich", 
+    "advanced": "Fortgeschritten",
+    "quick_ref_title": "⚡ Schnellreferenz - Die 8 Wichtigsten",
+    "cat_basic": "🎮 Grundbefehle",
+    "cat_modifiers": "⌨️ Modifikatoren",
+    "cat_groups": "🎯 Kontrollgruppen",
+    "cat_camera": "📷 Kamera",
+    "cat_selection": "✨ Auswahl",
+    "cat_orders": "⚡ Spezialbefehle",
+    "cat_build": "🏭 Bauen",
+    "cat_interface": "🔧 Interface"
+  },
+  
+  "units": {
+    "title": "Einheiten-Guide",
+    "subtitle": "Vollständiges Arsenal",
+    "description": "Detaillierte Analyse aller Einheiten im Spiel.",
+    "filter_all": "Alle",
+    "stats_hp": "LP",
+    "stats_dps": "DPS",
+    "stats_range": "Reichweite",
+    "stats_speed": "Geschwindigkeit",
+    "stats_cost": "Kosten",
+    "role": "Rolle",
+    "counters": "Effektiv gegen",
+    "countered_by": "Gekontert von",
+    "tip": "💡 Tipp"
+  },
+  
+  "structures": {
+    "title": "Gebäude",
+    "subtitle": "Gebäude & Verteidigung",
+    "description": "Alles über Wirtschaft, Produktion und Verteidigung.",
+    "cat_economy": "💰 Wirtschaft",
+    "cat_production": "🏭 Produktion",
+    "cat_defense": "🛡️ Verteidigung",
+    "cat_utility": "🔧 Hilfsmittel",
+    "cat_superweapons": "☢️ Superwaffen"
+  },
+  
+  "strategies": {
+    "title": "Strategien",
+    "subtitle": "Fortgeschrittene Taktiken",
+    "description": "Build Orders, Zusammenstellungen und Taktiken zum Dominieren.",
+    "sec_fundamentals": "🎯 Grundlagen",
+    "sec_build_orders": "🏁 Build Orders",
+    "sec_compositions": "⚔️ Armeezusammenstellungen",
+    "sec_map_control": "🗺️ Kartenkontrolle",
+    "sec_multi_planet": "🌍 Multi-Planet",
+    "sec_win_conditions": "🏆 Siegbedingungen",
+    "sec_defense": "🛡️ Verteidigung",
+    "sec_counters": "📊 Counter-Tabelle",
+    "sec_mistakes": "❌ Fehler vermeiden"
+  },
+  
+  "lexicon": {
+    "title": "Glossar",
+    "subtitle": "PA:Titans Wörterbuch",
+    "description": "Alle Begriffe und Abkürzungen erklärt.",
+    "search_placeholder": "🔍 Begriff suchen..."
   }
 }
