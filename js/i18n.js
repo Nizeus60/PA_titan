@@ -48,8 +48,82 @@ const i18n = {
         this.translations = translation;
         localStorage.setItem('pa-titans-lang', lang);
         
+        // Rediriger vers la bonne version de la page si nécessaire
+        this.redirectToLangPage(lang);
+        
         this.applyTranslations();
         this.updateLanguageSelector();
+    },
+    
+    // Rediriger vers la page dans la bonne langue
+    redirectToLangPage: function(lang) {
+        const currentPath = window.location.pathname;
+        const currentPage = currentPath.split('/').pop();
+        
+        // Mapping des pages FR <-> EN (les autres langues utilisent les mêmes noms que EN)
+        const frToEn = {
+            'debutant.html': 'beginner.html',
+            'raccourcis.html': 'shortcuts.html',
+            'unites.html': 'units.html',
+            'structures.html': 'structures.html',
+            'strategies.html': 'strategies.html',
+            'lexique.html': 'glossary.html'
+        };
+        
+        const enToFr = {
+            'beginner.html': 'debutant.html',
+            'shortcuts.html': 'raccourcis.html',
+            'units.html': 'unites.html',
+            'structures.html': 'structures.html',
+            'strategies.html': 'strategies.html',
+            'glossary.html': 'lexique.html'
+        };
+        
+        // Détecter où on est
+        const isInFrPages = currentPath.includes('/pages/') && 
+                           !currentPath.includes('/pages/en/') && 
+                           !currentPath.includes('/pages/es/') && 
+                           !currentPath.includes('/pages/pt/') && 
+                           !currentPath.includes('/pages/de/');
+        const isInLangFolder = currentPath.includes('/pages/en/') || 
+                               currentPath.includes('/pages/es/') || 
+                               currentPath.includes('/pages/pt/') || 
+                               currentPath.includes('/pages/de/');
+        
+        // Si on est sur l'index, pas de redirection
+        if (!currentPage || currentPage === 'index.html' || currentPage === '') {
+            return;
+        }
+        
+        // Si on est sur une page de contenu
+        if (isInFrPages || isInLangFolder) {
+            let newPath = currentPath;
+            let targetPage = currentPage;
+            
+            if (lang === 'fr') {
+                // Aller vers les pages françaises
+                if (isInLangFolder) {
+                    // Convertir le nom de page EN -> FR
+                    targetPage = enToFr[currentPage] || currentPage;
+                    // Retirer /en/, /es/, /pt/, /de/
+                    newPath = currentPath.replace(/\/pages\/(en|es|pt|de)\//, '/pages/');
+                    newPath = newPath.replace(currentPage, targetPage);
+                    window.location.href = newPath;
+                }
+            } else {
+                // Aller vers une page traduite (en, es, pt, de)
+                if (isInFrPages) {
+                    // Convertir le nom de page FR -> EN
+                    targetPage = frToEn[currentPage] || currentPage;
+                    newPath = currentPath.replace('/pages/', `/pages/${lang}/`);
+                    newPath = newPath.replace(currentPage, targetPage);
+                } else if (isInLangFolder) {
+                    // Changer de dossier de langue
+                    newPath = currentPath.replace(/\/pages\/(en|es|pt|de)\//, `/pages/${lang}/`);
+                }
+                window.location.href = newPath;
+            }
+        }
     },
     
     // Appliquer les traductions

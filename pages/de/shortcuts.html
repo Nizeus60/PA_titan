@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    <title>Tastenkürzel - PA:Titans</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        /* Hotkey Grid */
+        .hotkey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+        
+        /* Hotkey Item */
+        .hotkey-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, rgba(30, 35, 60, 0.8), rgba(20, 25, 45, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 12px 16px;
+            transition: all 0.2s ease;
+            position: relative;
+            cursor: help;
+        }
+        .hotkey-item:hover {
+            border-color: rgba(0, 212, 255, 0.5);
+            background: linear-gradient(135deg, rgba(40, 45, 70, 0.9), rgba(30, 35, 55, 0.95));
+            transform: translateY(-2px);
+        }
+        .hotkey-item.essential {
+            border-left: 3px solid #00d4ff;
+        }
+        .hotkey-item.useful {
+            border-left: 3px solid #ffd700;
+        }
+        .hotkey-item.advanced {
+            border-left: 3px solid #888;
+        }
+        
+        /* Key Badge */
+        .key-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 45px;
+            height: 40px;
+            padding: 0 12px;
+            background: linear-gradient(180deg, #3a3f5c, #252a40);
+            border: 2px solid #555;
+            border-radius: 6px;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            box-shadow: 0 3px 0 #1a1d2e, inset 0 1px 0 rgba(255,255,255,0.1);
+            flex-shrink: 0;
+        }
+        .key-badge.combo {
+            font-size: 0.75rem;
+            min-width: 70px;
+        }
+        .key-badge.mouse {
+            background: linear-gradient(180deg, #4a3f5c, #352a40);
+            border-color: #665;
+        }
+        
+        /* Action Text */
+        .hotkey-action {
+            flex: 1;
+        }
+        .hotkey-action-main {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            line-height: 1.3;
+        }
+        .hotkey-action-hint {
+            color: #888;
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+        
+        /* Tooltip */
+        .hotkey-tooltip {
+            position: absolute;
+            bottom: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid #00d4ff;
+            border-radius: 8px;
+            padding: 12px 16px;
+            min-width: 250px;
+            max-width: 350px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            z-index: 100;
+            pointer-events: none;
+        }
+        .hotkey-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: #00d4ff;
+        }
+        .hotkey-item:hover .hotkey-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        .tooltip-title {
+            color: #00d4ff;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .tooltip-text {
+            color: #c0c0c0;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        .tooltip-tip {
+            color: #ffd700;
+            font-size: 0.8rem;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Category Card */
+        .category-card {
+            background: linear-gradient(135deg, rgba(20, 25, 45, 0.95), rgba(15, 18, 35, 0.98));
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .category-icon {
+            font-size: 2rem;
+        }
+        .category-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.4rem;
+            color: #00d4ff;
+        }
+        .category-subtitle {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        /* Legende */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            background: rgba(0,0,0,0.3);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #c0c0c0;
+        }
+        .legend-color {
+            width: 20px;
+            height: 4px;
+            border-radius: 2px;
+        }
+        .legend-color.essential { background: #00d4ff; }
+        .legend-color.useful { background: #ffd700; }
+        .legend-color.advanced { background: #888; }
+        
+        /* Quick Reference */
+        .quick-ref {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 150, 200, 0.05));
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .quick-ref-title {
+            color: #00d4ff;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        .quick-ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .quick-ref-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .quick-ref-key {
+            background: #2a2f45;
+            border: 1px solid #444;
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.85rem;
+            color: #fff;
+        }
+        .quick-ref-action {
+            color: #c0c0c0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title" data-i18n="shortcuts.title">Tastenkürzel</h1>
+            <p class="site-subtitle" data-i18n="shortcuts.subtitle">Contrôlez le Jeu comme un Pro</p>
+            <p class="site-description" data-i18n="shortcuts.description">Tous les raccourcis essentiels pour PA:Titans. Survolez pour plus de détails.</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">PA:TITANS</a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../../index.html" data-i18n="nav.home">Startseite</a></li>
+                <li><a href="beginner.html"  data-i18n="nav.beginner">Anfänger</a></li>
+                <li><a href="shortcuts.html" class="active" data-i18n="nav.shortcuts">Tastenkürzel</a></li>
+                <li><a href="units.html"  data-i18n="nav.units">Einheiten</a></li>
+                <li><a href="structures.html"  data-i18n="nav.structures">Gebäude</a></li>
+                <li><a href="strategies.html"  data-i18n="nav.strategies">Strategien</a></li>
+                <li><a href="glossary.html"  data-i18n="nav.lexicon">Glossar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Barre de Recherche -->
+    <div class="search-bar-container">
+        <div class="container">
+            <div class="search-wrapper">
+                <input type="text" id="global-search" class="search-input" data-i18n-placeholder="search.placeholder" placeholder="🔍 Rechercher...">
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <main>
+        <section class="section">
+            <div class="container">
+                
+                <!-- Legende -->
+                <div class="legend">
+                    <div class="legend-item">
+                        <span class="legend-color essential"></span>
+                        <span><strong>Essentiel</strong> - À connaître absolument</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color useful"></span>
+                        <span><strong>Utile</strong> - Améliore votre jeu</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color advanced"></span>
+                        <span><strong>Avancé</strong> - Pour les pros</span>
+                    </div>
+                    <div class="legend-item" style="margin-left: auto;">
+                        <span>💡 Survolez pour plus d'infos</span>
+                    </div>
+                </div>
+                
+                <!-- Quick Reference -->
+                <div class="quick-ref">
+                    <h3 class="quick-ref-title">⚡ Les 8 Tastenkürzel les Plus Importants</h3>
+                    <div class="quick-ref-grid">
+                        <div class="quick-ref-item"><span class="quick-ref-key">Clic Droit</span><span class="quick-ref-action">Move / Attack</span></div>
+                        <div class="quick-ref-item"><span class="quick-ref-key">S</span><span class="quick-ref-action">Stop</span></div>
+                        <div class="quick-ref-item"><span class="quick-ref-key">A</span><span class="quick-ref-action">Attack Move</span></div>
+                        <div class="quick-ref-item"><span class="quick-ref-key">P</span><span class="quick-ref-action">Patrol</span></div>
+                        <div class="quick-ref-item"><span class="quick-ref-key">Ctrl+1-9</span><span class="quick-ref-action">Créer Groupe</span></div>
+                        <div class="quick-ref-item"><span class="quick-ref-key">1-9</span><span class="quick-ref-action">Auswahlner Groupe</span></div>
+                        <div class="quick-ref-item"><span class="quick-ref-key">Shift</span><span class="quick-ref-action">Queue d'ordres</span></div>
+                        <div class="quick-ref-item"><span class="quick-ref-key">Molette</span><span class="quick-ref-action">Zoom</span></div>
+                    </div>
+                </div>
+
+                <!-- ==================== COMMANDES DE BASE ==================== -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <span class="category-icon">🎮</span>
+                        <div>
+                            <h2 class="category-title">Grundbefehle</h2>
+                            <p class="category-subtitle">Les ordres que vous donnerez le plus souvent</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hotkey-grid">
+                        <!-- Move -->
+                        <div class="hotkey-item essential">
+                            <span class="key-badge mouse">Clic D</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Move / Attack</div>
+                                <div class="hotkey-action-hint">Contextuel</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Commande Contextuelle</div>
+                                <div class="tooltip-text">
+                                    <strong>Sur terrain vide :</strong> Déplacement<br>
+                                    <strong>Sur ennemi :</strong> Attaque<br>
+                                    <strong>Sur allié :</strong> Assist (fabbers)
+                                </div>
+                                <div class="tooltip-tip">💡 Le raccourci le plus utilisé du jeu !</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Move explicit -->
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">M</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Move</div>
+                                <div class="hotkey-action-hint">Déplacement forcé</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Déplacement Forcé</div>
+                                <div class="tooltip-text">Force le déplacement sans attaquer. Utile pour traverser une zone ennemie sans s'arrêter.</div>
+                                <div class="tooltip-tip">💡 Usez pour fuir ou ignorer des cibles</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Attack -->
+                        <div class="hotkey-item essential">
+                            <span class="key-badge">A</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Attack Move</div>
+                                <div class="hotkey-action-hint">Attaque en chemin</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Attack Move (A-Move)</div>
+                                <div class="tooltip-text">Les unités se déplacent vers la cible et attaquent tout ennemi rencontré en chemin.</div>
+                                <div class="tooltip-tip">💡 Essentiel pour les pushes ! Toujours A-move vos armées.</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Stop -->
+                        <div class="hotkey-item essential">
+                            <span class="key-badge">S</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Stop</div>
+                                <div class="hotkey-action-hint">Arrêt immédiat</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Stop</div>
+                                <div class="tooltip-text">Arrête immédiatement toutes les actions des unités sélectionnées. Annule tous les ordres en queue.</div>
+                                <div class="tooltip-tip">💡 Spam S pour annuler une mauvaise commande !</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Patrol -->
+                        <div class="hotkey-item essential">
+                            <span class="key-badge">P</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Patrol</div>
+                                <div class="hotkey-action-hint">Patrouille en boucle</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Patrol</div>
+                                <div class="tooltip-text">
+                                    <strong>Combat :</strong> Patrouille et attaque tout ennemi<br>
+                                    <strong>Fabbers :</strong> Répare, reclaim, assist automatiquement
+                                </div>
+                                <div class="tooltip-tip">💡 Glissez sur toute la planète pour couvrir tout !</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Assist -->
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">I</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Assist</div>
+                                <div class="hotkey-action-hint">Aider construction</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Assist</div>
+                                <div class="tooltip-text">Les fabbers aident à construire ce que construit l'unité ciblée. Accélère la construction.</div>
+                                <div class="tooltip-tip">💡 Assist une factory pour accélérer la production</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Reclaim -->
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">E</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Reclaim</div>
+                                <div class="hotkey-action-hint">Récupère metal</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Reclaim</div>
+                                <div class="tooltip-text">Récupère le metal des épaves, arbres, rochers. Source importante de metal en early game !</div>
+                                <div class="tooltip-tip">💡 Les épaves après un combat = beaucoup de metal gratuit</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Repair -->
+                        <div class="hotkey-item advanced">
+                            <span class="key-badge">R</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Repair</div>
+                                <div class="hotkey-action-hint">Réparer unités/structures</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Repair</div>
+                                <div class="tooltip-text">Les fabbers réparent l'unité ou structure ciblée. Coûte du metal.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== MODIFICATEURS ==================== -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <span class="category-icon">⌨️</span>
+                        <div>
+                            <h2 class="category-title">Modifikatoren</h2>
+                            <p class="category-subtitle">Touches à combiner avec d'autres commandes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hotkey-grid">
+                        <div class="hotkey-item essential">
+                            <span class="key-badge">Shift</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Queue d'Ordres</div>
+                                <div class="hotkey-action-hint">Ajoute à la suite</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Queue d'Ordres</div>
+                                <div class="tooltip-text">Maintenir Shift en donnant des ordres les ajoute à la queue au lieu de remplacer. Essentiel pour planifier !</div>
+                                <div class="tooltip-tip">💡 Shift + clic sur plusieurs Mex = fabber les construit tous</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item essential">
+                            <span class="key-badge">Ctrl</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Priorité / Groupes</div>
+                                <div class="hotkey-action-hint">Multi-usage</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Ctrl - Multi-Usage</div>
+                                <div class="tooltip-text">
+                                    <strong>Ctrl + Clic :</strong> Ajoute en priorité (début de queue)<br>
+                                    <strong>Ctrl + 1-9 :</strong> Crée un groupe de contrôle
+                                </div>
+                                <div class="tooltip-tip">💡 Ctrl+Clic pour construire quelque chose EN PREMIER</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">Alt</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Kamera / Ordres</div>
+                                <div class="hotkey-action-hint">Fonctions spéciales</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Alt - Fonctions Spéciales</div>
+                                <div class="tooltip-text">
+                                    <strong>Alt + 1-9 :</strong> Rappeler position caméra<br>
+                                    <strong>Alt + Click Molette :</strong> Kamera rotation
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== GROUPES DE CONTRÔLE ==================== -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <span class="category-icon">🎯</span>
+                        <div>
+                            <h2 class="category-title">Kontrollgruppen</h2>
+                            <p class="category-subtitle">Organisez vos unités pour les sélectionner instantanément</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hotkey-grid">
+                        <div class="hotkey-item essential">
+                            <span class="key-badge combo">Ctrl+1-9</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Créer Groupe</div>
+                                <div class="hotkey-action-hint">Assigne les unités sélectionnées</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Créer Groupe de Contrôle</div>
+                                <div class="tooltip-text">Auswahlnez des unités, puis Ctrl+[numéro] pour créer un groupe. Vous pourrez les resélectionner instantanément.</div>
+                                <div class="tooltip-tip">💡 Groupe 1 = armée principale, 2 = raids, etc.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item essential">
+                            <span class="key-badge">1-9</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Auswahlner Groupe</div>
+                                <div class="hotkey-action-hint">Rappelle le groupe</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Auswahlner Groupe</div>
+                                <div class="tooltip-text">Appuyez sur le numéro pour sélectionner le groupe. Double-tap pour centrer la caméra dessus.</div>
+                                <div class="tooltip-tip">💡 Double-tap 1 = sélectionne ET centre sur le groupe 1</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge combo">Shift+1-9</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Ajouter au Groupe</div>
+                                <div class="hotkey-action-hint">Sans remplacer</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Ajouter au Groupe</div>
+                                <div class="tooltip-text">Ajoute les unités sélectionnées au groupe existant sans le remplacer.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item advanced">
+                            <span class="key-badge">T</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Suivre Unité</div>
+                                <div class="hotkey-action-hint">Kamera suit la sélection</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Kamera Follow</div>
+                                <div class="tooltip-text">La caméra suit les unités sélectionnées. Pratique pour observer un raid ou un scout.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== CAMÉRA ==================== -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <span class="category-icon">📷</span>
+                        <div>
+                            <h2 class="category-title">Kamera</h2>
+                            <p class="category-subtitle">Naviguez sur la planète efficacement</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hotkey-grid">
+                        <div class="hotkey-item essential">
+                            <span class="key-badge mouse">Molette</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Zoom</div>
+                                <div class="hotkey-action-hint">In / Out</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Zoom</div>
+                                <div class="tooltip-text">Molette haut = zoom in, Molette bas = zoom out. Dézoomez pour voir toute la planète !</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item essential">
+                            <span class="key-badge mouse">Clic M</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Pan Kamera</div>
+                                <div class="hotkey-action-hint">Maintenir + glisser</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Pan Kamera</div>
+                                <div class="tooltip-text">Maintenez le clic molette et glissez pour déplacer la vue sur la planète. La méthode préférée des pros.</div>
+                                <div class="tooltip-tip">💡 Les top players utilisent UNIQUEMENT ça pour se déplacer</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">↑↓←→</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Déplacer Kamera</div>
+                                <div class="hotkey-action-hint">Flèches directionnelles</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Déplacer Kamera</div>
+                                <div class="tooltip-text">Alternative aux mouvements souris. Peut être reconfiguré en WASD dans les options.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge combo">Shift+1-9</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Sauver Position</div>
+                                <div class="hotkey-action-hint">Kamera Anchor</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Kamera Anchor - Sauvegarder</div>
+                                <div class="tooltip-text">Sauvegarde la position actuelle de la caméra. Rappelable avec Alt+[numéro].</div>
+                                <div class="tooltip-tip">💡 Shift+1 sur votre base, Shift+2 sur le front, etc.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge combo">Alt+1-9</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Rappeler Position</div>
+                                <div class="hotkey-action-hint">Kamera Anchor</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Kamera Anchor - Rappeler</div>
+                                <div class="tooltip-text">Téléporte la caméra à la position sauvegardée. Essentiel pour naviguer entre plusieurs fronts.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">C</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Centrer sur Auswahl</div>
+                                <div class="hotkey-action-hint">Focus rapide</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Centrer sur Auswahl</div>
+                                <div class="tooltip-text">Centre la caméra sur les unités actuellement sélectionnées.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item advanced">
+                            <span class="key-badge">Tab</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Changer Planète</div>
+                                <div class="hotkey-action-hint">Multi-planète</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Changer de Planète</div>
+                                <div class="tooltip-text">Cycle entre les planètes du système. Aussi accessible via le menu en haut à droite.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item advanced">
+                            <span class="key-badge">\</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">PIP (Picture-in-Picture)</div>
+                                <div class="hotkey-action-hint">Mini fenêtre</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Picture-in-Picture</div>
+                                <div class="tooltip-text">Ouvre une mini-fenêtre pour surveiller un autre endroit. Vous pouvez donner des ordres dans le PIP !</div>
+                                <div class="tooltip-tip">💡 Mettez votre raid dans le PIP pendant que vous gérez la base</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== SÉLECTION ==================== -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <span class="category-icon">✨</span>
+                        <div>
+                            <h2 class="category-title">Auswahl</h2>
+                            <p class="category-subtitle">Auswahlnez les bonnes unités rapidement</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hotkey-grid">
+                        <div class="hotkey-item essential">
+                            <span class="key-badge mouse">Clic G</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Auswahlner</div>
+                                <div class="hotkey-action-hint">Clic ou glisser</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Auswahl</div>
+                                <div class="tooltip-text">Clic = sélectionne une unité. Glisser = sélectionne toutes les unités dans le rectangle.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item essential">
+                            <span class="key-badge combo">Ctrl+Z</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Tout Auswahlner</div>
+                                <div class="hotkey-action-hint">Toute l'armée</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Auswahlner Toute l'Armée</div>
+                                <div class="tooltip-text">Auswahlne TOUTES vos unités de combat. Utile pour un all-in ou regrouper vos forces.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge combo">Double Clic</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Même Type</div>
+                                <div class="hotkey-action-hint">Toutes à l'écran</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Auswahlner Même Type</div>
+                                <div class="tooltip-text">Double-clic sur une unité sélectionne toutes les unités du même type visibles à l'écran.</div>
+                                <div class="tooltip-tip">💡 Double-clic sur un Ant = tous les Ants visibles</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge combo">Shift+Clic</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Ajouter/Retirer</div>
+                                <div class="hotkey-action-hint">Modifie sélection</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Modifier Auswahl</div>
+                                <div class="tooltip-text">Shift+Clic ajoute ou retire une unité de la sélection actuelle.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item advanced">
+                            <span class="key-badge">F</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Sélect. Fabbers</div>
+                                <div class="hotkey-action-hint">Tous les fabbers idle</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Auswahlner Fabbers Idle</div>
+                                <div class="tooltip-text">Auswahlne tous les fabbers qui ne font rien. Parfait pour les remettre au travail !</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== ORDRES SPÉCIAUX ==================== -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <span class="category-icon">⚡</span>
+                        <div>
+                            <h2 class="category-title">Spezialbefehle</h2>
+                            <p class="category-subtitle">Contrôle avancé de vos unités</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hotkey-grid">
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">D</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Alt Fire</div>
+                                <div class="hotkey-action-hint">Tir secondaire (Kommandant)</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Alt Fire / Uber Cannon</div>
+                                <div class="tooltip-text">Active le tir secondaire. Pour le Kommandant : l'Uber Cannon (gros dégâts, cooldown long).</div>
+                                <div class="tooltip-tip">💡 L'Uber Cannon du Kommandant peut one-shot des petites unités</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">U</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Use</div>
+                                <div class="hotkey-action-hint">User (Teleporter)</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Use / User</div>
+                                <div class="tooltip-text">Use une structure. Surtout pour les Teleporters (y compris ennemis !).</div>
+                                <div class="tooltip-tip">💡 Vous pouvez utiliser les teleporters ENNEMIS !</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">L</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Load</div>
+                                <div class="hotkey-action-hint">Charger transport</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Load</div>
+                                <div class="tooltip-text">Ordonne au transport (Pelican, Astraeus) de charger des unités.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">N</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Unload</div>
+                                <div class="hotkey-action-hint">Décharger transport</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Unload</div>
+                                <div class="tooltip-text">Décharge les unités du transport à l'endroit ciblé.</div>
+                                <div class="tooltip-tip">💡 Pour Astraeus interplanétaire : Move sur planète, puis queue Unload</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item advanced">
+                            <span class="key-badge">Q</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Energy Toggle</div>
+                                <div class="hotkey-action-hint">On/Off énergie</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Energy Toggle</div>
+                                <div class="tooltip-text">Active/désactive la consommation d'énergie. Utile pour les radars, factories, unités énergivores.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item advanced">
+                            <span class="key-badge">G</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Fire Mode</div>
+                                <div class="hotkey-action-hint">Hold Fire / Return Fire / Fire at Will</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Fire Mode</div>
+                                <div class="tooltip-text">Change le comportement de tir : ne tire pas, riposte seulement, ou tire sur tout.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item essential">
+                            <span class="key-badge">Del</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Self Destruct</div>
+                                <div class="hotkey-action-hint">Détruit unité</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Self Destruct</div>
+                                <div class="tooltip-text">Destroy selected unit. Sur le Kommandant = Surrender (abandon).</div>
+                                <div class="tooltip-tip">💡 Pour abandonner proprement : sélectionnez Kommandant + Del</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== CONSTRUCTION ==================== -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <span class="category-icon">🏭</span>
+                        <div>
+                            <h2 class="category-title">Bauen</h2>
+                            <p class="category-subtitle">Build vite et bien</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hotkey-grid">
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">B</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Build Mode</div>
+                                <div class="hotkey-action-hint">Toggle continu</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Build Mode Toggle</div>
+                                <div class="tooltip-text">Pour factories : bascule entre production normale et production continue (boucle infinie).</div>
+                                <div class="tooltip-tip">💡 Production continue = unités en boucle infinie</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge combo">Shift+Build</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Queue Multiple</div>
+                                <div class="hotkey-action-hint">Plusieurs bâtiments</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Queue Multiple</div>
+                                <div class="tooltip-text">Maintenir Shift en plaçant des bâtiments les ajoute tous à la queue du fabber.</div>
+                                <div class="tooltip-tip">💡 Shift + clic sur 10 spots de Mex = fabber les fait tous</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge combo">Ctrl+Build</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Priorité</div>
+                                <div class="hotkey-action-hint">Construit en premier</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Build en Priorité</div>
+                                <div class="tooltip-text">Ctrl+Clic place le bâtiment EN PREMIER dans la queue, avant tout le reste.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item advanced">
+                            <span class="key-badge combo">Alt+Drag</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Area Build</div>
+                                <div class="hotkey-action-hint">Construit sur zone</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Area Build</div>
+                                <div class="tooltip-text">Auswahlnez un bâtiment, puis Alt+Drag pour le construire sur toute une zone (ex: murs, Mex).</div>
+                                <div class="tooltip-tip">💡 Area build sur toute la planète = tous les Mex d'un coup</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== INTERFACE ==================== -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <span class="category-icon">🔧</span>
+                        <div>
+                            <h2 class="category-title">Interface & Système</h2>
+                            <p class="category-subtitle">Menus et fonctions générales</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hotkey-grid">
+                        <div class="hotkey-item essential">
+                            <span class="key-badge">Echap</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Menu / Annuler</div>
+                                <div class="hotkey-action-hint">Ouvre menu pause</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Menu Pause</div>
+                                <div class="tooltip-text">Ouvre le menu. Options : Pause, Surrender, Settings, Quit.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">Pause</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Pause Jeu</div>
+                                <div class="hotkey-action-hint">Met en pause</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Pause</div>
+                                <div class="tooltip-text">Met le jeu en pause. Vous pouvez donner des ordres pendant la pause (ils s'exécutent au unpause).</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">Enter</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Chat</div>
+                                <div class="hotkey-action-hint">Ouvre le chat</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Chat</div>
+                                <div class="tooltip-text">Ouvre la fenêtre de chat pour parler aux autres joueurs.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item useful">
+                            <span class="key-badge">Y</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Ping</div>
+                                <div class="hotkey-action-hint">Signal pour équipiers</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Ping</div>
+                                <div class="tooltip-text">Place un ping visible par vos coéquipiers. Utile pour signaler un danger ou une cible.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item advanced">
+                            <span class="key-badge">F10</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Chronoview</div>
+                                <div class="hotkey-action-hint">Replay en jeu</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Chronoview</div>
+                                <div class="tooltip-text">Permet de revoir les moments passés de la partie en cours. Utile pour analyser une bataille.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hotkey-item advanced">
+                            <span class="key-badge">I</span>
+                            <div class="hotkey-action">
+                                <div class="hotkey-action-main">Icons Toggle</div>
+                                <div class="hotkey-action-hint">Icônes stratégiques</div>
+                            </div>
+                            <div class="hotkey-tooltip">
+                                <div class="tooltip-title">Strategic Icons</div>
+                                <div class="tooltip-text">Bascule l'affichage des icônes stratégiques au-dessus des unités. Utile en zoom out.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3 class="footer-title" data-i18n="footer.title">Guide PA:Titans</h3>
+                <p class="footer-text" data-i18n="footer.text">Vollständiger Guide von der Community erstellt.</p>
+                <ul class="footer-links">
+                    <li><a href="../../index.html" data-i18n="nav.home">Startseite</a></li>
+                    <li><a href="beginner.html" data-i18n="nav.beginner">Anfänger</a></li>
+                    <li><a href="shortcuts.html" data-i18n="nav.shortcuts">Tastenkürzel</a></li>
+                    <li><a href="units.html" data-i18n="nav.units">Einheiten</a></li>
+                    <li><a href="structures.html" data-i18n="nav.structures">Gebäude</a></li>
+                    <li><a href="strategies.html" data-i18n="nav.strategies">Strategien</a></li>
+                    <li><a href="glossary.html" data-i18n="nav.lexicon">Glossar</a></li>
+                </ul>
+                <div class="footer-bottom">
+                    <p>© 2026 PA:Titans Guide 🎮</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" aria-label="Retour en haut">↑</button>
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    <meta name="description" content="Guide complet des unités de Planetary Annihilation: Titans - Bots, Vehicles, Air, Naval, Orbital et Titans">
+    <title>Guia de Unidades - PA:Titans</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="site-title" data-i18n="units.title">Guia de Unidades</h1>
+            <p class="site-subtitle" data-i18n="units.subtitle">Analyses Complètes & Tactiques d'Utilisation</p>
+            <p class="site-description" data-i18n="units.description">
+                Découvrez chaque unité en détail : stats, rôle tactique, forces, faiblesses et conseils d'utilisation.
+            </p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">PA:TITANS</a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../../index.html" data-i18n="nav.home">Início</a></li>
+                <li><a href="beginner.html"  data-i18n="nav.beginner">Iniciante</a></li>
+                <li><a href="shortcuts.html"  data-i18n="nav.shortcuts">Atalhos</a></li>
+                <li><a href="units.html" class="active" data-i18n="nav.units">Unidades</a></li>
+                <li><a href="structures.html"  data-i18n="nav.structures">Estruturas</a></li>
+                <li><a href="strategies.html"  data-i18n="nav.strategies">Estratégias</a></li>
+                <li><a href="glossary.html"  data-i18n="nav.lexicon">Glossário</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Barre de Recherche -->
+    <div class="search-bar-container">
+        <div class="container">
+            <div class="search-wrapper">
+                <input type="text" id="global-search" class="search-input" data-i18n-placeholder="search.placeholder" placeholder="🔍 Rechercher...">
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu Principal -->
+    <main>
+        <!-- Légende & Guide de lecture -->
+        <section class="section" style="padding-bottom: 40px;">
+            <div class="container">
+                <div class="info-box">
+                    <h3 class="info-box-title">📊 Guide de Lecture</h3>
+                    <p><strong>PV</strong> = Points de vie | <strong>DPS</strong> = Dégâts par seconde | <strong>Alcance</strong> = Alcance | <strong>Velocidade</strong> = Velocidade</p>
+                    <p><strong>Custo</strong> = Metal nécessaire | <strong>AoE</strong> = Dégâts de zone | Les stats peuvent varier selon les patchs</p>
+                </div>
+
+                <!-- Table des matières -->
+                <div class="toc-container">
+                    <h3 class="toc-title">📑 Navigation Rapide</h3>
+                    <div class="toc-grid">
+                        <a href="#bots-t1" class="toc-item">
+                            <span class="toc-icon">🤖</span>
+                            <span class="toc-text">T1 Bots</span>
+                            <span class="toc-badge tier-t1">T1</span>
+                        </a>
+                        <a href="#vehicules-t1" class="toc-item">
+                            <span class="toc-icon">🚗</span>
+                            <span class="toc-text">Vehicles T1</span>
+                            <span class="toc-badge tier-t1">T1</span>
+                        </a>
+                        <a href="#bots-t2" class="toc-item">
+                            <span class="toc-icon">🦾</span>
+                            <span class="toc-text">T2 Bots</span>
+                            <span class="toc-badge tier-t2">T2</span>
+                        </a>
+                        <a href="#vehicules-t2" class="toc-item">
+                            <span class="toc-icon">🚛</span>
+                            <span class="toc-text">Vehicles T2</span>
+                            <span class="toc-badge tier-t2">T2</span>
+                        </a>
+                        <a href="#air-t1" class="toc-item">
+                            <span class="toc-icon">✈️</span>
+                            <span class="toc-text">T1 Air</span>
+                            <span class="toc-badge tier-t1">T1</span>
+                        </a>
+                        <a href="#air-t2" class="toc-item">
+                            <span class="toc-icon">🛩️</span>
+                            <span class="toc-text">T2 Air</span>
+                            <span class="toc-badge tier-t2">T2</span>
+                        </a>
+                        <a href="#naval" class="toc-item">
+                            <span class="toc-icon">⚓</span>
+                            <span class="toc-text">Naval</span>
+                            <span class="toc-badge tier-naval">NAVAL</span>
+                        </a>
+                        <a href="#orbital" class="toc-item">
+                            <span class="toc-icon">🛰️</span>
+                            <span class="toc-text">Orbital</span>
+                            <span class="toc-badge tier-orbital">ORBITAL</span>
+                        </a>
+                        <a href="#titans" class="toc-item">
+                            <span class="toc-icon">🏛️</span>
+                            <span class="toc-text">Titans</span>
+                            <span class="toc-badge tier-titan">TITAN</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Filtres -->
+                <div class="filter-container">
+                    <span class="filter-label">Filtrer par :</span>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Tout</button>
+                        <button class="filter-btn" data-filter="t1">T1</button>
+                        <button class="filter-btn" data-filter="t2">T2</button>
+                        <button class="filter-btn" data-filter="air">Air</button>
+                        <button class="filter-btn" data-filter="naval">Naval</button>
+                        <button class="filter-btn" data-filter="orbital">Orbital</button>
+                        <button class="filter-btn" data-filter="titan">Titans</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== BOTS T1 ==================== -->
+        <section class="section unit-section" id="bots-t1" data-category="bots" data-tier="t1">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🤖 T1 Bots</h2>
+                    <span class="card-badge tier-t1">TIER 1</span>
+                </div>
+                <p class="section-subtitle">Unidades légères et rapides, parfaites pour le harcèlement et les raids économiques.</p>
+
+                <div class="unit-grid">
+                    <!-- Dox -->
+                    <div class="unit-card" data-category="t1">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Dox</h3>
+                                <span class="unit-role">Assalto Bot</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-assault">Assaut</span>
+                                <span class="unit-badge cost-low">40 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">80</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">30</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Unité de raid ultra-mobile et bon marché. Excellent en masse pour harceler l'économie ennemie et submerger les défenses.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Fabbers isolés</span>
+                                        <span class="counter-item">Extracteurs</span>
+                                        <span class="counter-item">Éco exposée</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Ant (outrange)</span>
+                                        <span class="weakness-item">Inferno (AoE)</span>
+                                        <span class="weakness-item">Turrets</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">💡</span>
+                            <p>Utilisez <strong>Shift+Click patrol</strong> autour des extracteurs ennemis pour raids automatiques.</p>
+                        </div>
+                    </div>
+
+                    <!-- Boom -->
+                    <div class="unit-card" data-category="t1">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Boom</h3>
+                                <span class="unit-role">Suicide Bot</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-suicide">Explosif</span>
+                                <span class="unit-badge cost-low">75 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">50</span></div>
+                            <div class="stat"><span class="stat-label">Dégâts</span><span class="stat-value">800</span></div>
+                            <div class="stat"><span class="stat-label">AoE</span><span class="stat-value">20</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Très Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Bombe mobile kamikaze. Invisible au radar ! Parfait pour cheese early game ou snipes de Comandante.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Comandante (15-20 = kill)</span>
+                                        <span class="counter-item">Groupes serrés</span>
+                                        <span class="counter-item">Fábricas</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Walls</span>
+                                        <span class="weakness-item">Micro défensif</span>
+                                        <span class="weakness-item">Explorador préventif</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">⏱️</span>
+                            <p>Rush optimal : <strong>3-5 min</strong> avant que l'ennemi ait des défenses solides.</p>
+                        </div>
+                    </div>
+
+                    <!-- Grenadier -->
+                    <div class="unit-card" data-category="t1">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Grenadier</h3>
+                                <span class="unit-role">Fire Suporte</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-artillery">Artilharia</span>
+                                <span class="unit-badge cost-low">100 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">90</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">45</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Arc (AoE)</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Bot d'artillerie légère. Tire en arc, peut passer par-dessus les murs. Bon support pour les Dox.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Unidades derrière walls</span>
+                                        <span class="counter-item">Groupes serrés</span>
+                                        <span class="counter-item">Défenses T1</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Unidades rapides</span>
+                                        <span class="weakness-item">Air</span>
+                                        <span class="weakness-item">Combat direct</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">🎯</span>
+                            <p>Combo efficace : <strong>Dox devant + Grenadiers derrière</strong> pour support de feu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spark -->
+                    <div class="unit-card" data-category="t1">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Spark</h3>
+                                <span class="unit-role">Tesla Bot</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-assault">AoE Électrique</span>
+                                <span class="unit-badge cost-low">105 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">130</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">80</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">60</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">-200/s</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Bot Tesla avec dégâts AoE électriques. <strong>Consomme de l'énergie en combat !</strong> Dévastateur contre groupes serrés.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Blobs de Dox</span>
+                                        <span class="counter-item">Groupes serrés</span>
+                                        <span class="counter-item">Swarms T1</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Kite (portée courte)</span>
+                                        <span class="weakness-item">Energy stall</span>
+                                        <span class="weakness-item">Ant à distance</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">⚡</span>
+                            <p>1 Energy Plant supporte <strong>3 Sparks</strong> en combat. Surveillez votre éco !</p>
+                        </div>
+                    </div>
+
+                    <!-- Stinger -->
+                    <div class="unit-card" data-category="t1">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Stinger</h3>
+                                <span class="unit-role">AA Bot</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-aa">Anti-Air</span>
+                                <span class="unit-badge cost-low">90 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">80</span></div>
+                            <div class="stat"><span class="stat-label">DPS (Air)</span><span class="stat-value">75</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">DPS (Sol)</span><span class="stat-value warning">0</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Bot AA mobile. <strong>Ne tire PAS au sol !</strong> Essentiel pour protéger vos armées de bots contre l'air.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Hummingbird</span>
+                                        <span class="counter-item">Bumblebee</span>
+                                        <span class="counter-item">Icarus</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Tout au sol (0 DPS)</span>
+                                        <span class="weakness-item">Phoenix</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">📊</span>
+                            <p>Ratio recommandé : <strong>1 Stinger pour 10-15 Dox</strong> dans vos groupes de raid.</p>
+                        </div>
+                    </div>
+
+                    <!-- Stitch -->
+                    <div class="unit-card" data-category="t1">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Stitch</h3>
+                                <span class="unit-role">Combat Fabber</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-fighter">Suporte</span>
+                                <span class="unit-badge cost-medium">150 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Repair</span><span class="stat-value">Oui</span></div>
+                            <div class="stat"><span class="stat-label">Build</span><span class="stat-value">Limité</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Moyen</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Fabber de combat T1. Peut réparer les unités et construire des structures basiques. Accompagne vos armées.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Utilité</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Répare en combat</span>
+                                        <span class="counter-item">Build turrets</span>
+                                        <span class="counter-item">Reclaim wreckage</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Limitations</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Pas d'armes</span>
+                                        <span class="weakness-item">Build limité</span>
+                                        <span class="weakness-item">Fragile</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">🔧</span>
+                            <p>Ajoutez <strong>2-3 Stitch</strong> à vos armées pour heal et build des turrets offensives.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== VÉHICULES T1 ==================== -->
+        <section class="section unit-section" id="vehicules-t1" data-category="vehicles" data-tier="t1">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🚗 Vehicles T1</h2>
+                    <span class="card-badge tier-t1">TIER 1</span>
+                </div>
+                <p class="section-subtitle">Unidades blindées et puissantes, le pilier de vos armées terrestres.</p>
+
+                <div class="unit-grid">
+                    <!-- Ant -->
+                    <div class="unit-card" data-category="t1">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Ant</h3>
+                                <span class="unit-role">Light Tank</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-assault">Tank</span>
+                                <span class="unit-badge cost-medium">175 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">60</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Moyen</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Le pilier des armées terrestres T1. Excellent ratio coût/efficacité. Outrange les bots T1.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Dox (range)</span>
+                                        <span class="counter-item">Boom (peut kite)</span>
+                                        <span class="counter-item">Autres T1</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Inferno (AoE)</span>
+                                        <span class="weakness-item">Bombardeiros</span>
+                                        <span class="weakness-item">Sheller</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">⚔️</span>
+                            <p>Masse critique : <strong>20+ Ant</strong> = armée difficile à stopper en early game.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spinner -->
+                    <div class="unit-card" data-category="t1">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Spinner</h3>
+                                <span class="unit-role">AA Vehicle</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-aa">Anti-Air</span>
+                                <span class="unit-badge cost-medium">150 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">150</span></div>
+                            <div class="stat"><span class="stat-label">DPS (Air)</span><span class="stat-value">90</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">130</span></div>
+                            <div class="stat"><span class="stat-label">DPS (Sol)</span><span class="stat-value warning">0</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">AA véhicule mobile avec missiles. Meilleur AA T1 pour armées de véhicules. Ne tire pas au sol.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">T1 Air</span>
+                                        <span class="counter-item">Bumblebee</span>
+                                        <span class="counter-item">Hummingbird</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Tout au sol</span>
+                                        <span class="weakness-item">T2 Air masse</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">🎯</span>
+                            <p>Composition : <strong>70% Ant + 30% Spinner</strong> = armée équilibrée anti-tout.</p>
+                        </div>
+                    </div>
+
+                    <!-- Inferno -->
+                    <div class="unit-card" data-category="t1">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Inferno</h3>
+                                <span class="unit-role">Flame Tank</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-assault">AoE</span>
+                                <span class="unit-badge cost-medium">225 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">350</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">65</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Flammes AoE</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Tank lance-flammes avec dégâts AoE. PV élevés mais portée courte. Dévastateur contre groupes serrés.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Blobs de Dox</span>
+                                        <span class="counter-item">Groupes d'Ant</span>
+                                        <span class="counter-item">Mêlées serrées</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Kite (portée)</span>
+                                        <span class="weakness-item">Gil-E sniper</span>
+                                        <span class="weakness-item">Air</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">🔥</span>
+                            <p>Anti-blob : <strong>5-8 Inferno</strong> nettoient n'importe quel swarm de Dox.</p>
+                        </div>
+                    </div>
+
+                    <!-- Stryker -->
+                    <div class="unit-card" data-category="t1">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Stryker</h3>
+                                <span class="unit-role">Attack Vehicle</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-assault">Raid</span>
+                                <span class="unit-badge cost-low">60 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">75</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">35</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">80</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Véhicule d'attaque rapide et bon marché. Alternative véhicule au Dox pour raids. Peut cibler l'air !</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Raids éco</span>
+                                        <span class="counter-item">Fabbers</span>
+                                        <span class="counter-item">Air faible (léger AA)</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Ant (combat direct)</span>
+                                        <span class="weakness-item">Turrets</span>
+                                        <span class="weakness-item">Inferno</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">🏃</span>
+                            <p>Raider hybride avec <strong>léger AA intégré</strong> - utile contre Icarus et scouts.</p>
+                        </div>
+                    </div>
+
+                    <!-- Skitter -->
+                    <div class="unit-card" data-category="t1">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Skitter</h3>
+                                <span class="unit-role">Explorador</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-fighter">Recon</span>
+                                <span class="unit-badge cost-low">50 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">5</span></div>
+                            <div class="stat"><span class="stat-label">Vision</span><span class="stat-value">Large</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">0</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Très Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Explorador terrestre très rapide. Pas d'arme mais vision excellente. Essentiel pour le scouting early game.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Utilité</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Exploradoring early</span>
+                                        <span class="counter-item">Vision artillerie</span>
+                                        <span class="counter-item">Détection cheese</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Limitations</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Aucun combat</span>
+                                        <span class="weakness-item">1 PV = mort facile</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">👁️</span>
+                            <p>Envoyez <strong>1-2 Skitter</strong> en early pour détecter les Boom rush et Air openings.</p>
+                        </div>
+                    </div>
+
+                    <!-- Drifter -->
+                    <div class="unit-card" data-category="t1">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Drifter</h3>
+                                <span class="unit-role">Hover Tank</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-assault">Hover</span>
+                                <span class="unit-badge cost-medium">250 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">65</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Hover</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Hovercraft T1 amphibie. Traverse eau et lave ! Plus cher mais versatile sur maps aquatiques.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Maps aquatiques</span>
+                                        <span class="counter-item">Traversée obstacles</span>
+                                        <span class="counter-item">Flanking via eau</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Ant (sur terre)</span>
+                                        <span class="weakness-item">T2 Naval</span>
+                                        <span class="weakness-item">Torpilles</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">🌊</span>
+                            <p>Utilisez sur maps avec eau pour <strong>flanquer via océan</strong> et surprendre l'ennemi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== BOTS T2 ==================== -->
+        <section class="section unit-section" id="bots-t2" data-category="bots" data-tier="t2">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🦾 T2 Bots</h2>
+                    <span class="card-badge tier-t2">TIER 2</span>
+                </div>
+                <p class="section-subtitle">Unidades avancées avec capacités spécialisées et puissance accrue.</p>
+
+                <div class="unit-grid">
+                    <!-- Slammer -->
+                    <div class="unit-card" data-category="t2">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Slammer</h3>
+                                <span class="unit-role">Advanced Assalto Bot</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-assault">Assaut</span>
+                                <span class="unit-badge cost-high">550 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">700</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">175</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Bot élite T2 ultra-mobile. Grimpe falaises, traverse eau. Excellent pour snipes de Comandante et raids profonds.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Tout T1</span>
+                                        <span class="counter-item">Comandante (masse)</span>
+                                        <span class="counter-item">Raids éco</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Vanguard</span>
+                                        <span class="weakness-item">Gil-E (kite)</span>
+                                        <span class="weakness-item">T2 Air</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">🎯</span>
+                            <p>Snipe Comandante : <strong>15-20 Slammer</strong> via téléporteur = kill instantané.</p>
+                        </div>
+                    </div>
+
+                    <!-- Gil-E -->
+                    <div class="unit-card" data-category="t2">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Gil-E</h3>
+                                <span class="unit-role">Sniper Bot</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-sniper">Sniper</span>
+                                <span class="unit-badge cost-high">700 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Dmg/Shot</span><span class="stat-value">400</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Fire Rate</span><span class="stat-value">Lent</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Sniper longue portée. One-shot les unités T1. Nécessite radar pour exploiter sa portée.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Unidades T1 (one-shot)</span>
+                                        <span class="counter-item">Vanguard (kite)</span>
+                                        <span class="counter-item">Défenses T1</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Rush (PV faibles)</span>
+                                        <span class="weakness-item">Air</span>
+                                        <span class="weakness-item">Swarms rapides</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">📡</span>
+                            <p>Combo obligatoire : <strong>Gil-E + Radar</strong> sinon portée gâchée.</p>
+                        </div>
+                    </div>
+
+                    <!-- Bluehawk -->
+                    <div class="unit-card" data-category="t2">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Bluehawk</h3>
+                                <span class="unit-role">Tactical Missile Bot</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-artillery">Missiles</span>
+                                <span class="unit-badge cost-high">600 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">150</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">50</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Missiles guidés</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Missile bot T2. Missiles guidés longue portée. Excellent contre structures et unités lentes.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Défenses fixes</span>
+                                        <span class="counter-item">Vanguard</span>
+                                        <span class="counter-item">Estruturas</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Rush (fragile)</span>
+                                        <span class="weakness-item">Air</span>
+                                        <span class="weakness-item">Slammer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">🚀</span>
+                            <p>Siege mobile : <strong>Bluehawk + Radar</strong> pour détruire bases à distance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Locusts -->
+                    <div class="unit-card" data-category="t2">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Locusts</h3>
+                                <span class="unit-role">Nanobot Swarm</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-assault">Swarm</span>
+                                <span class="unit-badge cost-medium">250 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">80</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">Court</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Très Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Essaim de nanobots ultra-rapides. DPS énorme à courte portée. Détruit les cibles lentes instantanément.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Fort contre</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Vanguard</span>
+                                        <span class="counter-item">Estruturas</span>
+                                        <span class="counter-item">Comandante</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Faible contre</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">AoE (Spark, Inferno)</span>
+                                        <span class="weakness-item">Unidades rapides</span>
+                                        <span class="weakness-item">Air</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">🐝</span>
+                            <p>Anti-Vanguard parfait : les Locusts <strong>fondent les tanks lourds</strong> en secondes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Mend -->
+                    <div class="unit-card" data-category="t2">
+                        <div class="unit-header">
+                            <div class="unit-title-row">
+                                <h3 class="unit-name">Mend</h3>
+                                <span class="unit-role">Advanced Combat Fabber</span>
+                            </div>
+                            <div class="unit-badges">
+                                <span class="unit-badge role-fighter">Suporte T2</span>
+                                <span class="unit-badge cost-high">600 Metal</span>
+                            </div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">300</span></div>
+                            <div class="stat"><span class="stat-label">Repair</span><span class="stat-value">Rapide</span></div>
+                            <div class="stat"><span class="stat-label">Build</span><span class="stat-value">Étendu</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Moyen</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Combat Fabber T2. Répare vite, peut build Anti-Nuke, Umbrella et défenses avancées.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section">
+                                    <span class="matchup-title strong">✅ Utilité</span>
+                                    <div class="matchup-list">
+                                        <span class="counter-item">Heal armées T2</span>
+                                        <span class="counter-item">Build Umbrella</span>
+                                        <span class="counter-item">Anti-Nuke mobile</span>
+                                    </div>
+                                </div>
+                                <div class="matchup-section">
+                                    <span class="matchup-title weak">❌ Limitations</span>
+                                    <div class="matchup-list">
+                                        <span class="weakness-item">Pas d'armes</span>
+                                        <span class="weakness-item">Custoeux</span>
+                                        <span class="weakness-item">Cible prioritaire</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit-tip">
+                            <span class="tip-icon">🏥</span>
+                            <p>Essentiel late game : <strong>2-3 Mend</strong> gardent vos Vanguards en vie.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== VÉHICULES T2 ==================== -->
+        <section class="section unit-section" id="vehicules-t2" data-category="vehicles" data-tier="t2">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🚛 Vehicles T2</h2>
+                    <span class="card-badge tier-t2">TIER 2</span>
+                </div>
+                <p class="section-subtitle">Vehicles lourds et spécialisés pour dominer le mid-late game.</p>
+
+                <div class="unit-grid">
+                    <!-- Vanguard -->
+                    <div class="unit-card" data-category="t2">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Vanguard</h3><span class="unit-role">Heavy Tank</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-assault">Tank Lourd</span><span class="unit-badge cost-very-high">2000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">3500</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">250</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">140</span></div>
+                            <div class="stat"><span class="stat-label">Special</span><span class="stat-value">Radar Jam</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Tank ultra-lourd T2. Monstre de puissance avec radar jammer intégré !</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Tout T1</span><span class="counter-item">T2 Bots</span><span class="counter-item">Défenses T1</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Gil-E (kite)</span><span class="weakness-item">Locusts</span><span class="weakness-item">Air massif</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">💪</span><p><strong>10-15 Vanguard</strong> = armée quasi-imbattable au sol.</p></div>
+                    </div>
+
+                    <!-- Leveler -->
+                    <div class="unit-card" data-category="t2">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Leveler</h3><span class="unit-role">Advanced Tank</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-assault">Tank Rapide</span><span class="unit-badge cost-high">1200 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">1500</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">Fire Rate</span><span class="stat-value">Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Tank T2 tir rapide. Moins PV que Vanguard mais meilleur DPS/cost.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Masses T1</span><span class="counter-item">Slammers</span><span class="counter-item">Estruturas</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Vanguard 1v1</span><span class="weakness-item">Bombardeiros</span><span class="weakness-item">Gil-E</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">📊</span><p><strong>2 Leveler > 1 Vanguard</strong> en DPS total.</p></div>
+                    </div>
+
+                    <!-- Sheller -->
+                    <div class="unit-card" data-category="t2">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Sheller</h3><span class="unit-role">Mobile Artilharia</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-artillery">Artilharia</span><span class="unit-badge cost-high">1400 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">600</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">300</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Mortier AoE</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Artilharia mobile T2. Alcance extrême, AoE massif. Nécessite radar.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Défenses fixes</span><span class="counter-item">Estruturas</span><span class="counter-item">Groupes</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Rush</span><span class="weakness-item">Air</span><span class="weakness-item">Slammer</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">📡</span><p><strong>Sheller + Radar</strong> = siege à distance.</p></div>
+                    </div>
+
+                    <!-- Storm -->
+                    <div class="unit-card" data-category="t2">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Storm</h3><span class="unit-role">Mobile Flak</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-aa">Flak AA</span><span class="unit-badge cost-high">750 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">300</span></div>
+                            <div class="stat"><span class="stat-label">DPS Air</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Flak AoE</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Flak mobile T2 AoE. Dévaste groupes d'avions. Anti-Zeus.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Groupes air</span><span class="counter-item">Kestrel</span><span class="counter-item">Zeus</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Tout au sol</span><span class="weakness-item">Air isolé</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🛡️</span><p><strong>5-8 Storm</strong> = no-fly zone totale.</p></div>
+                    </div>
+
+                    <!-- Nyx -->
+                    <div class="unit-card" data-category="t2">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Nyx</h3><span class="unit-role">Stealth Tank</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-assault">Stealth</span><span class="unit-badge cost-high">800 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">400</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Special</span><span class="stat-value">Radar Jam</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Tank stealth invisible au radar. Parfait pour infiltrations.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Sneak attacks</span><span class="counter-item">Comandante</span><span class="counter-item">Éco isolée</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Vision directe</span><span class="weakness-item">Vanguard</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">👻</span><p><strong>10 Nyx</strong> = snipe Comandante invisible.</p></div>
+                    </div>
+
+                    <!-- Manhattan -->
+                    <div class="unit-card" data-category="t2">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Manhattan</h3><span class="unit-role">Mobile Nuke</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-titan">NUKE</span><span class="unit-badge cost-very-high">8000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">3000</span></div>
+                            <div class="stat"><span class="stat-label">Nuke Dmg</span><span class="stat-value">45000</span></div>
+                            <div class="stat"><span class="stat-label">AoE</span><span class="stat-value">Massif</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Hover</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Nuke mobile hover ! Explose à la mort. Traverse téléporteurs.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Bases</span><span class="counter-item">Comandante</span><span class="counter-item">Tout</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Lent</span><span class="weakness-item">Focus fire</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">☢️</span><p><strong>Manhattan via Helios</strong> = nuke instantané.</p></div>
+                    </div>
+
+                    <!-- Ward -->
+                    <div class="unit-card" data-category="t2">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Ward</h3><span class="unit-role">Mobile Anti-Nuke</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-aa">Anti-Nuke</span><span class="unit-badge cost-very-high">3500 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">1500</span></div>
+                            <div class="stat"><span class="stat-label">Intercept</span><span class="stat-value">1 Nuke</span></div>
+                            <div class="stat"><span class="stat-label">Cooldown</span><span class="stat-value">Long</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Hover</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Anti-nuke mobile hover. Protège armées des nukes défensives.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Protège armées</span><span class="counter-item">Push late</span><span class="counter-item">Invasions</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">1 missile</span><span class="weakness-item">Custoeux</span><span class="weakness-item">Long reload</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🛡️</span><p><strong>1-2 Ward</strong> avec armée d'invasion.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== AIR T1 ==================== -->
+        <section class="section unit-section" id="air-t1" data-category="air" data-tier="t1">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">✈️ T1 Air</h2>
+                    <span class="card-badge tier-t1">TIER 1</span>
+                </div>
+                <p class="section-subtitle">Dominez les cieux pour contrôler la map et harceler l'économie.</p>
+
+                <div class="unit-grid">
+                    <!-- Firefly -->
+                    <div class="unit-card" data-category="air">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Firefly</h3><span class="unit-role">Air Explorador</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-fighter">Recon</span><span class="unit-badge cost-low">55 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">20</span></div>
+                            <div class="stat"><span class="stat-label">Vision</span><span class="stat-value">Large</span></div>
+                            <div class="stat"><span class="stat-label">Arme</span><span class="stat-value">Aucune</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Très Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Explorador aérien ultra-rapide. Vision excellente, pas d'arme. Essentiel early game.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Explorador early</span><span class="counter-item">Détection rushes</span><span class="counter-item">Vision artillerie</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Aucun combat</span><span class="weakness-item">Très fragile</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">👁️</span><p>Premier build : <strong>1 Firefly</strong> pour scout la base ennemie.</p></div>
+                    </div>
+
+                    <!-- Hummingbird -->
+                    <div class="unit-card" data-category="air">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Hummingbird</h3><span class="unit-role">Caça</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-fighter">Caça</span><span class="unit-badge cost-low">150 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">DPS Air</span><span class="stat-value">60</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Caça T1. Contrôle aérien early game. Ne tire PAS au sol !</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Bumblebee</span><span class="counter-item">Firefly</span><span class="counter-item">Icarus</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">AA ground</span><span class="weakness-item">Phoenix</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🎯</span><p><strong>10-15 Hummingbird</strong> = suprématie aérienne locale.</p></div>
+                    </div>
+
+                    <!-- Bumblebee -->
+                    <div class="unit-card" data-category="air">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Bumblebee</h3><span class="unit-role">Bombardeiro</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-bomber">Bombardeiro</span><span class="unit-badge cost-low">180 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">Dmg/Bomb</span><span class="stat-value">400</span></div>
+                            <div class="stat"><span class="stat-label">Reload</span><span class="stat-value">5s</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">AoE</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Bombardeiro T1 pour raids économiques. Détruit extracteurs en un passage.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Extracteurs</span><span class="counter-item">Fabbers</span><span class="counter-item">Groupes T1</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">AA</span><span class="weakness-item">Hummingbird</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">💰</span><p><strong>5 Bumblebee</strong> = 3-4 Mex détruits par passage.</p></div>
+                    </div>
+
+                    <!-- Icarus -->
+                    <div class="unit-card" data-category="air">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Icarus</h3><span class="unit-role">Solar Drone</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-fighter">Énergie</span><span class="unit-badge cost-low">125 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">40</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">+175/s</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">25</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Lent</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Drone solaire mobile. Produit de l'énergie + faible attaque laser.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Énergie mobile</span><span class="counter-item">Tue fabbers</span><span class="counter-item">Suporte éco</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Très fragile</span><span class="weakness-item">Lent</span><span class="weakness-item">AA = mort</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">⚡</span><p>Énergie mobile pour <strong>Sparks</strong> ou expansion rapide.</p></div>
+                    </div>
+
+                    <!-- Pelican -->
+                    <div class="unit-card" data-category="air">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Pelican</h3><span class="unit-role">Transporte</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-fighter">Transporte</span><span class="unit-badge cost-medium">250 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Capacité</span><span class="stat-value">1 unité</span></div>
+                            <div class="stat"><span class="stat-label">Arme</span><span class="stat-value">Aucune</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Air transport. Déplace 1 unité terrestre. Drop fabbers ou unités.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Drop fabbers</span><span class="counter-item">Expansion îles</span><span class="counter-item">Drop Comandante</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Pas d'arme</span><span class="weakness-item">1 seule unité</span><span class="weakness-item">Fragile</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🚁</span><p>Expansion : <strong>Pelican + Fabber</strong> sur nouvelle planète/île.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== AIR T2 ==================== -->
+        <section class="section unit-section" id="air-t2" data-category="air" data-tier="t2">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🛩️ T2 Air</h2>
+                    <span class="card-badge tier-t2">TIER 2</span>
+                </div>
+                <p class="section-subtitle">Unidades aériennes avancées pour domination totale des cieux.</p>
+
+                <div class="unit-grid">
+                    <!-- Phoenix -->
+                    <div class="unit-card" data-category="air">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Phoenix</h3><span class="unit-role">Advanced Caça</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-fighter">Caça T2</span><span class="unit-badge cost-high">600 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">400</span></div>
+                            <div class="stat"><span class="stat-label">DPS Air</span><span class="stat-value">150</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Caça T2 supérieur. Domine Hummingbird. Escorte pour bombers.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Hummingbird</span><span class="counter-item">Bumblebee</span><span class="counter-item">T1 Air</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Storm</span><span class="weakness-item">Umbrella</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🛡️</span><p>Ratio : <strong>1 Phoenix pour 2 bombers</strong>.</p></div>
+                    </div>
+
+                    <!-- Hornet -->
+                    <div class="unit-card" data-category="air">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Hornet</h3><span class="unit-role">Tactical Bombardeiro</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-bomber">Bombardeiro T2</span><span class="unit-badge cost-high">900 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">600</span></div>
+                            <div class="stat"><span class="stat-label">Dmg</span><span class="stat-value">1500</span></div>
+                            <div class="stat"><span class="stat-label">Bombs</span><span class="stat-value">Multiples</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Carpet</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Bombardeiro tactique T2. Carpet bombing dévastateur sur lignes.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Armées T1</span><span class="counter-item">Lignes défense</span><span class="counter-item">Bases</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">AA T2</span><span class="weakness-item">Storm</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">💥</span><p><strong>5-8 Hornet</strong> = ligne d'armée anéantie.</p></div>
+                    </div>
+
+                    <!-- Kestrel -->
+                    <div class="unit-card" data-category="air">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Kestrel</h3><span class="unit-role">Canhoneiro</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-assault">Canhoneiro</span><span class="unit-badge cost-very-high">1200 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">1000</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Stationnaire</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Canhoneiro T2. Stationne et tire en continu. Terreur des tanks.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Vanguard</span><span class="counter-item">Armées sol</span><span class="counter-item">Défenses</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Storm</span><span class="weakness-item">Phoenix</span><span class="weakness-item">Umbrella</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">⚔️</span><p><strong>8-10 Kestrel</strong> = armée terrestre détruite.</p></div>
+                    </div>
+
+                    <!-- Horsefly -->
+                    <div class="unit-card" data-category="air">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Horsefly</h3><span class="unit-role">Heavy Strafer</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-assault">Strafer</span><span class="unit-badge cost-high">800 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">800</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">80</span></div>
+                            <div class="stat"><span class="stat-label">Targets</span><span class="stat-value">Sol + Air</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Strafer lourd hybride. Attaque sol ET air. Durable.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Unidades légères</span><span class="counter-item">Air léger</span><span class="counter-item">Fabbers</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">AA dédié</span><span class="weakness-item">Phoenix masse</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🎯</span><p>Hybride polyvalent sol/air.</p></div>
+                    </div>
+
+                    <!-- Wyrm -->
+                    <div class="unit-card" data-category="air">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Wyrm</h3><span class="unit-role">Heavy Bombardeiro</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-bomber">Siege Bombardeiro</span><span class="unit-badge cost-very-high">3300 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">3000</span></div>
+                            <div class="stat"><span class="stat-label">Dmg</span><span class="stat-value">5000</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">-500/s</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Siege</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Bombardeiro ultra-lourd. PV massifs, dégâts dévastateurs. Consomme énergie.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Bases</span><span class="counter-item">Comandante</span><span class="counter-item">Estruturas</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Storm masse</span><span class="weakness-item">Umbrella</span><span class="weakness-item">Energy stall</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🐉</span><p><strong>2-3 Wyrm</strong> = Comandante snipe possible.</p></div>
+                    </div>
+
+                    <!-- Angel -->
+                    <div class="unit-card" data-category="air">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Angel</h3><span class="unit-role">Suporte Platform</span></div>
+                            <div class="unit-badges"><span class="unit-badge role-fighter">Suporte</span><span class="unit-badge cost-high">900 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">600</span></div>
+                            <div class="stat"><span class="stat-label">Repair</span><span class="stat-value">Rapide</span></div>
+                            <div class="stat"><span class="stat-label">Arme</span><span class="stat-value">Aucune</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Hover</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Plateforme de réparation aérienne. Heal vos avions en vol.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Heal air</span><span class="counter-item">Sustain flottes</span><span class="counter-item">Suporte Zeus</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Pas d'arme</span><span class="weakness-item">Cible facile</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">💚</span><p><strong>2-3 Angel</strong> avec flottes air pour sustain.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== NAVAL ==================== -->
+        <section class="section unit-section" id="naval" data-category="naval" data-tier="mixed">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">⚓ Naval</h2>
+                    <span class="card-badge tier-naval">NAVAL</span>
+                </div>
+                <p class="section-subtitle">Dominez les océans sur les maps aquatiques.</p>
+
+                <div class="unit-grid">
+                    <!-- Piranha -->
+                    <div class="unit-card" data-category="naval">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Piranha</h3><span class="unit-role">Gunboat - T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-low">150 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">50</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Gunboat scout T1. Rapide, léger, bon pour harceler côtes.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Explorador naval</span><span class="counter-item">Côtes</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Narwhal</span><span class="weakness-item">Torpilles</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🔍</span><p>Explorador naval early.</p></div>
+                    </div>
+
+                    <!-- Narwhal -->
+                    <div class="unit-card" data-category="naval">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Narwhal</h3><span class="unit-role">Frigate - T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">300 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">400</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">80</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">150</span></div>
+                            <div class="stat"><span class="stat-label">Target</span><span class="stat-value">Surface + Côte</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Frégate T1. Combat naval ET bombarde côtes.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Piranha</span><span class="counter-item">Côtes</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Orca</span><span class="weakness-item">Leviathan</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🌊</span><p>Pilier flottes T1.</p></div>
+                    </div>
+
+                    <!-- Barracuda -->
+                    <div class="unit-card" data-category="naval">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Barracuda</h3><span class="unit-role">Submarine - T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">350 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Torpilles</span></div>
+                            <div class="stat"><span class="stat-label">Stealth</span><span class="stat-value">Radar</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Submarine T1 stealth radar. Torpilles anti-surface.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Navires surface</span><span class="counter-item">Sneak</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Torpedo Launcher</span><span class="weakness-item">Orca</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🔇</span><p>Invisible au radar.</p></div>
+                    </div>
+
+                    <!-- Orca -->
+                    <div class="unit-card" data-category="naval">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Orca</h3><span class="unit-role">Destroyer - T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-high">600 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">800</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">180</span></div>
+                            <div class="stat"><span class="stat-label">Torpilles</span><span class="stat-value">Oui</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Destroyer T1 avec canons ET torpilles.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Narwhal</span><span class="counter-item">Barracuda</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Leviathan</span><span class="weakness-item">Air</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">⚓</span><p>Anti-tout T1 naval.</p></div>
+                    </div>
+
+                    <!-- Leviathan -->
+                    <div class="unit-card" data-category="naval">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Leviathan</h3><span class="unit-role">Battleship - T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-very-high">4500 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">6000</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">400</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">300</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Artilharia</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Battleship T2. Monstre des mers. Artilharia dévastatrice.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Tout naval</span><span class="counter-item">Bases côtières</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Kraken</span><span class="weakness-item">Air masse</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">👑</span><p><strong>2-3 Leviathan</strong> = domination océan.</p></div>
+                    </div>
+
+                    <!-- Stingray -->
+                    <div class="unit-card" data-category="naval">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Stingray</h3><span class="unit-role">Missile Ship - T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">1500 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">1200</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">250</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Missiles</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Croiseur lance-missiles T2. Alcance extrême, AA intégré.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Côtes</span><span class="counter-item">Air</span><span class="counter-item">Naval léger</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Leviathan</span><span class="weakness-item">Kraken</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🚀</span><p>AA naval + bombardement.</p></div>
+                    </div>
+
+                    <!-- Kraken -->
+                    <div class="unit-card" data-category="naval">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Kraken</h3><span class="unit-role">Nuclear Sub - T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-very-high">3000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">1500</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">250</span></div>
+                            <div class="stat"><span class="stat-label">Stealth</span><span class="stat-value">Total</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Torpilles</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Submarine nucléaire T2. Stealth complet, torpilles massives.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Leviathan</span><span class="counter-item">Tout naval surface</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Adv Torpedo</span><span class="weakness-item">Mines</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">☠️</span><p>Anti-Leviathan parfait.</p></div>
+                    </div>
+
+                    <!-- Kaiju -->
+                    <div class="unit-card" data-category="naval">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Kaiju</h3><span class="unit-role">Hover Ship - T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-very-high">2500 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">3000</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">180</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">160</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Hover</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Navire hover T2. Traverse eau ET terre !</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Amphibie</span><span class="counter-item">T1</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Leviathan</span><span class="weakness-item">Vanguard</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🏖️</span><p>Assaut côtier amphibie.</p></div>
+                    </div>
+
+                    <!-- Typhoon -->
+                    <div class="unit-card" data-category="naval">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Typhoon</h3><span class="unit-role">Drone Carrier - T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-very-high">6500 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">5000</span></div>
+                            <div class="stat"><span class="stat-label">Drones</span><span class="stat-value">Continu</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">-30/s</span></div>
+                            <div class="stat"><span class="stat-label">Targets</span><span class="stat-value">Sol/Air/Mer</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Porte-drones T2. Produit des drones missiles en continu.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Sans AA</span><span class="counter-item">Bases</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">AA massif</span><span class="weakness-item">Kraken</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🐝</span><p>Dévastateur sans AA ennemi.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ORBITAL ==================== -->
+        <section class="section unit-section" id="orbital" data-category="orbital" data-tier="mixed">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🛰️ Orbital</h2>
+                    <span class="card-badge tier-orbital">ORBITAL</span>
+                </div>
+                <p class="section-subtitle">Contrôlez l'espace pour dominer le système solaire.</p>
+
+                <div class="unit-grid">
+                    <!-- Hermes -->
+                    <div class="unit-card" data-category="orbital">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Hermes</h3><span class="unit-role">Space Probe</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-low">200 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">50</span></div>
+                            <div class="stat"><span class="stat-label">Vision</span><span class="stat-value">Large</span></div>
+                            <div class="stat"><span class="stat-label">Arme</span><span class="stat-value">Aucune</span></div>
+                            <div class="stat"><span class="stat-label">Velocidade</span><span class="stat-value">Rapide</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Sonde spatiale rapide et jetable. Explorador orbital.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Explorador planètes</span><span class="counter-item">Vision rapide</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Très fragile</span><span class="weakness-item">Pas d'arme</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🚀</span><p>Spam pour scout système.</p></div>
+                    </div>
+
+                    <!-- ARKYD -->
+                    <div class="unit-card" data-category="orbital">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">ARKYD</h3><span class="unit-role">Radar Satellite</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">300 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Radar</span><span class="stat-value">Large</span></div>
+                            <div class="stat"><span class="stat-label">Arme</span><span class="stat-value">Aucune</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Stationnaire</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Satellite radar T1. Vision radar permanente sur zone.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Vision radar</span><span class="counter-item">Artilharia</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Avenger</span><span class="weakness-item">Umbrella</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">📡</span><p>Essentiel pour artillerie.</p></div>
+                    </div>
+
+                    <!-- Astraeus -->
+                    <div class="unit-card" data-category="orbital">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Astraeus</h3><span class="unit-role">Orbital Lander</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">450 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Capacité</span><span class="stat-value">1 unité</span></div>
+                            <div class="stat"><span class="stat-label">Arme</span><span class="stat-value">Aucune</span></div>
+                            <div class="stat"><span class="stat-label">Travel</span><span class="stat-value">Interplanétaire</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Orbital transport. Déplace 1 unité entre planètes.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Drop fabbers</span><span class="counter-item">Invasion</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Umbrella</span><span class="weakness-item">Avenger</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🌍</span><p>Invasion planétaire early.</p></div>
+                    </div>
+
+                    <!-- Avenger -->
+                    <div class="unit-card" data-category="orbital">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Avenger</h3><span class="unit-role">Orbital Caça</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">900 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">500</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">150</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Target</span><span class="stat-value">Orbital</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Caça orbital. Contrôle l'espace, détruit satellites.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Satellites</span><span class="counter-item">Astraeus</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Umbrella</span><span class="weakness-item">Anchor</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">⚔️</span><p>Suprématie orbitale.</p></div>
+                    </div>
+
+                    <!-- Anchor -->
+                    <div class="unit-card" data-category="orbital">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Anchor</h3><span class="unit-role">Defense Satellite</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">1200 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">1000</span></div>
+                            <div class="stat"><span class="stat-label">DPS Sol</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">DPS Orbital</span><span class="stat-value">150</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Laser</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Satellite de défense. Tire sur orbital ET sol !</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Avenger</span><span class="counter-item">Unidades sol</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Umbrella</span><span class="weakness-item">SXX</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🔒</span><p>Orbital defense + support sol.</p></div>
+                    </div>
+
+                    <!-- SXX-1304 -->
+                    <div class="unit-card" data-category="orbital">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">SXX-1304</h3><span class="unit-role">Laser Platform</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-very-high">2400 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">2000</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">300</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">Planète</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">-1000/s</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Plateforme laser orbitale. Frappe au sol depuis l'espace.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Unidades sol</span><span class="counter-item">Estruturas</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Umbrella</span><span class="weakness-item">Energy stall</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">⚡</span><p>Death from above !</p></div>
+                    </div>
+
+                    <!-- Artemis -->
+                    <div class="unit-card" data-category="orbital">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Artemis</h3><span class="unit-role">Railgun Platform</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-very-high">2000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">350</span></div>
+                            <div class="stat"><span class="stat-label">Dmg</span><span class="stat-value">300</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">Long</span></div>
+                            <div class="stat"><span class="stat-label">Target</span><span class="stat-value">Orbital</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Railgun orbital. Sniper anti-orbital longue portée.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Anchor</span><span class="counter-item">Satellites</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Avenger rush</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🎯</span><p>Sniper orbital longue portée.</p></div>
+                    </div>
+
+                    <!-- Solar Array -->
+                    <div class="unit-card" data-category="orbital">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Solar Array</h3><span class="unit-role">Energy Satellite</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">1000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">500</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">+3000/s</span></div>
+                            <div class="stat"><span class="stat-label">Arme</span><span class="stat-value">Aucune</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Économie</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Panneau solaire orbital. Énergie massive.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Énergie late</span><span class="counter-item">Suporte SXX</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Avenger</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">☀️</span><p>Énergie late game.</p></div>
+                    </div>
+
+                    <!-- Jig -->
+                    <div class="unit-card" data-category="orbital">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Jig</h3><span class="unit-role">Gas Mining Platform</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-very-high">4500 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">5000</span></div>
+                            <div class="stat"><span class="stat-label">Metal</span><span class="stat-value">+36/s</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">+7200/s</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Gas Giant Only</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Plateforme minière sur géante gazeuse. Éco massive !</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Éco massive</span><span class="counter-item">Late game</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Gas giant only</span><span class="weakness-item">Avenger</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">⛽</span><p>Rush gas giant si présent !</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TITANS ==================== -->
+        <section class="section unit-section" id="titans" data-category="titan" data-tier="titan">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🏛️ TITANS</h2>
+                    <span class="card-badge tier-titan">TITAN</span>
+                </div>
+                <p class="section-subtitle">Les unités ultimes du jeu. Machines de guerre colossales.</p>
+
+                <div class="unit-grid">
+                    <!-- Atlas -->
+                    <div class="unit-card" data-category="titan">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Atlas</h3><span class="unit-role">Seismic Titan</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-titan">TITAN</span><span class="unit-badge cost-very-high">30000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">40000</span></div>
+                            <div class="stat"><span class="stat-label">Dmg</span><span class="stat-value">8000</span></div>
+                            <div class="stat"><span class="stat-label">AoE</span><span class="stat-value">Massif</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Amphibie</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Land Titan. Attaque sismique AoE dévastatrice. Amphibie ! 2 coups = Comandante mort.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Tout au sol</span><span class="counter-item">Bases</span><span class="counter-item">Comandante</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Air</span><span class="weakness-item">Orbital</span><span class="weakness-item">Gil-E kite</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🦶</span><p>Steamroller : <strong>Atlas + Storm</strong> pour cover AA.</p></div>
+                    </div>
+
+                    <!-- Ares -->
+                    <div class="unit-card" data-category="titan">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Ares</h3><span class="unit-role">Rolling Fortress</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-titan">TITAN</span><span class="unit-badge cost-very-high">30000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">50000</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">1380</span></div>
+                            <div class="stat"><span class="stat-label">Alcance</span><span class="stat-value">400</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Hover</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Forteresse roulante hover. PV max du jeu ! Traverse tout terrain. Alcance énorme.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Bases</span><span class="counter-item">Comandante</span><span class="counter-item">Défenses</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Air masse</span><span class="weakness-item">Lent</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🏰</span><p>Nécessite vision radar pour exploiter sa portée !</p></div>
+                    </div>
+
+                    <!-- Zeus -->
+                    <div class="unit-card" data-category="titan">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Zeus</h3><span class="unit-role">Lightning Titan</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-titan">TITAN</span><span class="unit-badge cost-very-high">30000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">20000</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">2000</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">-2000/s</span></div>
+                            <div class="stat"><span class="stat-label">Targets</span><span class="stat-value">Sol/Air/Mer</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Air Titan électrique. Éclairs sur tout ! Comandante en ~20s. Consomme énergie.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Armées</span><span class="counter-item">Bases sans AA</span><span class="counter-item">Comandante</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Faible contre</span><div class="matchup-list"><span class="weakness-item">Storm masse</span><span class="weakness-item">Anchor</span><span class="weakness-item">Energy stall</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">⚡</span><p>Surveillez votre énergie ! Stall = Zeus inutile.</p></div>
+                    </div>
+
+                    <!-- Helios -->
+                    <div class="unit-card" data-category="titan">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Helios</h3><span class="unit-role">Orbital Teleporter</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-titan">TITAN</span><span class="unit-badge cost-very-high">30000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">25000</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">-1000/s</span></div>
+                            <div class="stat"><span class="stat-label">Special</span><span class="stat-value">Téléporteur</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Orbital Titan téléporteur. Déplace armées entre planètes instantanément !</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Invasions</span><span class="counter-item">Manhattan drop</span><span class="counter-item">Mobilité totale</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Umbrella</span><span class="weakness-item">Anchors masse</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🌀</span><p>Combo : <strong>Helios + Manhattan</strong> = nuke n'importe où.</p></div>
+                    </div>
+
+                    <!-- Ragnarok -->
+                    <div class="unit-card" data-category="titan">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Ragnarok</h3><span class="unit-role">Planet Killer</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-titan">TITAN</span><span class="unit-badge cost-very-high">40000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">PV</span><span class="stat-value">50000</span></div>
+                            <div class="stat"><span class="stat-label">Effet</span><span class="stat-value">DÉTRUIT PLANÈTE</span></div>
+                            <div class="stat"><span class="stat-label">Charge</span><span class="stat-value">60s</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Structure</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Structure Titan. DÉTRUIT LA PLANÈTE. 60 secondes de charge. Victoire ou mort.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Fin de partie</span><span class="counter-item">Planète ennemie</span><span class="counter-item">Victoire</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">60s vulnérable</span><span class="weakness-item">Immobile</span><span class="weakness-item">Cher</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">💀</span><p>Alternative au Halley. Défendez-le 60 secondes !</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scroll to Top -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3 class="footer-title" data-i18n="footer.title">Guide PA:Titans</h3>
+                <p class="footer-text" data-i18n="footer.text">Guia completo criado pela comunidade.</p>
+                <ul class="footer-links">
+                    <li><a href="../../index.html" data-i18n="nav.home">Início</a></li>
+                    <li><a href="beginner.html" data-i18n="nav.beginner">Iniciante</a></li>
+                    <li><a href="shortcuts.html" data-i18n="nav.shortcuts">Atalhos</a></li>
+                    <li><a href="units.html" data-i18n="nav.units">Unidades</a></li>
+                    <li><a href="structures.html" data-i18n="nav.structures">Estruturas</a></li>
+                    <li><a href="strategies.html" data-i18n="nav.strategies">Estratégias</a></li>
+                    <li><a href="glossary.html" data-i18n="nav.lexicon">Glossário</a></li>
+                </ul>
+                <div class="footer-bottom">
+                    <p>© 2026 Guia PA:Titans 🎮</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" aria-label="Retour en haut">↑</button>
+
+    <!-- Scripts -->
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const unitSections = document.querySelectorAll('.unit-section');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    if (filter === 'all') {
+                        unitSections.forEach(section => {
+                            section.style.display = 'block';
+                            setTimeout(() => section.style.opacity = '1', 50);
+                        });
+                    } else {
+                        unitSections.forEach(section => {
+                            const cat = section.dataset.category;
+                            const tier = section.dataset.tier;
+                            if (cat === filter || tier === filter) {
+                                section.style.display = 'block';
+                                setTimeout(() => section.style.opacity = '1', 50);
+                            } else {
+                                section.style.opacity = '0';
+                                setTimeout(() => section.style.display = 'none', 300);
+                            }
+                        });
+                    }
+                });
+            });
+
+            document.querySelectorAll('.toc-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

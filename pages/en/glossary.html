@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    <meta name="description" content="Glossary complet des termes techniques de Planetary Annihilation: Titans">
+    <title>Glossary - Guide PA:Titans</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="site-title" data-i18n="lexicon.title">Glossary PA:Titans</h1>
+            <p class="site-subtitle" data-i18n="lexicon.subtitle">Dictionnaire Complet du Jargon</p>
+            <p class="site-description" data-i18n="lexicon.description">
+                Tous les termes techniques, abréviations et concepts expliqués en détail
+            </p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">PA:TITANS</a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../../index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="beginner.html"  data-i18n="nav.beginner">Beginner</a></li>
+                <li><a href="shortcuts.html"  data-i18n="nav.shortcuts">Shortcuts</a></li>
+                <li><a href="units.html"  data-i18n="nav.units">Units</a></li>
+                <li><a href="structures.html"  data-i18n="nav.structures">Structures</a></li>
+                <li><a href="strategies.html"  data-i18n="nav.strategies">Strategys</a></li>
+                <li><a href="glossary.html" class="active" data-i18n="nav.lexicon">Glossary</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Barre de Recherche -->
+    <div class="search-bar-container">
+        <div class="container">
+            <div class="search-wrapper">
+                <input type="text" id="global-search" class="search-input" data-i18n-placeholder="search.placeholder" placeholder="🔍 Rechercher...">
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu Principal -->
+    <main>
+        <!-- Section Recherche -->
+        <section class="section">
+            <div class="container">
+                <div class="info-box">
+                    <h3 class="info-box-title">🔍 Recherche Rapide</h3>
+                    <input 
+                        type="text" 
+                        id="lexique-search" 
+                        placeholder="Search for a term... (ex: APM, Kiting, T2)" 
+                        style="width: 100%; padding: 15px 20px; font-size: 1.1rem; border: 2px solid var(--border-color); border-radius: 8px; background: var(--card-bg); color: var(--text-primary); font-family: 'Rajdhani', sans-serif;"
+                    >
+                    <p style="margin-top: 15px; color: var(--text-secondary);">
+                        Tapez au moins 2 caractères pour filtrer les résultats
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Glossary A-Z -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">📚 A-Z</h2>
+
+                <div class="lexique-container">
+                    <!-- A -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">AA (Anti-Air)</div>
+                        <div class="lexique-definition">
+                            Défense anti-aérienne. Désigne les unités et structures capables d'attaquer les unités aériennes. Exemples : Spinner (T1), Stinger (T2), Tours anti-air. Toujours avoir 20-30% d'AA dans vos armées.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Aggressive Expansion</div>
+                        <div class="lexique-definition">
+                            Strategy consistant à sécuriser rapidement tous les gisements de métal disponibles sur la carte, même en territoire contesté. Nécessite protection des fabricants par des unités militaires.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">All-In</div>
+                        <div class="lexique-definition">
+                            Strategy ultra-agressive où vous investissez tout dans une attaque précoce. Si l'attaque échoue, vous êtes très vulnérable économiquement. Risqué mais peut gagner rapidement.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">AOE (Area of Effect)</div>
+                        <div class="lexique-definition">
+                            Zone d'effet. Dégâts infligés à plusieurs unités simultanément dans une zone. Exemples : Inferno (lance-flammes), bombers, artillerie. Très efficace contre groupes compacts.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">APM (Actions Par Minute)</div>
+                        <div class="lexique-definition">
+                            Mesure de vitesse d'exécution. Nombre d'actions (clics, commandes) effectuées par minute. Joueurs pro : 200-300 APM. Beginners : 50-100 APM. Les raccourcis augmentent drastiquement l'APM.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Assist</div>
+                        <div class="lexique-definition">
+                            Mode où fabricants/usines aident une construction ou production en cours. Touche <strong>G</strong>. Accélère grandement la vitesse. Exemple : 5 fabricants assist = construction 6x plus rapide.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Attack-Move (A-Move)</div>
+                        <div class="lexique-definition">
+                            Commande d'attaque en déplacement (touche <strong>A</strong>). Units avancent vers le point désigné en attaquant tout sur leur chemin. CRUCIAL : toujours utiliser A-move en combat, jamais déplacement simple.
+                        </div>
+                    </div>
+
+                    <!-- B -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Base Trade</div>
+                        <div class="lexique-definition">
+                            Situation où les deux joueurs attaquent simultanément la base adverse au lieu de se défendre. Victoire à celui qui détruit la base ennemie le plus vite. Risqué mais parfois nécessaire.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Blob</div>
+                        <div class="lexique-definition">
+                            Grande masse d'unités groupées ensemble sans formation. Vulnérable à l'AOE mais puissant par la force du nombre. Terme souvent péjoratif (manque de micro-gestion).
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Boom</div>
+                        <div class="lexique-definition">
+                            Strategy économique consistant à maximiser la production de ressources au détriment de l'armée précoce. "Boomer" = développer économie rapidement. Risqué si rush ennemi.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Bot</div>
+                        <div class="lexique-definition">
+                            Catégorie d'unités robotiques bipèdes. Generalement rapides et polyvalentes. Exemples : Dox, Boom Bot, Gil-E, Stinger. Produites dans les usines Bot.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Build Order</div>
+                        <div class="lexique-definition">
+                            Séquence optimale de construction en début de partie. Définit l'ordre des structures et unités à produire pour une stratégie donnée. Crucial pour efficacité early game.
+                        </div>
+                    </div>
+
+                    <!-- C -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Cheese</div>
+                        <div class="lexique-definition">
+                            Strategy non-conventionnelle ou "triche tactique" visant une victoire rapide via surprise. Exemple : téléporteur caché, Boom Bot rush, proxy base. Efficace une fois puis prévisible.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Commander Snipe</div>
+                        <div class="lexique-definition">
+                            Tactique visant à tuer le Commandeur ennemi directement pour victoire instantanée. Méthodes : Boom Bots, Hornets, Gil-E, Vanguards, Nuke. Très risqué mais game-winner si réussi.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Counter</div>
+                        <div class="lexique-definition">
+                            Unité ou stratégie efficace contre une autre spécifique. Exemple : Spinners (AA) counter les Bombers. Connaître les counters est essentiel pour victoire.
+                        </div>
+                    </div>
+
+                    <!-- D -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">DPS (Damage Per Second)</div>
+                        <div class="lexique-definition">
+                            Dégâts par seconde. Mesure de puissance d'attaque d'une unité. Haut DPS = tue rapidement. Important pour comparer efficacité des unités. Vanguard a le DPS le plus élevé (hors Titans).
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Drop</div>
+                        <div class="lexique-definition">
+                            Larguer des unités via transport aérien (Pelican) ou orbital (Astraeus) directement sur/derrière lignes ennemies. Tactique surprise puissante mais coûteuse et risquée.
+                        </div>
+                    </div>
+
+                    <!-- E -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Early Game</div>
+                        <div class="lexique-definition">
+                            Phase initiale de la partie (0-10 minutes). Focus sur établissement économie de base, premières unités T1, expansion territoire. Fondations de la victoire.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Eco (Economy)</div>
+                        <div class="lexique-definition">
+                            Système de production de ressources (métal + énergie). Bonne éco = plus d'unités = plus de pouvoir. Règle d'or : Economy > Armée. Toujours investir dans l'éco.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Éco Denial</div>
+                        <div class="lexique-definition">
+                            Strategy visant à détruire/bloquer l'économie ennemie. Raids constants sur extracteurs métal, générateurs énergie. Étouffe adversaire, l'empêche de produire.
+                        </div>
+                    </div>
+
+                    <!-- F -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Fabricant (Constructor)</div>
+                        <div class="lexique-definition">
+                            Construction unit. Construit structures et répare unités. Base du jeu. Commander est un Fabricant T2 ultra-puissant. Ne laissez JAMAIS fabricants inactifs.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Fast Expand (FE)</div>
+                        <div class="lexique-definition">
+                            Expansion rapide vers nouveaux gisements métal sans production militaire importante. Greedy mais payant si non rushé. Nécessite scouting pour détecter menaces.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Focus Fire</div>
+                        <div class="lexique-definition">
+                            Concentrer le tir de plusieurs unités sur une seule cible ennemie prioritaire. Tue rapidement unités chères (Vanguards, Titans). Technique micro-management avancée.
+                        </div>
+                    </div>
+
+                    <!-- G -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">GG (Good Game)</div>
+                        <div class="lexique-definition">
+                            "Bonne partie". Dit en fin de partie, avant de démissionner. Étiquette multijoueur. Reconnaître défaite dignement plutôt que prolonger partie perdue.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Greedy</div>
+                        <div class="lexique-definition">
+                            Strategy économique agressive minimisant défense/armée pour maximiser développement. Très payant long terme mais vulnérable à rush early. Nécessite bon scouting.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Groupe de Contrôle</div>
+                        <div class="lexique-definition">
+                            Sauvegarder sélection d'unités sur touches 1-9 (<strong>CTRL + 1-9</strong> créer, <strong>1-9</strong> rappeler). Essentiel pour multi-tâche et gestion multiple fronts simultanés.
+                        </div>
+                    </div>
+
+                    <!-- H -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Halley</div>
+                        <div class="lexique-definition">
+                            Moteurs massifs construits sur petites lunes/planètes pour les transformer en projectiles. 5 Halleys requis minimum. Arme ultime : écrase planète cible = destruction totale.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Harcèlement (Harassment)</div>
+                        <div class="lexique-definition">
+                            Attaques de distraction sur économie/production ennemie sans engagement direct majeur. Force ennemi à diviser attention et armée. Dox, Bombers excellents pour harcèlement.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">HP (Health Points / Hit Points)</div>
+                        <div class="lexique-definition">
+                            Points de vie d'une unité. Quand HP = 0, unité détruite. Units lourdes (Vanguard, Titans) ont HP très élevés = difficiles à tuer.
+                        </div>
+                    </div>
+
+                    <!-- K -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Kiting</div>
+                        <div class="lexique-definition">
+                            Tactique hit-and-run. Units rapides attaquent puis reculent avant représailles. Répété = dégâts gratuits sans pertes. Efficace : Dox vs Ants, Gil-E vs tout. Nécessite micro-management.
+                        </div>
+                    </div>
+
+                    <!-- L -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Late Game</div>
+                        <div class="lexique-definition">
+                            Phase finale (20+ minutes). Titans, orbital, nukes, économies massives. Armées énormes. Décisions critiques. Qui contrôle orbital/titans généralement gagne.
+                        </div>
+                    </div>
+
+                    <!-- M -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Macro</div>
+                        <div class="lexique-definition">
+                            Gestion économique et production globale. Bon macro = jamais fabricants/usines inactifs, expansion constante, ressources utilisées efficacement. Opposé de micro. Les deux sont essentiels.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Map Control</div>
+                        <div class="lexique-definition">
+                            Contrôle territorial. Qui occupe le plus de zones stratégiques. Plus de contrôle = plus de métal = plus d'armée = victoire. Objectif #1 dans PA:Titans.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Meta</div>
+                        <div class="lexique-definition">
+                            "Metagame". Strategys et compositions dominantes actuelles. Évolue avec patchs et découvertes communauté. Connaître meta = savoir quoi jouer et counter.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Micro (Micro-management)</div>
+                        <div class="lexique-definition">
+                            Contrôle précis d'unités individuelles en combat. Kiting, focus fire, esquiver. Bon micro gagne batailles à nombre égal. Difficile mais très rewarding.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Mid Game</div>
+                        <div class="lexique-definition">
+                            Phase intermédiaire (10-20 minutes). Transition T2, économies avancées, grandes armées, contrôle air/orbital. Phase la plus stratégique.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Muscle Memory</div>
+                        <div class="lexique-definition">
+                            Mémoire musculaire. Quand raccourcis/actions deviennent automatiques par répétition. Doigts exécutent sans réflexion consciente. Atteint après 3-4 semaines pratique intensive.
+                        </div>
+                    </div>
+
+                    <!-- N -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Nuke</div>
+                        <div class="lexique-definition">
+                            Nuclear missile. Super-arme dévastatrice. Détruit tout dans large rayon. Coûteuse mais game-changer. Contrée par Anti-Nuke (qui coûte aussi cher). Course nuke/anti-nuke.
+                        </div>
+                    </div>
+
+                    <!-- O -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Orbital</div>
+                        <div class="lexique-definition">
+                            Couche spatiale au-dessus planètes. Units orbitales : Avenger, SXX, Laser, Helios. Contrôle orbital = bombardement impuni. Course orbitale critique late game.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Over-extend</div>
+                        <div class="lexique-definition">
+                            S'étendre trop loin en territoire ennemi. Armée trop éloignée de base = vulnérable aux contre-attaques. Erreur fréquente. Toujours garder défense suffisante chez soi.
+                        </div>
+                    </div>
+
+                    <!-- P -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Patrouille (Patrol)</div>
+                        <div class="lexique-definition">
+                            Ordre de surveillance automatique (touche <strong>Z</strong>). Units patrouillent zone définie, engagent ennemis détectés automatiquement. Excellent pour défense périmétrique.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Proxy</div>
+                        <div class="lexique-definition">
+                            Base avancée cachée près/dans territoire ennemi. Permet production rapprochée = pression constante. Risqué (si découvert = perte ressources) mais très efficace.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Push</div>
+                        <div class="lexique-definition">
+                            Attaque coordonnée majeure vers base/position ennemie. Generalement avec toute l'armée. "Final push" = attaque décisive pour gagner partie.
+                        </div>
+                    </div>
+
+                    <!-- R -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Raid</div>
+                        <div class="lexique-definition">
+                            Attaque rapide sur économie ennemie avec unités mobiles (Dox, Bombers). Objectif : détruire extracteurs/générateurs, perturber, forcer réaction. Puis se retirer.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Reclaim</div>
+                        <div class="lexique-definition">
+                            Récupération (touche <strong>C</strong>). Recycler épaves, structures détruites pour récupérer métal. Champs de bataille post-combat = mines d'or métal. Ne jamais gaspiller !
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Rush</div>
+                        <div class="lexique-definition">
+                            Strategy d'attaque précoce agressive. Produire armée T1 rapidement, attaquer avant que ennemi soit prêt. Vehicle Rush, Bot Rush. All-in risqué mais efficace vs greedy.
+                        </div>
+                    </div>
+
+                    <!-- S -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Scout (Scouting)</div>
+                        <div class="lexique-definition">
+                            Reconnaissance. Explorer carte avec Skitters/Firefly pour information sur ennemi. CRUCIAL. Information = pouvoir. Toujours 3-5 scouts actifs. Joueur sans scout = joueur aveugle.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Snipe</div>
+                        <div class="lexique-definition">
+                            Assassination ciblée d'unité spécifique de haute valeur. Commander snipe, Titan snipe. Méthodes : Boom Bots, Gil-E, focus fire, Hornets. High-risk high-reward.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Snowball</div>
+                        <div class="lexique-definition">
+                            Effet boule de neige. Petit avantage initial → croît exponentiellement. Exemple : contrôler 1 extracteur de plus = 10% armée de plus = gagner combats = contrôler plus extracteurs = etc.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Spam</div>
+                        <div class="lexique-definition">
+                            Produire massivement même unité. "Ant spam" = 100 Ants. Strategy simple mais efficace. Quantité > qualité parfois. Vulnérable à AOE et counters spécifiques.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Stalling</div>
+                        <div class="lexique-definition">
+                            Situation où production excède revenus. Métal/énergie = 0, tout ralentit drastiquement. TRÈS mauvais. Éviter à tout prix. Solution : réduire production ou augmenter éco.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Swarm</div>
+                        <div class="lexique-definition">
+                            Essaim. Grande quantité d'unités faibles submergeant ennemi par le nombre. Dox swarm, Firefly swarm. Efficace vs petit nombre unités chères. Vulnérable à AOE.
+                        </div>
+                    </div>
+
+                    <!-- T -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">T1 (Tier 1)</div>
+                        <div class="lexique-definition">
+                            Premier palier technologique. Units basiques, économiques, rapides à produire. Dox, Ant, Firefly. Backbone des armées early/mid game. Ne pas négliger leur importance !
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">T2 (Tier 2)</div>
+                        <div class="lexique-definition">
+                            Deuxième palier technologique avancé. Units puissantes, chères, lentes à produire. Slammer, Vanguard, Phoenix. Dominent T1 mais arrivent tard. Transition T2 = phase critique.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Tank</div>
+                        <div class="lexique-definition">
+                            Unité blindée résistante. Absorbe dégâts pour protéger unités fragiles. Ant, Slammer, Vanguard sont tanks. Frontline des armées. Opposé de "glass cannon".
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Téléporteur</div>
+                        <div class="lexique-definition">
+                            Structure permettant téléportation instantanée unités entre planètes. Coûteux mais stratégiquement puissant. Téléport drop = invasion surprise. Toujours protéger vos téléporteurs !
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Timing Attack</div>
+                        <div class="lexique-definition">
+                            Attaque à moment précis optimal. Exemple : "Push Vanguard timing" = attaquer dès premiers Vanguards sortis, avant ennemi ait compteurs T2. Fenêtre de pouvoir temporaire.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Titan</div>
+                        <div class="lexique-definition">
+                            Units géantes ultra-puissantes. Atlas, Zeus, Ares, Helios. Game-changers. Extrêmement chers, arrivent très tard, mais peuvent gagner parties seuls. Toujours priorité #1 à focus/kill.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Turtle</div>
+                        <div class="lexique-definition">
+                            "Tortue". Strategy ultra-défensive : fortifier base, construire murs de défenses, ne jamais sortir. Generalement mauvaise stratégie. Perd contrôle carte = perd long terme.
+                        </div>
+                    </div>
+
+                    <!-- U -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Umbrella</div>
+                        <div class="lexique-definition">
+                            "Parapluie". Tour de défense anti-orbitale. Protège zone contre lasers orbitaux et SXX. Essentiel si contrôle orbital perdu. Construire autour structures critiques.
+                        </div>
+                    </div>
+
+                    <!-- W -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Wall (Mur)</div>
+                        <div class="lexique-definition">
+                            Fortifications bloquant passage. Ralentissent ennemis, canalisent attaques. Utiles pour protéger points d'entrée clés. Mais ne jamais sur-investir : armée mobile > murs.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Win Condition</div>
+                        <div class="lexique-definition">
+                            Condition de victoire. Méthode pour gagner partie. Exemples : Commander snipe, domination territoriale, Titan push, Nuke spam, Halley planétaire. Toujours avoir win condition claire.
+                        </div>
+                    </div>
+
+                    <div class="lexique-item">
+                        <div class="lexique-term">Wreckage</div>
+                        <div class="lexique-definition">
+                            Épave. Reste d'unité/structure détruite. Contient 40-60% métal investi. TOUJOURS reclaim les wreckages après batailles. Ressource gratuite massive gaspillée sinon.
+                        </div>
+                    </div>
+
+                    <!-- Z -->
+                    <div class="lexique-item">
+                        <div class="lexique-term">Zone Control</div>
+                        <div class="lexique-definition">
+                            Contrôle de zone. Dominer région stratégique par présence militaire constante. Patrouilles, défenses, bases avancées. Empêche expansion ennemie, sécurise ressources.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Abréviations Courantes -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🔤 Abréviations Courantes</h2>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Abréviation</th>
+                            <th>Signification</th>
+                            <th>Contexte</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PA</strong></td>
+                            <td>Planetary Annihilation</td>
+                            <td>Nom du jeu</td>
+                        </tr>
+                        <tr>
+                            <td><strong>T1 / T2</strong></td>
+                            <td>Tier 1 / Tier 2</td>
+                            <td>Niveaux technologiques</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AA</strong></td>
+                            <td>Anti-Air</td>
+                            <td>Défense aérienne</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AOE</strong></td>
+                            <td>Area of Effect</td>
+                            <td>Zone d'effet</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DPS</strong></td>
+                            <td>Damage Per Second</td>
+                            <td>Dégâts par seconde</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HP</strong></td>
+                            <td>Health Points</td>
+                            <td>Points de vie</td>
+                        </tr>
+                        <tr>
+                            <td><strong>APM</strong></td>
+                            <td>Actions Per Minute</td>
+                            <td>Actions par minute</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GG</strong></td>
+                            <td>Good Game</td>
+                            <td>Bonne partie (fin de jeu)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GL HF</strong></td>
+                            <td>Good Luck Have Fun</td>
+                            <td>Bonne chance (début de jeu)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BO</strong></td>
+                            <td>Build Order</td>
+                            <td>Ordre de construction</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Eco</strong></td>
+                            <td>Economy</td>
+                            <td>Système de ressources</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FE</strong></td>
+                            <td>Fast Expand</td>
+                            <td>Expansion rapide</td>
+                        </tr>
+                        <tr>
+                            <td><strong>OP</strong></td>
+                            <td>Over Powered</td>
+                            <td>Trop puissant (déséquilibré)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>UP</strong></td>
+                            <td>Under Powered</td>
+                            <td>Trop faible</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Meta</strong></td>
+                            <td>Metagame</td>
+                            <td>Strategys dominantes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RTS</strong></td>
+                            <td>Real-Time Strategy</td>
+                            <td>Genre du jeu</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AFK</strong></td>
+                            <td>Away From Keyboard</td>
+                            <td>Absent</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BRB</strong></td>
+                            <td>Be Right Back</td>
+                            <td>Je reviens</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scroll to Top -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3 class="footer-title" data-i18n="footer.title">Guide PA:Titans</h3>
+                <p class="footer-text" data-i18n="footer.text">Complete guide created by the community.</p>
+                <ul class="footer-links">
+                    <li><a href="../../index.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="beginner.html" data-i18n="nav.beginner">Beginner</a></li>
+                    <li><a href="shortcuts.html" data-i18n="nav.shortcuts">Shortcuts</a></li>
+                    <li><a href="units.html" data-i18n="nav.units">Units</a></li>
+                    <li><a href="structures.html" data-i18n="nav.structures">Structures</a></li>
+                    <li><a href="strategies.html" data-i18n="nav.strategies">Strategys</a></li>
+                    <li><a href="glossary.html" data-i18n="nav.lexicon">Glossary</a></li>
+                </ul>
+                <div class="footer-bottom">
+                    <p>© 2026 PA:Titans Guide 🎮</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" aria-label="Retour en haut">↑</button>
+
+    <!-- Scripts -->
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

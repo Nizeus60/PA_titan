@@ -1792,8 +1792,16 @@ header.header-home .site-description {
 
 /* ==================== LANGUAGE SELECTOR ==================== */
 .lang-selector {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Ajuster le nav-container pour laisser de la place */
+.nav-container {
     position: relative;
-    margin-left: 15px;
+    padding-right: 80px;
 }
 
 .lang-btn {
@@ -1881,11 +1889,11 @@ header.header-home .site-description {
 /* Mobile */
 @media (max-width: 900px) {
     .lang-selector {
-        position: absolute;
-        right: 60px;
-        top: 50%;
-        transform: translateY(-50%);
-        margin-left: 0;
+        right: 70px;
+    }
+    
+    .nav-container {
+        padding-right: 120px;
     }
     
     .lang-dropdown {
