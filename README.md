@@ -1,234 +1,183 @@
-# Guide Complet PA:Titans - Documentation
+# Guide Complet PA:Titans - TERMINÉ ✅
 
 ## 📁 Structure du Projet
 
 ```
 guide-pa-titans/
-├── index.html              # Page d'accueil
+├── index.html              # Page d'accueil ✅
 ├── css/
-│   └── styles.css          # Styles CSS professionnels (tooltips, animations)
+│   └── styles.css          # Styles CSS professionnels ✅
 ├── js/
-│   └── main.js             # JavaScript (navigation, recherche, interactions)
+│   └── main.js             # JavaScript (navigation, recherche, interactions) ✅
 └── pages/
-    ├── raccourcis.html     # Guide complet raccourcis clavier
-    ├── unites.html         # Analyses détaillées des unités (À créer)
-    ├── structures.html     # Guide structures & économie (À créer)
-    ├── strategies.html     # Stratégies & tactiques avancées (À créer)
-    └── lexique.html        # Lexique complet avec recherche
+    ├── raccourcis.html     # Guide complet raccourcis clavier ✅
+    ├── unites.html         # Analyses détaillées des unités ✅
+    ├── structures.html     # Guide structures & économie ✅
+    ├── strategies.html     # Stratégies & tactiques avancées ✅
+    └── lexique.html        # Lexique complet avec recherche ✅
 ```
 
-## ✨ Fonctionnalités
-
-### 🎨 Design Professionnel
-- **Thème futuriste militaire** : Dégradés orange/bleu, typographies Orbitron + Rajdhani
-- **Animations fluides** : Hover effects, transitions, scroll reveal
-- **Responsive** : Optimisé mobile, tablette, desktop
-- **Effets visuels** : Background animé, scan effects, glows
-
-### 💡 Tooltips Informatifs
-- Survolez les termes techniques pour info contextuelle
-- Exemples : APM, Kiting, Stalling, Muscle Memory...
-- Positioned intelligently (s'adaptent aux bords d'écran)
-
-### 🔍 Recherche dans le Lexique
-- Filtre en temps réel
-- Minimum 2 caractères
-- Highlight des résultats
-- 100+ termes expliqués
-
-### 📱 Navigation Intuitive
-- Menu sticky toujours accessible
-- Smooth scroll entre sections
-- Active link highlighting
-- Bouton retour en haut
-
-### ⌨️ Raccourcis Détaillés
-- **50+ raccourcis** classés par priorité
-- Exemples tactiques concrets
-- Tableaux comparatifs
-- Workflows optimisés
-- Plan d'apprentissage 4 semaines
-
-## 🎯 Pages Complétées
+## ✨ Pages Complétées
 
 ### ✅ index.html
 - Vue d'ensemble du guide
-- Cartes navigables
-- Progression par niveaux
-- Stats du contenu
-- Conseils rapides & erreurs à éviter
+- Cartes navigables vers toutes les sections
+- Design futuriste militaire
+- Stats et progression
 
 ### ✅ pages/raccourcis.html
-- **8 raccourcis critiques** détaillés
-- **20+ raccourcis importants**
-- Sélection, caméra, commandes spéciales
-- Tooltips sur chaque terme technique
-- Exemples tactiques avec combos
+- **50+ raccourcis** classés par priorité
+- Tooltips informatifs sur termes techniques
+- Exemples tactiques concrets
+- Plan d'apprentissage 4 semaines
 - Tables comparatives
-- Boxes info/warning/success
-- Plan d'apprentissage complet
+
+### ✅ pages/unites.html (NOUVELLE)
+- **Bots T1:** Dox, Boom Bot, Stinger
+- **Véhicules T1:** Ant, Spinner, Inferno, Stump
+- **Bots T2:** Slammer, Gil-E, Stitch
+- **Véhicules T2:** Vanguard, Leveler, Sheller
+- **Aérien:** Hummingbird, Bumblebee, Kestrel, Hornet
+- **Naval:** Narwhal, Leviathan
+- **Orbital:** Avenger, Anchor
+- **Titans:** Atlas, Zeus
+- Pour chaque unité:
+  - Stats complètes (HP, DPS, Range, Coût)
+  - Rôle tactique détaillé
+  - Fort contre / Faible contre
+  - Synergies
+  - Conseils Pro avec tips précis
+
+### ✅ pages/structures.html (NOUVELLE)
+- **Économie:**
+  - Metal Extractor T1/T2 (ratios optimaux, timing upgrades)
+  - Energy Generator T1/T2 (gestion énergétique)
+  - Storage (quand construire)
+- **Production:**
+  - Factories T1 (Bot, Vehicle, Air, Naval)
+  - Factories T2 (Advanced)
+  - Orbital Launcher
+  - Titan Foundry
+- **Défenses:**
+  - Turrets T1/T2 (Catalyst)
+  - AA Towers et Umbrella (critique vs air)
+  - Holkins (Artillery T2)
+  - Walls (placement optimal)
+- **Super-Armes:**
+  - Nuclear Missile Launcher (stratégie nuke)
+  - Anti-Nuke Defense (protection)
+  - Halleys (planet smash)
+- **Utilitaires:**
+  - Radar T1/T2 (coverage)
+  - Teleporter (tactiques avancées)
+
+### ✅ pages/strategies.html (NOUVELLE)
+- **Early Game (0-5min):**
+  - Vehicle Rush (opening standard)
+  - Boom Bot All-In (cheese)
+  - Dox Harass (agressif)
+  - Air First (risqué)
+- **Mid Game (5-15min):**
+  - Domination T1 (compositions optimales)
+  - Fast T2 (tech rush timing)
+  - Commander Snipe (4 méthodes)
+- **Late Game (15min+):**
+  - Vanguard Spam (steamroll)
+  - Air Dominance avec Kestrel
+  - Titan Rush (requirements massifs)
+  - Nuke Rush (saturation tactics)
+- **Erreurs Fatales à Éviter:** 10 erreurs communes expliquées
+- **Mind Games & Psychologie:** 8 tactiques psychologiques
+- **Timings Critiques:** Power spikes par tranches de temps
 
 ### ✅ pages/lexique.html
 - **100+ termes** expliqués
 - Recherche en temps réel
 - Abréviations courantes
 - Contexte d'utilisation
-- Exemples pratiques
 
 ### ✅ css/styles.css
 - **1500+ lignes** de CSS professionnel
 - Variables CSS (couleurs, transitions)
 - Composants réutilisables
 - Animations keyframes
-- Responsive breakpoints
+- Responsive design
 - Tooltips système
-- Cards avec hover effects
 
 ### ✅ js/main.js
 - Navigation mobile (burger menu)
 - Smooth scroll
 - Scroll-to-top button
 - Active nav highlighting
-- Intersection Observer (scroll animations)
+- Intersection Observer
 - Recherche lexique
 - Tooltips positioning
-- Easter egg (Konami code)
 
-## 🚀 Pages à Créer
+## 🎨 Design & Fonctionnalités
 
-### 📋 pages/unites.html
-**Contenu suggéré :**
-- Unités terrestres T1/T2 (30+ unités)
-- Unités aériennes (10+ unités)
-- Unités navales (8+ unités)
-- Unités orbitales (6+ unités)
-- Titans (4 types)
-- Pour chaque unité :
-  - Stats détaillées
-  - Rôle tactique
-  - Fort contre / Faible contre
-  - Compteurs spécifiques
-  - Synergies
-  - Coût/efficacité
-  - Tooltips sur concepts avancés
+### Thème Futuriste Militaire
+- **Couleurs:** Orange (#ff6b35) + Bleu (#00d4ff) + Pourpre (#8b5cf6)
+- **Typographies:** Orbitron (titres) + Rajdhani (corps)
+- **Background:** Animations subtiles, grille hexagonale
+- **Effects:** Hover effects, glow, scan lines
 
-### 🏗️ pages/structures.html
-**Contenu suggéré :**
-- Économie (extracteurs, générateurs T1/T2)
-- Défenses (tours, AA, artillerie, umbrella, anti-nuke)
-- Production (usines T1/T2, orbital launcher, titan foundry)
-- Super-armes (nuke, halleys)
-- Utilités (radar, téléporteur)
-- Guides de placement optimal
-- Ratio économique optimal
-- Timing de construction
+### Composants Interactifs
+- **Tooltips:** Survol termes techniques = info contextuelle
+- **Badges:** Priorité (Critical, High, Medium, Low), Tiers (T1, T2, Titan), Rôles
+- **Cards:** Hover effects, clickable
+- **Info Boxes:** Tips, Warnings, Success
+- **Tables:** Responsive, stats comparatives
 
-### 🎯 pages/strategies.html
-**Contenu suggéré :**
-- Ouvertures classiques (Vehicle Rush, Bot Raid, Air First, Fast T2)
+### Responsive Design
+- **Mobile:** < 768px
+- **Tablette:** 768px - 1200px
+- **Desktop:** > 1200px
+- Touch-friendly sur mobile
+
+## 🎯 Contenu Couvert
+
+### Unités (30+ unités analysées)
+- Stats complètes
+- Rôles tactiques
+- Matchups détaillés
+- Synergies
+- Tips pro
+
+### Structures (25+ structures)
+- Coûts et stats
+- Timing construction
+- Placement optimal
+- Stratégies économiques
+
+### Stratégies (15+ stratégies)
 - Build orders détaillés
-- Compositions d'armées optimales
-- Tactiques avancées (Commander Snipe, Teleport Drop, Eco Denial)
-- Timings critiques (0-5min, 5-10min, 10-20min, 20min+)
-- Erreurs fatales à éviter
-- Mind games & psychologie
-- Adaptation selon map
+- Timings précis
+- Conditions victoire
+- Counters et adaptations
 
-## 🎨 Éléments de Design Utilisés
+## 🚀 Utilisation
 
-### Couleurs
-- **Orange primaire** : `#ff6b35` (action, priorité)
-- **Bleu primaire** : `#00d4ff` (info, technologie)
-- **Background sombre** : `#0a0e1a` (immersion)
-- **Cartes** : `#151923` (contraste)
-- **Texte** : `#e8edf4` (lisibilité)
-- **Succès** : `#3bff6b` (positif)
-- **Danger** : `#ff3b3b` (warning)
-
-### Typographies
-- **Orbitron** : Titres (sci-fi, militaire)
-- **Rajdhani** : Corps de texte (moderne, lisible)
-
-### Composants
-- Cards avec hover effects
-- Badges de priorité (Critical, High, Medium, Low)
-- Badges de tier (T1, T2, Orbital, Titan)
-- Info boxes (tips, warnings, success)
-- Tables responsives
-- Tooltips contextuels
-- Touches de clavier stylisées
-
-## 🔧 Utilisation
-
-### Ouvrir le Guide
 1. Ouvrez `index.html` dans n'importe quel navigateur moderne
-2. Navigation via menu ou cartes cliquables
+2. Naviguez via menu ou cartes cliquables
 3. Utilisez recherche dans lexique si besoin
+4. Consultez tooltips pour infos supplémentaires
 
-### Raccourcis Clavier du Site
-- **Espace** : Scroll vers le bas
-- **Home** : Retour en haut
-- **Konami Code** : Easter egg (↑↑↓↓←→←→BA)
+## 📝 Technologies
 
-### Fonctionnalités Interactives
-- **Hover** sur termes techniques → Tooltip
-- **Clic** sur touches clavier → Copie dans presse-papier
-- **Recherche** lexique → Filtre instantané
-- **Smooth scroll** entre sections
-
-## 📝 Notes de Développement
-
-### Technologies
 - HTML5 sémantique
-- CSS3 moderne (Grid, Flexbox, animations)
+- CSS3 moderne (Grid, Flexbox, Animations)
 - JavaScript vanilla (pas de dépendances)
 - Google Fonts (Orbitron, Rajdhani)
 
-### Compatibilité
-- Chrome, Firefox, Safari, Edge (dernières versions)
-- Mobile responsive (breakpoints 480px, 768px, 1200px)
-- Touch-friendly sur tablettes/mobiles
+## 🎮 Crédits
 
-### Performance
-- CSS minifié possible (actuellement en format lisible)
-- Images non requises (design basé sur CSS pur)
-- Lazy loading sections (Intersection Observer)
-- Pas de librairies externes lourdes
-
-## 🎯 Prochaines Améliorations Possibles
-
-1. **Comparateur d'unités** : Sélectionner 2-3 unités pour comparaison côte à côte
-2. **Calculateur économique** : Estimer production selon nombre extracteurs/générateurs
-3. **Mode sombre/clair** : Toggle de thème
-4. **Système de favoris** : Marquer sections préférées
-5. **Progression utilisateur** : Tracker ce qui est maîtrisé
-6. **Version PDF** : Export pour lecture offline
-7. **Vidéos intégrées** : Tutoriels visuels
-8. **Section replays** : Analyses de parties commentées
-
-## 📚 Ressources Supplémentaires
-
-- **Forums PA** : https://forums.uberent.com/forums/planetary-annihilation/
-- **Discord Officiel** : Communauté active
-- **PA Stats** : Statistiques de parties
-- **Mod DB** : Mods communautaires
-
-## 👨‍💻 Crédits
-
-- **Développement** : Guide créé avec attention aux détails
-- **Design** : Thème futuriste militaire custom
-- **Contenu** : Analyse approfondie méchaniques PA:Titans
-- **Communauté** : Merci aux joueurs pour stratégies partagées
-
-## 📄 Licence
-
-Guide éducatif créé pour la communauté PA:Titans.
-Planetary Annihilation: Titans © Uber Entertainment.
+Guide créé pour la communauté PA:Titans
+Planetary Annihilation: Titans © Uber Entertainment
 
 ---
 
-**Version** : 1.0 (Janvier 2026)
-**Statut** : Pages Accueil, Raccourcis, Lexique complètes
-**À venir** : Unités, Structures, Stratégies (pages détaillées)
+**Version:** 2.0 (Janvier 2025)
+**Statut:** COMPLET - Toutes pages terminées ✅
+**Pages:** 6/6 complètes (Accueil, Raccourcis, Unités, Structures, Stratégies, Lexique)
 
 🎮 **Bon jeu, Commandant !**

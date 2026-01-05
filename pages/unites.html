@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide des Unités - PA:Titans</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="page-title">Guide des Unités</h1>
+            <p class="page-subtitle">Analyses Complètes & Tactiques d'Utilisation</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">PA:TITANS</a>
+            <button class="nav-toggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="raccourcis.html">Raccourcis</a></li>
+                <li><a href="unites.html" class="active">Unités</a></li>
+                <li><a href="structures.html">Structures</a></li>
+                <li><a href="strategies.html">Stratégies</a></li>
+                <li><a href="lexique.html">Lexique</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="info-box">
+                    <h3>📊 Guide de Lecture</h3>
+                    <p><strong>DPS</strong> = Dégâts par seconde | <strong>HP</strong> = Points de vie | <strong>Range</strong> = Portée | <strong>Cost Eff</strong> = Efficacité/coût</p>
+                </div>
+
+                <!-- T1 BOTS -->
+                <div class="section-header"><h2 class="section-title">🤖 Bots T1</h2><span class="tier-badge tier-t1">T1</span></div>
+                
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Dox - Infanterie Légère</h3>
+                        <div class="unit-badges"><span class="unit-badge role-assault">Assaut</span><span class="unit-badge cost-low">90 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 80 | <strong>DPS:</strong> 50 | <strong>Range:</strong> 100m | <strong>Speed:</strong> Rapide</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Unité de raid ultra-mobile pour harcèlement économique. Excellent en masse (50+) pour submerger defenses.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Autres bots T1</li><li>Extracteurs isolés</li><li>Commander isolé (20-30 Dox)</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Véhicules T1 (Ant outrange)</li><li>Défenses statiques</li><li>Air</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Pro tip:</strong> Utilisez Shift+Click pour patrouiller autour extracteurs ennemis</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Boom Bot - Kamikaze</h3>
+                        <div class="unit-badges"><span class="unit-badge role-suicide">Explosif</span><span class="unit-badge cost-low">80 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 50 | <strong>Dégâts:</strong> 800 (AoE 15m) | <strong>Speed:</strong> Très Rapide</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Bombe mobile pour cheese early game ou snipes structures. Invisible au radar.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Groupes d'unités serrés</li><li>Commander (15-20 Boom = kill)</li><li>Extracteurs (ratio 1:1.5)</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Unités espacées</li><li>Micro intensif</li><li>Walls</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Timing:</strong> Rush entre 3-5min avant défenses solides</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Stinger - AA Bot</h3>
+                        <div class="unit-badges"><span class="unit-badge role-aa">Anti-Air</span><span class="unit-badge cost-low">100 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 75 | <strong>DPS (Air):</strong> 80 | <strong>Range:</strong> 120m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Defense AA mobile T1. Ne tire PAS au sol. Essentiel vs raids aériens précoces.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Hummingbird (Fighter)</li><li>Bumblebee (Bomber)</li><li>Air Fabber</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Tout au sol (0 DPS)</li><li>Artillery</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Ratio:</strong> 1 Stinger pour 10 unités terrestres</p></div>
+                    </div>
+                </div>
+
+                <!-- T1 VEHICLES -->
+                <div class="section-header"><h2 class="section-title">🚗 Véhicules T1</h2><span class="tier-badge tier-t1">T1</span></div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Ant - Tank Léger</h3>
+                        <div class="unit-badges"><span class="unit-badge role-assault">Assaut Lourd</span><span class="unit-badge cost-medium">200 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 300 | <strong>DPS:</strong> 120 | <strong>Range:</strong> 110m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Pilier armées terrestres T1. Meilleur ratio coût/efficacité. Outrange tous bots T1.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Dox (portée supérieure)</li><li>Boom Bot</li><li>Autres Ant</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Inferno (AoE brûle groupes)</li><li>Air Bombers</li><li>Artillery</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Masse critique:</strong> 20 Ant = force difficile à stopper</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Spinner - AA Hybride</h3>
+                        <div class="unit-badges"><span class="unit-badge role-aa">Anti-Air</span><span class="unit-badge cost-medium">180 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 180 | <strong>DPS (Air):</strong> 100 | <strong>DPS (Sol):</strong> 40 | <strong>Range:</strong> 100m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>AA polyvalent tirant aussi au sol. Meilleur que Stinger en late T1.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Air T1</li><li>Dox</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Ant (1v1)</li><li>Inferno</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Composition:</strong> 70% Ant + 30% Spinner = équilibre parfait</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Inferno - Lance-Flammes</h3>
+                        <div class="unit-badges"><span class="unit-badge role-aoe">AoE</span><span class="unit-badge cost-medium">220 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 200 | <strong>DPS:</strong> 160 (AoE) | <strong>Range:</strong> 65m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Anti-swarm dévastateur. Brûle groupes d'unités serrés. Faible portée = vulnérable.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Groupes de Dox (10+ en secondes)</li><li>Boom waves</li><li>Ant balls serrés</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Unités espacées</li><li>Longue portée</li><li>Air</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Nombre:</strong> 5-8 Inferno suffisent, plus = overkill</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Stump - Artillery Mobile</h3>
+                        <div class="unit-badges"><span class="unit-badge role-artillery">Artillerie</span><span class="unit-badge cost-medium">250 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 150 | <strong>DPS:</strong> 40 (AoE) | <strong>Range:</strong> 200m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Artillery T1 longue portée. Bombarde à distance, trajectoire en arc.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Turrets (outrange)</li><li>Structures</li><li>Formations serrées</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Raids rapides</li><li>Air</li><li>Unités mobiles</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Position:</strong> Toujours derrière ligne, jamais devant</p></div>
+                    </div>
+                </div>
+
+                <!-- T2 BOTS -->
+                <div class="section-header"><h2 class="section-title">🦾 Bots T2</h2><span class="tier-badge tier-t2">T2</span></div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Slammer - Bot Élite</h3>
+                        <div class="unit-badges"><span class="unit-badge role-assault">Assaut</span><span class="unit-badge cost-high">650 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 900 | <strong>DPS:</strong> 250 | <strong>Range:</strong> 120m | <strong>Speed:</strong> Rapide</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Bot combat T2 élite. Mobilité + puissance + HP. Grimpe falaises, traverse eau.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Toute unité T1</li><li>Commander (10-15 = snipe)</li><li>Raids économiques</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Vanguard (HP double)</li><li>Gil-E (outrangé)</li><li>Defenses T2</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Timing:</strong> Rush vers 10-12min = très puissant</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Gil-E - Sniper</h3>
+                        <div class="unit-badges"><span class="unit-badge role-sniper">Sniper</span><span class="unit-badge cost-high">700 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 400 | <strong>Dégâts/Shot:</strong> 800 | <strong>Range:</strong> 250m | <strong>Fire Rate:</strong> 3s</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Sniper longue portée. One-shot T1. Nécessite vision (radar) pour exploiter portée.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Unités T1 (one-shot)</li><li>Slammer</li><li>Structures</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Raids rapides</li><li>Air</li><li>Swarms</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Vision:</strong> Inutile sans radar pour voir cibles</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Stitch - AA T2</h3>
+                        <div class="unit-badges"><span class="unit-badge role-aa">Anti-Air</span><span class="unit-badge cost-medium">500 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 450 | <strong>DPS (Air):</strong> 300 | <strong>Range:</strong> 180m | <strong>Missiles:</strong> x4 homing</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>AA mobile T2 élite. 4 missiles simultanés. Ne tire PAS au sol.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Tout air T1 (one-shot)</li><li>Kestrel (Bomber T2)</li><li>Hornet (Gunship)</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Unités sol (0 DPS)</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Ratio:</strong> 1 Stitch pour 15 unités T2</p></div>
+                    </div>
+                </div>
+
+                <!-- T2 VEHICLES -->
+                <div class="section-header"><h2 class="section-title">🚀 Véhicules T2</h2><span class="tier-badge tier-t2">T2</span></div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Vanguard - Tank Ultra-Lourd</h3>
+                        <div class="unit-badges"><span class="unit-badge role-assault">Tank Lourd</span><span class="unit-badge cost-very-high">2000 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 3500 | <strong>DPS:</strong> 500 | <strong>Range:</strong> 140m | <strong>Speed:</strong> Lent</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Monstre de puissance. Écrase tout. Nécessite AA (Spinner/Stitch). Symbole domination terrestre.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Toutes unités T1/T2</li><li>Commander (3-4 = snipe)</li><li>Structures défensives</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Bombers (sans AA)</li><li>Artillery longue portée</li></ul>
+                        <div class="tip-box"><p>💡 <strong>AA OBLIGATOIRE:</strong> 1 Spinner pour 3 Vanguard minimum</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Leveler - Tank Rapide</h3>
+                        <div class="unit-badges"><span class="unit-badge role-assault">Tank</span><span class="unit-badge cost-high">1200 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 2000 | <strong>DPS:</strong> 600 | <strong>Range:</strong> 120m | <strong>Fire Rate:</strong> Très Rapide</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Tank T2 tir rapide. Moins HP que Vanguard mais DPS supérieur. Meilleur cost efficiency.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>T1 masses</li><li>Slammer groups</li><li>Structures légères</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Vanguard (1v1)</li><li>Bombers</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Cost:</strong> 2 Leveler (2400m) > 1 Vanguard (2000m) en DPS</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Sheller - Artillery Mobile</h3>
+                        <div class="unit-badges"><span class="unit-badge role-artillery">Artillerie</span><span class="unit-badge cost-high">1400 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 600 | <strong>DPS:</strong> 120 (AoE) | <strong>Range:</strong> 300m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Artillery T2 mobile dévastatrice. Portée extrême, AoE massif. Nécessite vision.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Defenses statiques</li><li>Structures</li><li>Formations serrées</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Raids rapides</li><li>Air</li><li>Cibles mobiles</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Nombre:</strong> 5-10 Sheller = artillerie dévastatrice</p></div>
+                    </div>
+                </div>
+
+                <!-- AIR -->
+                <div class="section-header"><h2 class="section-title">✈️ Unités Aériennes</h2><span class="tier-badge tier-air">AIR</span></div>
+
+                <div class="warning-box">
+                    <h3>⚠️ Domination Aérienne</h3>
+                    <p>Le contrôle aérien est <strong>critique</strong>. Sans AA, base et armée anéanties en minutes.</p>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Hummingbird - Fighter T1</h3>
+                        <div class="unit-badges"><span class="unit-badge role-fighter">Fighter</span><span class="unit-badge cost-low">150 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 100 | <strong>DPS (Air):</strong> 120 | <strong>Range:</strong> 100m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Chasseur léger T1. Air superiority early game. Ne tire PAS au sol.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Bumblebee</li><li>Autres Hummingbird</li><li>Air Fabber</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>AA Ground</li><li>AA Towers</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Patrol:</strong> Kbd P pour patrouille défensive</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Bumblebee - Bomber T1</h3>
+                        <div class="unit-badges"><span class="unit-badge role-bomber">Bomber</span><span class="unit-badge cost-low">180 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 120 | <strong>Dégâts/Bomb:</strong> 400 (AoE) | <strong>Reload:</strong> 5s</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Bombardier léger. Raids économiques, détruit groupes T1. Nécessite protection Hummingbird.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Groupes Dox/Ant</li><li>Extracteurs</li><li>Factories</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>AA</li><li>Hummingbird</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Timing:</strong> Rush 5-10 vers 5-7min si pas AA</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Kestrel - Bomber T2</h3>
+                        <div class="unit-badges"><span class="unit-badge role-bomber">Bomber Stratégique</span><span class="unit-badge cost-very-high">1800 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 500 | <strong>Dégâts:</strong> 3000 (AoE) | <strong>Carpet Bomb:</strong> 3 bombes</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Game-changer. Carpet bombing dévastateur. Peut tuer Commander en un passage.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Commander (2-3 = kill)</li><li>Bases non défendues</li><li>Armées</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>AA T2 (Stitch)</li><li>Umbrella</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Masse:</strong> 5-8 Kestrel = unstoppable sans Umbrella</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Hornet - Fighter T2</h3>
+                        <div class="unit-badges"><span class="unit-badge role-fighter">Fighter</span><span class="unit-badge cost-medium">900 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 450 | <strong>DPS (Air):</strong> 400 | <strong>Range:</strong> 120m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Chasseur lourd T2. Domination aérienne totale. Protège Kestrel.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Tout air T1 (one-shot)</li><li>Autres Hornet</li><li>Kestrel ennemi</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>AA T2</li><li>Masse Hummingbird</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Ratio:</strong> 1 Hornet pour 2 Kestrel</p></div>
+                    </div>
+                </div>
+
+                <!-- NAVAL -->
+                <div class="section-header"><h2 class="section-title">⚓ Unités Navales</h2><span class="tier-badge tier-naval">NAVAL</span></div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Narwhal - Corvette T1</h3>
+                        <div class="unit-badges"><span class="unit-badge role-assault">Naval</span><span class="unit-badge cost-low">300 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 500 | <strong>DPS:</strong> 100 | <strong>Range:</strong> 120m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Vaisseau léger T1. Combat naval ET tire sur côtes. Mobile, polyvalent.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Autres Narwhal</li><li>Unités côtières</li><li>Orca (masse)</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Air</li><li>Leviathan</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Harass:</strong> Bombardez extracteurs côtiers</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Leviathan - Cuirassé T2</h3>
+                        <div class="unit-badges"><span class="unit-badge role-assault">Battleship</span><span class="unit-badge cost-very-high">3000 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 8000 | <strong>DPS:</strong> 800 | <strong>Range:</strong> 250m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Cuirassé lourd T2. HP massif, DPS dévastatrice. Nécessite AA. Symbole domination navale.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Toute unité navale T1</li><li>Bases côtières</li><li>Autres Leviathan</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Air (sans AA)</li><li>Submarines masse</li><li>Nuke</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Nombre:</strong> 3-5 Leviathan = domination totale</p></div>
+                    </div>
+                </div>
+
+                <!-- ORBITAL -->
+                <div class="section-header"><h2 class="section-title">🌌 Unités Orbitales</h2><span class="tier-badge tier-orbital">ORBITAL</span></div>
+
+                <div class="warning-box">
+                    <h3>🛰️ Layer Orbital</h3>
+                    <p>L'orbital = vision totale + frappe globale. N'ignorez jamais en late game.</p>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Avenger - Fighter Orbital</h3>
+                        <div class="unit-badges"><span class="unit-badge role-fighter">Orbital</span><span class="unit-badge cost-medium">600 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 300 | <strong>DPS (Orbital):</strong> 150 | <strong>Range:</strong> 120m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Chasseur orbital. Contrôle layer orbital. Tue autres unités orbitales.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Autres Avenger</li><li>Satellites (Radar, Laser)</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Umbrella (AA orbital)</li><li>Masse d'Avenger</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Contrôle:</strong> Dominez orbital = vision totale</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Anchor - Defense Orbital</h3>
+                        <div class="unit-badges"><span class="unit-badge role-aa">Défense</span><span class="unit-badge cost-high">1500 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 5000 | <strong>DPS:</strong> 500 | <strong>Range:</strong> 300m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Forteresse orbitale. Protège planète des invasions orbitales. Très résistant.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Avenger</li><li>Invasions orbitales</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Masse d'Avenger (20+)</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Defense:</strong> 2-3 Anchor = planète sécurisée</p></div>
+                    </div>
+                </div>
+
+                <!-- TITANS -->
+                <div class="section-header"><h2 class="section-title">🏛️ Titans</h2><span class="tier-badge tier-titan">TITAN</span></div>
+
+                <div class="success-box">
+                    <h3>⚡ Les Titans</h3>
+                    <p>Unités ultra-lourdes <strong>game-changing</strong>. Coûteux mais dévastateurs. 1 Titan = force de 50 unités T2.</p>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Atlas - Titan Lourd</h3>
+                        <div class="unit-badges"><span class="unit-badge role-assault">Titan Terrestre</span><span class="unit-badge cost-very-high">15000 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 45000 | <strong>DPS:</strong> 2000 | <strong>Range:</strong> 200m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Titan terrestre colossal. Écrase armées entières. Quasi-indestructible. Nécessite 100+ Mex T2.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Toutes unités T1/T2</li><li>Bases fortifiées</li><li>Autres Titans (masse)</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Air massif (sans AA)</li><li>Nuke (cible lente)</li><li>Autre Atlas (1v1)</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Game-ender:</strong> 1 Atlas = win si ennemi pas prepared</p></div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Zeus - Titan Mobile AA</h3>
+                        <div class="unit-badges"><span class="unit-badge role-aa">Titan Support</span><span class="unit-badge cost-very-high">12000 Metal</span></div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>HP:</strong> 35000 | <strong>DPS (Air):</strong> 1500 | <strong>Range:</strong> 350m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Titan AA. No-fly zone absolue. Protège autres Titans. DPS sol modéré.</p>
+                        <h4>✅ Fort contre:</h4>
+                        <ul><li>Tout air (détruit instantanément)</li><li>Kestrel swarms</li></ul>
+                        <h4>❌ Faible contre:</h4>
+                        <ul><li>Atlas (moins DPS sol)</li><li>Artillerie ultra-lourde</li></ul>
+                        <div class="tip-box"><p>💡 <strong>Synergie:</strong> 1 Zeus + 2 Atlas = combo ultime</p></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <button id="scrollTopBtn" title="Retour en haut">↑</button>
+    <script src="../js/main.js"></script>
+</body>
+</html>

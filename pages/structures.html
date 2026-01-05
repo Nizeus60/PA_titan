@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide des Structures - PA:Titans</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="page-title">Guide des Structures</h1>
+            <p class="page-subtitle">Économie, Défenses & Super-Armes</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">PA:TITANS</a>
+            <button class="nav-toggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="raccourcis.html">Raccourcis</a></li>
+                <li><a href="unites.html">Unités</a></li>
+                <li><a href="structures.html" class="active">Structures</a></li>
+                <li><a href="strategies.html">Stratégies</a></li>
+                <li><a href="lexique.html">Lexique</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="info-box">
+                    <h3>🏗️ L'Économie est Tout</h3>
+                    <p>Dans PA:Titans, <strong>l'économie gagne les parties</strong>. Plus de metal = plus d'unités = victoire. 
+                    Priorisez TOUJOURS les extracteurs avant l'armée en early game.</p>
+                </div>
+
+                <!-- ÉCONOMIE -->
+                <div class="section-header">
+                    <h2 class="section-title">💰 Structures Économiques</h2>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Metal Extractor T1</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-low">300 Metal</span>
+                            <span class="unit-badge priority-critical">CRITIQUE</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 300 Metal | <strong>Build Time:</strong> 30s | <strong>Production:</strong> +7 Metal/s | <strong>HP:</strong> 500</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Fondation de votre économie. TOUJOURS construire sur metal spots (repères bleus). 
+                        Chaque Mex = 7 metal/s = capacité de build 1 Dox toutes les 13 secondes.</p>
+                        <h4>💡 Priorités</h4>
+                        <ul>
+                            <li><strong>0-3min:</strong> Commander build 5-8 Mex → critiques pour early eco</li>
+                            <li><strong>3-10min:</strong> Fabbers étendent réseau metal (15-20 Mex)</li>
+                            <li><strong>10min+:</strong> Upgrade vers T2 ou défendre avec Walls/Turrets</li>
+                        </ul>
+                        <div class="tip-box">
+                            <p>💡 <strong>Ratio Optimal:</strong> 1 Fabber pour 3-4 Mex en construction constante</p>
+                            <p>💡 <strong>Placement:</strong> Toujours sur metal spots, défendez les plus exposés</p>
+                            <p>💡 <strong>Math:</strong> 10 Mex T1 = 70 metal/s = ~100 Dox/minute ou 3 Ant/minute</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Metal Extractor T2</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-high">1500 Metal</span>
+                            <span class="unit-badge priority-high">IMPORTANT</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 1500 Metal | <strong>Build Time:</strong> 60s | <strong>Production:</strong> +28 Metal/s (+300%) | <strong>HP:</strong> 3000</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Upgrade massif d'économie. x4 production d'un Mex T1. Crucial pour late game et spam T2.</p>
+                        <h4>💡 Stratégie d'Upgrade</h4>
+                        <ul>
+                            <li><strong>Timing:</strong> Commencez upgrade vers 8-12min selon stratégie</li>
+                            <li><strong>Priorisation:</strong> Upgradez Mex SÉCURISÉS (près base) en premier</li>
+                            <li><strong>Investissement:</strong> 1 Mex T2 = ROI en ~2min si metal utilisé efficacement</li>
+                            <li><strong>Nombre:</strong> 15-20 Mex T2 = économie pour spam Vanguard/Kestrel</li>
+                        </ul>
+                        <div class="warning-box">
+                            <h4>⚠️ Piège Commun</h4>
+                            <p>N'upgradez PAS tous vos Mex T1 simultanément ! Vous stall production pendant upgrade. 
+                            Upgradez 2-3 à la fois, attendez ROI, puis continuez.</p>
+                        </div>
+                        <div class="tip-box">
+                            <p>💡 <strong>Defense:</strong> Mex T2 coûteux = cible priority pour raids. Défendez avec Walls + Turrets</p>
+                            <p>💡 <strong>Math:</strong> 10 Mex T2 = 280 metal/s = économie pour 2 Vanguard/minute</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Energy Generator T1</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-low">450 Metal</span>
+                            <span class="unit-badge priority-high">IMPORTANT</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 450 Metal | <strong>Build Time:</strong> 35s | <strong>Production:</strong> +600 Energy/s | <strong>HP:</strong> 700</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Fournit énergie pour Factories, Radars, Defenses, Fabbers. Sans énergie = build speed réduite drastiquement.</p>
+                        <h4>💡 Gestion Énergétique</h4>
+                        <ul>
+                            <li><strong>Ratio:</strong> ~2-3 Energy Plants pour 10 Mex T1</li>
+                            <li><strong>Placement:</strong> Groupez-les près usines (spread = vulnérable raids)</li>
+                            <li><strong>Symptômes manque:</strong> Barre energy rouge = ralentissement production 50-90%</li>
+                            <li><strong>Priority:</strong> Moins critique que metal mais nécessaire</li>
+                        </ul>
+                        <div class="tip-box">
+                            <p>💡 <strong>Crash Économique:</strong> Si energy négatif, arrêtez production radars/defenses non-critiques</p>
+                            <p>💡 <strong>Expansion:</strong> Build 2-3 Energy Plants AVANT ouvrir nouvelle Factory</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Energy Generator T2</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-high">4500 Metal</span>
+                            <span class="unit-badge priority-medium">MOYEN</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 4500 Metal | <strong>Build Time:</strong> 90s | <strong>Production:</strong> +7200 Energy/s (+1100%) | <strong>HP:</strong> 5000</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Centrale énergétique massive. x12 production d'un T1. Essentiel pour late game (Titans, Nuke, etc).</p>
+                        <h4>💡 Transition T2 Energy</h4>
+                        <ul>
+                            <li><strong>Timing:</strong> Après 15-20 Mex T2, ou si energy constamment négatif</li>
+                            <li><strong>Nombre:</strong> 5-10 Energy T2 suffisent pour économie massive</li>
+                            <li><strong>Efficacité spatiale:</strong> 1 Energy T2 remplace ~12 Energy T1 (même espace)</li>
+                        </ul>
+                        <div class="tip-box">
+                            <p>💡 <strong>Superweapons:</strong> Nuke Launcher nécessite 10-15 Energy T2 dédiés</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Metal Storage</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-low">500 Metal</span>
+                            <span class="unit-badge priority-low">OPTIONNEL</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 500 Metal | <strong>Capacity:</strong> +5000 Metal | <strong>HP:</strong> 800</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Augmente capacité stockage metal. Utile pour burst production (rush unités massif) ou stabiliser eco.</p>
+                        <h4>💡 Quand Construire</h4>
+                        <ul>
+                            <li><strong>Situation:</strong> Metal income > spending = cap atteint rapidement</li>
+                            <li><strong>Usage:</strong> Avant gros investissements (Titan, Nuke, Halleys)</li>
+                            <li><strong>Late Game:</strong> 3-5 Storage = buffer pour situations critiques</li>
+                        </ul>
+                        <div class="tip-box">
+                            <p>💡 <strong>Priorité:</strong> Moins important que Mex. Build seulement si metal cap souvent atteint</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTION -->
+                <div class="section-header">
+                    <h2 class="section-title">🏭 Structures de Production</h2>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Bot Factory T1</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-medium">600 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 600 Metal | <strong>Build Time:</strong> 45s | <strong>Produit:</strong> Dox, Boom, Stinger, Fabber</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Usine bots légers mobiles. Excellente pour raids, harcèlement, early aggression.</p>
+                        <h4>💡 Stratégie Bot</h4>
+                        <ul>
+                            <li><strong>Opening:</strong> Populaire pour Dox rush ou Boom cheese</li>
+                            <li><strong>Avantages:</strong> Unités rapides, all-terrain (eau, falaises)</li>
+                            <li><strong>Nombre:</strong> 2-3 Bot Factories en early = production constante</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Vehicle Factory T1</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-medium">600 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 600 Metal | <strong>Build Time:</strong> 45s | <strong>Produit:</strong> Ant, Spinner, Inferno, Stump, Fabber</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Usine véhicules lourds. Standard pour armées équilibrées T1. Meilleur cost/efficiency.</p>
+                        <h4>💡 Stratégie Vehicle</h4>
+                        <ul>
+                            <li><strong>Opening:</strong> Build order classique pour jeu équilibré</li>
+                            <li><strong>Avantages:</strong> Unités solides (Ant), polyvalence (Spinner)</li>
+                            <li><strong>Composition:</strong> 70% Ant, 25% Spinner, 5% Inferno/Stump</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Air Factory T1</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-medium">600 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 600 Metal | <strong>Build Time:</strong> 45s | <strong>Produit:</strong> Hummingbird, Bumblebee, Firefly, Fabber</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Usine unités aériennes. Contrôle aérien = mobilité + vision + raids dévas tateurs.</p>
+                        <h4>💡 Stratégie Air</h4>
+                        <ul>
+                            <li><strong>Timing:</strong> Opening air = risqué mais dévastateur si ennemi pas prepared</li>
+                            <li><strong>Build:</strong> 10 Hummingbird → 10-15 Bumblebee → raids</li>
+                            <li><strong>Counter:</strong> Hard-countered par mass AA (Spinner/Stinger)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Advanced Bot Factory T2</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-very-high">2400 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 2400 Metal | <strong>Build Time:</strong> 90s | <strong>Produit:</strong> Slammer, Gil-E, Stitch, Fabber T2</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Usine bots T2 élites. Unités puissantes, mobiles, polyvalentes. Coûteux mais efficaces.</p>
+                        <h4>💡 Transition T2</h4>
+                        <ul>
+                            <li><strong>Timing:</strong> Vers 10-15min selon stratégie</li>
+                            <li><strong>Économie:</strong> Nécessite 15-20 Mex pour rentabiliser</li>
+                            <li><strong>Build:</strong> Slammer (backbone) + Gil-E (sniper) + Stitch (AA)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Advanced Vehicle Factory T2</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-very-high">2400 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 2400 Metal | <strong>Build Time:</strong> 90s | <strong>Produit:</strong> Vanguard, Leveler, Sheller, Fabber T2</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Usine véhicules T2 lourds. Tanks dévastateurs mais lents. Domination terrestre.</p>
+                        <h4>💡 Stratégie T2 Vehicles</h4>
+                        <ul>
+                            <li><strong>Vanguard Rush:</strong> 10+ Vanguard = steamroll garanti</li>
+                            <li><strong>AA Obligatoire:</strong> Spinner/Stitch = essentiel vs bombers</li>
+                            <li><strong>Nombre:</strong> 2-3 Factories T2 pour production continue</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Advanced Air Factory T2</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-very-high">2400 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 2400 Metal | <strong>Build Time:</strong> 90s | <strong>Produit:</strong> Kestrel, Hornet, Phoenix, Fabber T2</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Usine air T2. Kestrel = game-changer. Peut décider partie en quelques passages.</p>
+                        <h4>💡 Air T2 Strategy</h4>
+                        <ul>
+                            <li><strong>Timing:</strong> Rush Kestrel vers 15-18min = pic de puissance</li>
+                            <li><strong>Build:</strong> 5-8 Hornet (protection) → 5-8 Kestrel (bombers)</li>
+                            <li><strong>Snipe:</strong> 3 Kestrel = Commander dead si pas Umbrella</li>
+                        </ul>
+                        <div class="warning-box">
+                            <h4>⚠️ Counter</h4>
+                            <p>Umbrella (AA T2 static) = no-fly zone. Build Umbrella dès que ennemi a Air T2.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Orbital Launcher</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-very-high">2400 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 2400 Metal | <strong>Build Time:</strong> 90s | <strong>Produit:</strong> Avenger, Anchor, SXX, Fabber Orbital</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Lance unités orbitales. Contrôle layer orbital = vision totale + frappe globale.</p>
+                        <h4>💡 Stratégie Orbital</h4>
+                        <ul>
+                            <li><strong>Vision:</strong> Satellites radar = vision permanente planète entière</li>
+                            <li><strong>Defense:</strong> Anchor = protège vs invasions orbitales</li>
+                            <li><strong>Late Game:</strong> SXX Laser Satellite = détruit armées depuis orbite</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Titan Foundry</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-very-high">10000 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 10000 Metal | <strong>Build Time:</strong> 180s | <strong>Produit:</strong> Atlas, Zeus, Ares, Helios</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Forge de Titans. Unités ultra-lourdes game-ending. Nécessite économie massive (40+ Mex T2).</p>
+                        <h4>💡 Stratégie Titan</h4>
+                        <ul>
+                            <li><strong>Timing:</strong> 25-30min minimum (rarement avant)</li>
+                            <li><strong>Atlas:</strong> 45000 HP, 2000 DPS = force de la nature</li>
+                            <li><strong>Zeus:</strong> AA Titan, protège Atlas des air swarms</li>
+                            <li><strong>Combo:</strong> 1 Zeus + 2 Atlas = quasi-unstoppable</li>
+                        </ul>
+                        <div class="success-box">
+                            <h4>🏆 Win Condition</h4>
+                            <p>Premier joueur à sortir Titan avec support adéquat (AA, economy) gagne généralement la partie.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DÉFENSES -->
+                <div class="section-header">
+                    <h2 class="section-title">🛡️ Structures Défensives</h2>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Single Laser Defense Tower</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-low">300 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 300 Metal | <strong>HP:</strong> 1000 | <strong>DPS:</strong> 100 | <strong>Range:</strong> 100m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Turret basique anti-sol. Protège Mex et choke points vs raids T1.</p>
+                        <h4>💡 Placement Optimal</h4>
+                        <ul>
+                            <li><strong>Mex exposés:</strong> 1-2 Turrets + Walls = défense efficace</li>
+                            <li><strong>Choke points:</strong> Passages étroits = force engagement</li>
+                            <li><strong>Nombre:</strong> 3-5 Turrets groupés stoppent raids T1</li>
+                        </ul>
+                        <div class="tip-box">
+                            <p>💡 <strong>Limitation:</strong> Ne tire PAS en l'air. Nécessite AA séparée.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Double Laser Defense Tower (Catalyst)</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-high">2200 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 2200 Metal | <strong>HP:</strong> 5000 | <strong>DPS:</strong> 500 | <strong>Range:</strong> 150m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Turret T2 dévastatrice. Double laser = DPS massif. Stoppe assauts T1/T2.</p>
+                        <h4>💡 Utilisation</h4>
+                        <ul>
+                            <li><strong>Base Defense:</strong> 2-3 Catalyst = mur quasi-imprenable</li>
+                            <li><strong>Choke Points:</strong> + Walls = kill zone fatale</li>
+                            <li><strong>Coût:</strong> Expensive, réservez zones critiques</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Air Defense Tower (AA)</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-medium">400 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 400 Metal | <strong>HP:</strong> 800 | <strong>DPS (Air):</strong> 150 | <strong>Range:</strong> 120m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Defense AA statique T1. Protège contre raids aériens précoces.</p>
+                        <h4>💡 Coverage</h4>
+                        <ul>
+                            <li><strong>Base:</strong> 3-5 AA Towers = protection minimale</li>
+                            <li><strong>Mex importants:</strong> 1 AA Tower par cluster de 3-4 Mex</li>
+                            <li><strong>Overlap:</strong> Ranges qui se chevauchent = meilleur</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Umbrella (AA T2)</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-very-high">4500 Metal</span>
+                            <span class="unit-badge priority-critical">CRITIQUE</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 4500 Metal | <strong>HP:</strong> 8000 | <strong>DPS (Air):</strong> 800 | <strong>Range:</strong> 300m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>AA T2 élite. No-fly zone absolue. ESSENTIEL vs Kestrel. Portée massive.</p>
+                        <h4>💡 Defense vs Air T2</h4>
+                        <ul>
+                            <li><strong>Timing:</strong> Build dès que ennemi a Air Factory T2</li>
+                            <li><strong>Coverage:</strong> 1 Umbrella = rayon 300m protégé</li>
+                            <li><strong>Nombre:</strong> 2-3 Umbrella = base quasi-invulnérable air</li>
+                            <li><strong>Priorité:</strong> Protégez Factories T2, Mex clusters, Commander</li>
+                        </ul>
+                        <div class="warning-box">
+                            <h4>⚠️ Sans Umbrella</h4>
+                            <p>3-5 Kestrel peuvent détruire votre base entière en 2-3 minutes. Umbrella = survie.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Holkins (Artillery T2)</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-very-high">6000 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 6000 Metal | <strong>HP:</strong> 10000 | <strong>DPS:</strong> 300 (AoE) | <strong>Range:</strong> 600m</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Artillery statique ultra-longue portée. Bombarde depuis sécurité totale. Defensive/offensive.</p>
+                        <h4>💡 Utilisation</h4>
+                        <ul>
+                            <li><strong>Defense:</strong> Protège approches de base (outrange tout T1/T2)</li>
+                            <li><strong>Offense:</strong> Bombarde bases ennemies de loin avec radar vision</li>
+                            <li><strong>Nombre:</strong> 3-5 Holkins = artillerie dévastatrice</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Wall</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-low">25 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 25 Metal | <strong>HP:</strong> 5000 | <strong>Block:</strong> Passage</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Bloque passage unités terrestres. Crée choke points, ralentit assauts, protège structures.</p>
+                        <h4>💡 Tactiques Walls</h4>
+                        <ul>
+                            <li><strong>Choke Points:</strong> Forcez engagements dans zones étroites</li>
+                            <li><strong>Mex Protection:</strong> Walling Mex = ralentit raids, donne temps réaction</li>
+                            <li><strong>Base Perimeter:</strong> Mur extérieur = détection early raids</li>
+                            <li><strong>Turret Support:</strong> Walls + Turrets = synergie mortelle</li>
+                        </ul>
+                        <div class="tip-box">
+                            <p>💡 <strong>Cost Efficiency:</strong> Walls = défense la moins chère. Spam-les généreusement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUPER-ARMES -->
+                <div class="section-header">
+                    <h2 class="section-title">☢️ Super-Armes</h2>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Nuclear Missile Launcher</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-very-high">18000 Metal</span>
+                            <span class="unit-badge priority-high">GAME-CHANGER</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Launcher:</strong> 18000 Metal | <strong>Missile:</strong> 32000 Metal | <strong>Dégâts:</strong> 37500 (AoE 150m)</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Arme nucléaire dévastatrice. One-shot bases entières. Win condition si ennemi pas prepared.</p>
+                        <h4>💡 Stratégie Nuke</h4>
+                        <ul>
+                            <li><strong>Économie:</strong> Nécessite 50+ Mex T2 pour Launcher + Missiles</li>
+                            <li><strong>Timing:</strong> Rarement avant 25-30min</li>
+                            <li><strong>Targets:</strong> Clusters Mex T2, Factories, Titan Foundry, Commander</li>
+                            <li><strong>Production:</strong> Build 3-5 missiles simultanément = saturation AA</li>
+                        </ul>
+                        <div class="warning-box">
+                            <h4>⚠️ Counter: Anti-Nuke</h4>
+                            <p>Anti-Nuke Defense = intercepte 1 nuke. Nécessite 1 Anti-Nuke par angle d'attaque.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Anti-Nuke Defense</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-very-high">18000 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Launcher:</strong> 18000 Metal | <strong>Missile:</strong> 10000 Metal | <strong>Range:</strong> 350m interception</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Intercepte missiles nucléaires. Sauve base de destruction totale.</p>
+                        <h4>💡 Defense Anti-Nuke</h4>
+                        <ul>
+                            <li><strong>Timing:</strong> Build dès que vous suspect nuke ennemi (~20min+)</li>
+                            <li><strong>Coverage:</strong> 1 Anti-Nuke = rayon 350m protégé</li>
+                            <li><strong>Missiles:</strong> Keep 3-5 missiles loaded (production continue)</li>
+                            <li><strong>Nombre:</strong> 2-3 Anti-Nuke = protection multi-angles</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Halleys (Planet Engines)</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-very-high">75000 Metal EACH</span>
+                            <span class="unit-badge priority-critical">ULTIMATE</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 75000 Metal chacun | <strong>Required:</strong> Multiple (varie selon taille planète)</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Propulseurs planétaires. Transforme planète/lune en arme. SMASH dans autre planète = destruction totale.</p>
+                        <h4>💡 Stratégie Halley</h4>
+                        <ul>
+                            <li><strong>Économie:</strong> Nécessite 100+ Mex T2 minimum</li>
+                            <li><strong>Timing:</strong> Late game only (35-45min+)</li>
+                            <li><strong>Setup:</strong> Conquérir lune/small planet → Build Halleys → SMASH</li>
+                            <li><strong>Nombre:</strong> Varie (petite lune = 3-5, grosse = 10-15)</li>
+                        </ul>
+                        <div class="success-box">
+                            <h4>🌍 Armageddon</h4>
+                            <p>Réussir un planet smash = victoire instantanée. Ennemi doit destroy Halleys ou évacuer planète.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UTILITAIRES -->
+                <div class="section-header">
+                    <h2 class="section-title">🔧 Structures Utilitaires</h2>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Radar T1</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-medium">600 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 600 Metal | <strong>Range:</strong> 300m | <strong>Energy:</strong> -300/s</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Vision étendue. Détecte unités ennemies (pas structures). Essentiel pour scouting.</p>
+                        <h4>💡 Coverage Radar</h4>
+                        <ul>
+                            <li><strong>Early:</strong> 1-2 Radar T1 près base = sécurité</li>
+                            <li><strong>Expansion:</strong> Radar aux frontières = early warning raids</li>
+                            <li><strong>Artillery:</strong> Radar + Stump/Sheller/Holkins = bombardement longue portée</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Advanced Radar T2</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-high">3600 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 3600 Metal | <strong>Range:</strong> 600m | <strong>Energy:</strong> -1500/s</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Radar longue portée. Vision massive. Détecte mouvements ennemis early.</p>
+                        <h4>💡 Utilisation</h4>
+                        <ul>
+                            <li><strong>Center Map:</strong> 1 Advanced Radar = vision ~50% map</li>
+                            <li><strong>Strategic:</strong> Placement hauteur = bonus range</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-header">
+                        <h3>Teleporter</h3>
+                        <div class="unit-badges">
+                            <span class="unit-badge cost-very-high">9000 Metal</span>
+                        </div>
+                    </div>
+                    <div class="unit-content">
+                        <p><strong>Coût:</strong> 9000 Metal EACH | <strong>Energy:</strong> -5000/s | <strong>Linked:</strong> Paires</p>
+                        <h4>🎯 Rôle</h4>
+                        <p>Téléportation instantanée unités entre 2 points. Mobilité stratégique ultime.</p>
+                        <h4>💡 Tactiques Teleporter</h4>
+                        <ul>
+                            <li><strong>Base → Frontline:</strong> Renfort instantané</li>
+                            <li><strong>Flanking:</strong> Téléportez armée derrière lignes ennemies</li>
+                            <li><strong>Commander Snipe:</strong> Téléportez 50 Slammer dans base = kill</li>
+                        </ul>
+                        <div class="tip-box">
+                            <p>💡 <strong>Defense:</strong> Protégez Teleporters avec Walls + Turrets (high-value targets)</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <button id="scrollTopBtn" title="Retour en haut">↑</button>
+    <script src="../js/main.js"></script>
+</body>
+</html>
