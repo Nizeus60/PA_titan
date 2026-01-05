@@ -1072,3 +1072,424 @@ footer::before {
 .mb-2 { margin-bottom: 20px; }
 .mb-3 { margin-bottom: 30px; }
 .mb-4 { margin-bottom: 40px; }
+
+/* ===================================
+   Table des Matières (TOC)
+   =================================== */
+.toc-container {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px 0;
+}
+
+.toc-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.toc-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition-normal);
+}
+
+.toc-item:hover {
+    border-color: var(--primary-orange);
+    background: rgba(255, 107, 53, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.2);
+}
+
+.toc-icon {
+    font-size: 1.5rem;
+}
+
+.toc-text {
+    flex: 1;
+    font-weight: 600;
+}
+
+.toc-badge {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===================================
+   Filtres
+   =================================== */
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.filter-label {
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--primary-orange), var(--warning-red));
+    border-color: var(--primary-orange);
+    color: white;
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+}
+
+/* ===================================
+   Unit Cards Améliorées
+   =================================== */
+.unit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.unit-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition-normal);
+}
+
+.unit-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+}
+
+.unit-card.titan-card {
+    border-color: var(--accent-purple);
+    background: linear-gradient(135deg, var(--card-bg), rgba(139, 92, 246, 0.1));
+}
+
+.unit-card.titan-card:hover {
+    border-color: var(--accent-purple);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.3);
+}
+
+.unit-header {
+    padding: 20px 25px;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 212, 255, 0.05));
+    border-bottom: 1px solid var(--border-color);
+}
+
+.unit-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.unit-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: var(--primary-blue);
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.unit-role {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.unit-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.unit-badge {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.role-assault { background: var(--primary-orange); color: var(--dark-bg); }
+.role-aa { background: var(--primary-blue); color: var(--dark-bg); }
+.role-fighter { background: #4CAF50; color: white; }
+.role-bomber { background: #FF5722; color: white; }
+.role-suicide { background: var(--warning-red); color: white; }
+.role-sniper { background: #9C27B0; color: white; }
+.role-artillery { background: #795548; color: white; }
+
+.cost-low { background: var(--success-green); color: var(--dark-bg); }
+.cost-medium { background: var(--warning-yellow); color: var(--dark-bg); }
+.cost-high { background: var(--primary-orange); color: var(--dark-bg); }
+.cost-very-high { background: var(--warning-red); color: white; }
+
+.tier-naval {
+    background: linear-gradient(135deg, #0077B6, #00B4D8);
+    color: white;
+}
+
+/* Unit Stats Grid */
+.unit-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 15px 25px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.unit-stats.titan-stats {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(255, 107, 53, 0.1));
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+}
+
+.stat-value.warning {
+    color: var(--warning-red);
+}
+
+/* Unit Content */
+.unit-content {
+    padding: 20px 25px;
+}
+
+.unit-description {
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.unit-matchups {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.matchup-section {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+}
+
+.matchup-title {
+    display: block;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.matchup-title.strong { color: var(--success-green); }
+.matchup-title.weak { color: var(--warning-red); }
+
+.matchup-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.counter-item,
+.weakness-item {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.counter-item {
+    background: rgba(59, 255, 107, 0.15);
+    border: 1px solid var(--success-green);
+    color: var(--success-green);
+}
+
+.weakness-item {
+    background: rgba(255, 59, 59, 0.15);
+    border: 1px solid var(--warning-red);
+    color: var(--warning-red);
+}
+
+/* Unit Tips */
+.unit-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 212, 255, 0.05));
+    border-top: 1px solid var(--border-color);
+}
+
+.tip-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.unit-tip p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.unit-tip strong {
+    color: var(--primary-orange);
+}
+
+/* Unit Section Styling */
+.unit-section {
+    transition: opacity 0.3s ease;
+}
+
+/* ===================================
+   Page Title Styles (pour pages internes)
+   =================================== */
+.page-title {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, var(--primary-orange), var(--primary-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+/* ===================================
+   Responsive pour Unit Cards
+   =================================== */
+@media (max-width: 900px) {
+    .unit-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .unit-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .unit-matchups {
+        grid-template-columns: 1fr;
+    }
+    
+    .toc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .toc-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-buttons {
+        width: 100%;
+    }
+    
+    .filter-btn {
+        flex: 1;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .unit-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .unit-name {
+        font-size: 1.2rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+}

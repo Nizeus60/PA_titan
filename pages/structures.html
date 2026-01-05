@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guide des Structures - PA:Titans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1 class="page-title">Guide des Structures</h1>
-            <p class="page-subtitle">Économie, Défenses & Super-Armes</p>
+            <h1 class="site-title">Guide des Structures</h1>
+            <p class="site-subtitle">Bâtiments, Défenses & Économie</p>
+            <p class="site-description">Tout ce qu'il faut savoir sur les structures : factories, défenses, économie et bâtiments spéciaux.</p>
         </div>
     </header>
 
     <nav>
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">PA:TITANS</a>
-            <button class="nav-toggle"><span></span><span></span><span></span></button>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
             <ul class="nav-menu">
                 <li><a href="../index.html">Accueil</a></li>
                 <li><a href="raccourcis.html">Raccourcis</a></li>
@@ -31,613 +34,1018 @@
     </nav>
 
     <main>
-        <section class="section">
+        <section class="section" style="padding-bottom: 40px;">
             <div class="container">
                 <div class="info-box">
-                    <h3>🏗️ L'Économie est Tout</h3>
-                    <p>Dans PA:Titans, <strong>l'économie gagne les parties</strong>. Plus de metal = plus d'unités = victoire. 
-                    Priorisez TOUJOURS les extracteurs avant l'armée en early game.</p>
+                    <h3 class="info-box-title">🏗️ Guide de Lecture</h3>
+                    <p><strong>HP</strong> = Points de vie | <strong>Coût</strong> = Metal requis | <strong>Build</strong> = Temps de construction</p>
+                    <p><strong>T1</strong> = Tier 1 (basique) | <strong>T2</strong> = Tier 2 (avancé) | Stats susceptibles de varier selon patchs</p>
                 </div>
 
-                <!-- ÉCONOMIE -->
-                <div class="section-header">
-                    <h2 class="section-title">💰 Structures Économiques</h2>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Metal Extractor T1</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-low">300 Metal</span>
-                            <span class="unit-badge priority-critical">CRITIQUE</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 300 Metal | <strong>Build Time:</strong> 30s | <strong>Production:</strong> +7 Metal/s | <strong>HP:</strong> 500</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Fondation de votre économie. TOUJOURS construire sur metal spots (repères bleus). 
-                        Chaque Mex = 7 metal/s = capacité de build 1 Dox toutes les 13 secondes.</p>
-                        <h4>💡 Priorités</h4>
-                        <ul>
-                            <li><strong>0-3min:</strong> Commander build 5-8 Mex → critiques pour early eco</li>
-                            <li><strong>3-10min:</strong> Fabbers étendent réseau metal (15-20 Mex)</li>
-                            <li><strong>10min+:</strong> Upgrade vers T2 ou défendre avec Walls/Turrets</li>
-                        </ul>
-                        <div class="tip-box">
-                            <p>💡 <strong>Ratio Optimal:</strong> 1 Fabber pour 3-4 Mex en construction constante</p>
-                            <p>💡 <strong>Placement:</strong> Toujours sur metal spots, défendez les plus exposés</p>
-                            <p>💡 <strong>Math:</strong> 10 Mex T1 = 70 metal/s = ~100 Dox/minute ou 3 Ant/minute</p>
-                        </div>
+                <div class="toc-container">
+                    <h3 class="toc-title">📑 Navigation Rapide</h3>
+                    <div class="toc-grid">
+                        <a href="#factories" class="toc-item"><span class="toc-icon">🏭</span><span class="toc-text">Factories</span><span class="toc-badge tier-t1">T1/T2</span></a>
+                        <a href="#economie" class="toc-item"><span class="toc-icon">💰</span><span class="toc-text">Économie</span><span class="toc-badge tier-t1">T1/T2</span></a>
+                        <a href="#defense-t1" class="toc-item"><span class="toc-icon">🛡️</span><span class="toc-text">Défense T1</span><span class="toc-badge tier-t1">T1</span></a>
+                        <a href="#defense-t2" class="toc-item"><span class="toc-icon">🏰</span><span class="toc-text">Défense T2</span><span class="toc-badge tier-t2">T2</span></a>
+                        <a href="#intel" class="toc-item"><span class="toc-icon">📡</span><span class="toc-text">Intel & Radar</span><span class="toc-badge tier-t1">T1/T2</span></a>
+                        <a href="#nucleaire" class="toc-item"><span class="toc-icon">☢️</span><span class="toc-text">Nucléaire</span><span class="toc-badge tier-t2">T2</span></a>
+                        <a href="#special" class="toc-item"><span class="toc-icon">⭐</span><span class="toc-text">Spécial</span><span class="toc-badge tier-titan">LATE</span></a>
                     </div>
                 </div>
 
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Metal Extractor T2</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-high">1500 Metal</span>
-                            <span class="unit-badge priority-high">IMPORTANT</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 1500 Metal | <strong>Build Time:</strong> 60s | <strong>Production:</strong> +28 Metal/s (+300%) | <strong>HP:</strong> 3000</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Upgrade massif d'économie. x4 production d'un Mex T1. Crucial pour late game et spam T2.</p>
-                        <h4>💡 Stratégie d'Upgrade</h4>
-                        <ul>
-                            <li><strong>Timing:</strong> Commencez upgrade vers 8-12min selon stratégie</li>
-                            <li><strong>Priorisation:</strong> Upgradez Mex SÉCURISÉS (près base) en premier</li>
-                            <li><strong>Investissement:</strong> 1 Mex T2 = ROI en ~2min si metal utilisé efficacement</li>
-                            <li><strong>Nombre:</strong> 15-20 Mex T2 = économie pour spam Vanguard/Kestrel</li>
-                        </ul>
-                        <div class="warning-box">
-                            <h4>⚠️ Piège Commun</h4>
-                            <p>N'upgradez PAS tous vos Mex T1 simultanément ! Vous stall production pendant upgrade. 
-                            Upgradez 2-3 à la fois, attendez ROI, puis continuez.</p>
-                        </div>
-                        <div class="tip-box">
-                            <p>💡 <strong>Defense:</strong> Mex T2 coûteux = cible priority pour raids. Défendez avec Walls + Turrets</p>
-                            <p>💡 <strong>Math:</strong> 10 Mex T2 = 280 metal/s = économie pour 2 Vanguard/minute</p>
-                        </div>
+                <div class="filter-container">
+                    <span class="filter-label">Filtrer par :</span>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Tout</button>
+                        <button class="filter-btn" data-filter="t1">T1</button>
+                        <button class="filter-btn" data-filter="t2">T2</button>
+                        <button class="filter-btn" data-filter="economy">Économie</button>
+                        <button class="filter-btn" data-filter="defense">Défense</button>
+                        <button class="filter-btn" data-filter="factory">Factories</button>
                     </div>
                 </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Energy Generator T1</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-low">450 Metal</span>
-                            <span class="unit-badge priority-high">IMPORTANT</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 450 Metal | <strong>Build Time:</strong> 35s | <strong>Production:</strong> +600 Energy/s | <strong>HP:</strong> 700</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Fournit énergie pour Factories, Radars, Defenses, Fabbers. Sans énergie = build speed réduite drastiquement.</p>
-                        <h4>💡 Gestion Énergétique</h4>
-                        <ul>
-                            <li><strong>Ratio:</strong> ~2-3 Energy Plants pour 10 Mex T1</li>
-                            <li><strong>Placement:</strong> Groupez-les près usines (spread = vulnérable raids)</li>
-                            <li><strong>Symptômes manque:</strong> Barre energy rouge = ralentissement production 50-90%</li>
-                            <li><strong>Priority:</strong> Moins critique que metal mais nécessaire</li>
-                        </ul>
-                        <div class="tip-box">
-                            <p>💡 <strong>Crash Économique:</strong> Si energy négatif, arrêtez production radars/defenses non-critiques</p>
-                            <p>💡 <strong>Expansion:</strong> Build 2-3 Energy Plants AVANT ouvrir nouvelle Factory</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Energy Generator T2</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-high">4500 Metal</span>
-                            <span class="unit-badge priority-medium">MOYEN</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 4500 Metal | <strong>Build Time:</strong> 90s | <strong>Production:</strong> +7200 Energy/s (+1100%) | <strong>HP:</strong> 5000</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Centrale énergétique massive. x12 production d'un T1. Essentiel pour late game (Titans, Nuke, etc).</p>
-                        <h4>💡 Transition T2 Energy</h4>
-                        <ul>
-                            <li><strong>Timing:</strong> Après 15-20 Mex T2, ou si energy constamment négatif</li>
-                            <li><strong>Nombre:</strong> 5-10 Energy T2 suffisent pour économie massive</li>
-                            <li><strong>Efficacité spatiale:</strong> 1 Energy T2 remplace ~12 Energy T1 (même espace)</li>
-                        </ul>
-                        <div class="tip-box">
-                            <p>💡 <strong>Superweapons:</strong> Nuke Launcher nécessite 10-15 Energy T2 dédiés</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Metal Storage</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-low">500 Metal</span>
-                            <span class="unit-badge priority-low">OPTIONNEL</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 500 Metal | <strong>Capacity:</strong> +5000 Metal | <strong>HP:</strong> 800</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Augmente capacité stockage metal. Utile pour burst production (rush unités massif) ou stabiliser eco.</p>
-                        <h4>💡 Quand Construire</h4>
-                        <ul>
-                            <li><strong>Situation:</strong> Metal income > spending = cap atteint rapidement</li>
-                            <li><strong>Usage:</strong> Avant gros investissements (Titan, Nuke, Halleys)</li>
-                            <li><strong>Late Game:</strong> 3-5 Storage = buffer pour situations critiques</li>
-                        </ul>
-                        <div class="tip-box">
-                            <p>💡 <strong>Priorité:</strong> Moins important que Mex. Build seulement si metal cap souvent atteint</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PRODUCTION -->
-                <div class="section-header">
-                    <h2 class="section-title">🏭 Structures de Production</h2>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Bot Factory T1</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-medium">600 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 600 Metal | <strong>Build Time:</strong> 45s | <strong>Produit:</strong> Dox, Boom, Stinger, Fabber</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Usine bots légers mobiles. Excellente pour raids, harcèlement, early aggression.</p>
-                        <h4>💡 Stratégie Bot</h4>
-                        <ul>
-                            <li><strong>Opening:</strong> Populaire pour Dox rush ou Boom cheese</li>
-                            <li><strong>Avantages:</strong> Unités rapides, all-terrain (eau, falaises)</li>
-                            <li><strong>Nombre:</strong> 2-3 Bot Factories en early = production constante</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Vehicle Factory T1</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-medium">600 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 600 Metal | <strong>Build Time:</strong> 45s | <strong>Produit:</strong> Ant, Spinner, Inferno, Stump, Fabber</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Usine véhicules lourds. Standard pour armées équilibrées T1. Meilleur cost/efficiency.</p>
-                        <h4>💡 Stratégie Vehicle</h4>
-                        <ul>
-                            <li><strong>Opening:</strong> Build order classique pour jeu équilibré</li>
-                            <li><strong>Avantages:</strong> Unités solides (Ant), polyvalence (Spinner)</li>
-                            <li><strong>Composition:</strong> 70% Ant, 25% Spinner, 5% Inferno/Stump</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Air Factory T1</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-medium">600 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 600 Metal | <strong>Build Time:</strong> 45s | <strong>Produit:</strong> Hummingbird, Bumblebee, Firefly, Fabber</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Usine unités aériennes. Contrôle aérien = mobilité + vision + raids dévas tateurs.</p>
-                        <h4>💡 Stratégie Air</h4>
-                        <ul>
-                            <li><strong>Timing:</strong> Opening air = risqué mais dévastateur si ennemi pas prepared</li>
-                            <li><strong>Build:</strong> 10 Hummingbird → 10-15 Bumblebee → raids</li>
-                            <li><strong>Counter:</strong> Hard-countered par mass AA (Spinner/Stinger)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Advanced Bot Factory T2</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-very-high">2400 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 2400 Metal | <strong>Build Time:</strong> 90s | <strong>Produit:</strong> Slammer, Gil-E, Stitch, Fabber T2</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Usine bots T2 élites. Unités puissantes, mobiles, polyvalentes. Coûteux mais efficaces.</p>
-                        <h4>💡 Transition T2</h4>
-                        <ul>
-                            <li><strong>Timing:</strong> Vers 10-15min selon stratégie</li>
-                            <li><strong>Économie:</strong> Nécessite 15-20 Mex pour rentabiliser</li>
-                            <li><strong>Build:</strong> Slammer (backbone) + Gil-E (sniper) + Stitch (AA)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Advanced Vehicle Factory T2</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-very-high">2400 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 2400 Metal | <strong>Build Time:</strong> 90s | <strong>Produit:</strong> Vanguard, Leveler, Sheller, Fabber T2</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Usine véhicules T2 lourds. Tanks dévastateurs mais lents. Domination terrestre.</p>
-                        <h4>💡 Stratégie T2 Vehicles</h4>
-                        <ul>
-                            <li><strong>Vanguard Rush:</strong> 10+ Vanguard = steamroll garanti</li>
-                            <li><strong>AA Obligatoire:</strong> Spinner/Stitch = essentiel vs bombers</li>
-                            <li><strong>Nombre:</strong> 2-3 Factories T2 pour production continue</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Advanced Air Factory T2</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-very-high">2400 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 2400 Metal | <strong>Build Time:</strong> 90s | <strong>Produit:</strong> Kestrel, Hornet, Phoenix, Fabber T2</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Usine air T2. Kestrel = game-changer. Peut décider partie en quelques passages.</p>
-                        <h4>💡 Air T2 Strategy</h4>
-                        <ul>
-                            <li><strong>Timing:</strong> Rush Kestrel vers 15-18min = pic de puissance</li>
-                            <li><strong>Build:</strong> 5-8 Hornet (protection) → 5-8 Kestrel (bombers)</li>
-                            <li><strong>Snipe:</strong> 3 Kestrel = Commander dead si pas Umbrella</li>
-                        </ul>
-                        <div class="warning-box">
-                            <h4>⚠️ Counter</h4>
-                            <p>Umbrella (AA T2 static) = no-fly zone. Build Umbrella dès que ennemi a Air T2.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Orbital Launcher</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-very-high">2400 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 2400 Metal | <strong>Build Time:</strong> 90s | <strong>Produit:</strong> Avenger, Anchor, SXX, Fabber Orbital</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Lance unités orbitales. Contrôle layer orbital = vision totale + frappe globale.</p>
-                        <h4>💡 Stratégie Orbital</h4>
-                        <ul>
-                            <li><strong>Vision:</strong> Satellites radar = vision permanente planète entière</li>
-                            <li><strong>Defense:</strong> Anchor = protège vs invasions orbitales</li>
-                            <li><strong>Late Game:</strong> SXX Laser Satellite = détruit armées depuis orbite</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Titan Foundry</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-very-high">10000 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 10000 Metal | <strong>Build Time:</strong> 180s | <strong>Produit:</strong> Atlas, Zeus, Ares, Helios</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Forge de Titans. Unités ultra-lourdes game-ending. Nécessite économie massive (40+ Mex T2).</p>
-                        <h4>💡 Stratégie Titan</h4>
-                        <ul>
-                            <li><strong>Timing:</strong> 25-30min minimum (rarement avant)</li>
-                            <li><strong>Atlas:</strong> 45000 HP, 2000 DPS = force de la nature</li>
-                            <li><strong>Zeus:</strong> AA Titan, protège Atlas des air swarms</li>
-                            <li><strong>Combo:</strong> 1 Zeus + 2 Atlas = quasi-unstoppable</li>
-                        </ul>
-                        <div class="success-box">
-                            <h4>🏆 Win Condition</h4>
-                            <p>Premier joueur à sortir Titan avec support adéquat (AA, economy) gagne généralement la partie.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DÉFENSES -->
-                <div class="section-header">
-                    <h2 class="section-title">🛡️ Structures Défensives</h2>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Single Laser Defense Tower</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-low">300 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 300 Metal | <strong>HP:</strong> 1000 | <strong>DPS:</strong> 100 | <strong>Range:</strong> 100m</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Turret basique anti-sol. Protège Mex et choke points vs raids T1.</p>
-                        <h4>💡 Placement Optimal</h4>
-                        <ul>
-                            <li><strong>Mex exposés:</strong> 1-2 Turrets + Walls = défense efficace</li>
-                            <li><strong>Choke points:</strong> Passages étroits = force engagement</li>
-                            <li><strong>Nombre:</strong> 3-5 Turrets groupés stoppent raids T1</li>
-                        </ul>
-                        <div class="tip-box">
-                            <p>💡 <strong>Limitation:</strong> Ne tire PAS en l'air. Nécessite AA séparée.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Double Laser Defense Tower (Catalyst)</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-high">2200 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 2200 Metal | <strong>HP:</strong> 5000 | <strong>DPS:</strong> 500 | <strong>Range:</strong> 150m</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Turret T2 dévastatrice. Double laser = DPS massif. Stoppe assauts T1/T2.</p>
-                        <h4>💡 Utilisation</h4>
-                        <ul>
-                            <li><strong>Base Defense:</strong> 2-3 Catalyst = mur quasi-imprenable</li>
-                            <li><strong>Choke Points:</strong> + Walls = kill zone fatale</li>
-                            <li><strong>Coût:</strong> Expensive, réservez zones critiques</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Air Defense Tower (AA)</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-medium">400 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 400 Metal | <strong>HP:</strong> 800 | <strong>DPS (Air):</strong> 150 | <strong>Range:</strong> 120m</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Defense AA statique T1. Protège contre raids aériens précoces.</p>
-                        <h4>💡 Coverage</h4>
-                        <ul>
-                            <li><strong>Base:</strong> 3-5 AA Towers = protection minimale</li>
-                            <li><strong>Mex importants:</strong> 1 AA Tower par cluster de 3-4 Mex</li>
-                            <li><strong>Overlap:</strong> Ranges qui se chevauchent = meilleur</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Umbrella (AA T2)</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-very-high">4500 Metal</span>
-                            <span class="unit-badge priority-critical">CRITIQUE</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 4500 Metal | <strong>HP:</strong> 8000 | <strong>DPS (Air):</strong> 800 | <strong>Range:</strong> 300m</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>AA T2 élite. No-fly zone absolue. ESSENTIEL vs Kestrel. Portée massive.</p>
-                        <h4>💡 Defense vs Air T2</h4>
-                        <ul>
-                            <li><strong>Timing:</strong> Build dès que ennemi a Air Factory T2</li>
-                            <li><strong>Coverage:</strong> 1 Umbrella = rayon 300m protégé</li>
-                            <li><strong>Nombre:</strong> 2-3 Umbrella = base quasi-invulnérable air</li>
-                            <li><strong>Priorité:</strong> Protégez Factories T2, Mex clusters, Commander</li>
-                        </ul>
-                        <div class="warning-box">
-                            <h4>⚠️ Sans Umbrella</h4>
-                            <p>3-5 Kestrel peuvent détruire votre base entière en 2-3 minutes. Umbrella = survie.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Holkins (Artillery T2)</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-very-high">6000 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 6000 Metal | <strong>HP:</strong> 10000 | <strong>DPS:</strong> 300 (AoE) | <strong>Range:</strong> 600m</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Artillery statique ultra-longue portée. Bombarde depuis sécurité totale. Defensive/offensive.</p>
-                        <h4>💡 Utilisation</h4>
-                        <ul>
-                            <li><strong>Defense:</strong> Protège approches de base (outrange tout T1/T2)</li>
-                            <li><strong>Offense:</strong> Bombarde bases ennemies de loin avec radar vision</li>
-                            <li><strong>Nombre:</strong> 3-5 Holkins = artillerie dévastatrice</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Wall</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-low">25 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 25 Metal | <strong>HP:</strong> 5000 | <strong>Block:</strong> Passage</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Bloque passage unités terrestres. Crée choke points, ralentit assauts, protège structures.</p>
-                        <h4>💡 Tactiques Walls</h4>
-                        <ul>
-                            <li><strong>Choke Points:</strong> Forcez engagements dans zones étroites</li>
-                            <li><strong>Mex Protection:</strong> Walling Mex = ralentit raids, donne temps réaction</li>
-                            <li><strong>Base Perimeter:</strong> Mur extérieur = détection early raids</li>
-                            <li><strong>Turret Support:</strong> Walls + Turrets = synergie mortelle</li>
-                        </ul>
-                        <div class="tip-box">
-                            <p>💡 <strong>Cost Efficiency:</strong> Walls = défense la moins chère. Spam-les généreusement.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SUPER-ARMES -->
-                <div class="section-header">
-                    <h2 class="section-title">☢️ Super-Armes</h2>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Nuclear Missile Launcher</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-very-high">18000 Metal</span>
-                            <span class="unit-badge priority-high">GAME-CHANGER</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Launcher:</strong> 18000 Metal | <strong>Missile:</strong> 32000 Metal | <strong>Dégâts:</strong> 37500 (AoE 150m)</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Arme nucléaire dévastatrice. One-shot bases entières. Win condition si ennemi pas prepared.</p>
-                        <h4>💡 Stratégie Nuke</h4>
-                        <ul>
-                            <li><strong>Économie:</strong> Nécessite 50+ Mex T2 pour Launcher + Missiles</li>
-                            <li><strong>Timing:</strong> Rarement avant 25-30min</li>
-                            <li><strong>Targets:</strong> Clusters Mex T2, Factories, Titan Foundry, Commander</li>
-                            <li><strong>Production:</strong> Build 3-5 missiles simultanément = saturation AA</li>
-                        </ul>
-                        <div class="warning-box">
-                            <h4>⚠️ Counter: Anti-Nuke</h4>
-                            <p>Anti-Nuke Defense = intercepte 1 nuke. Nécessite 1 Anti-Nuke par angle d'attaque.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Anti-Nuke Defense</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-very-high">18000 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Launcher:</strong> 18000 Metal | <strong>Missile:</strong> 10000 Metal | <strong>Range:</strong> 350m interception</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Intercepte missiles nucléaires. Sauve base de destruction totale.</p>
-                        <h4>💡 Defense Anti-Nuke</h4>
-                        <ul>
-                            <li><strong>Timing:</strong> Build dès que vous suspect nuke ennemi (~20min+)</li>
-                            <li><strong>Coverage:</strong> 1 Anti-Nuke = rayon 350m protégé</li>
-                            <li><strong>Missiles:</strong> Keep 3-5 missiles loaded (production continue)</li>
-                            <li><strong>Nombre:</strong> 2-3 Anti-Nuke = protection multi-angles</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Halleys (Planet Engines)</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-very-high">75000 Metal EACH</span>
-                            <span class="unit-badge priority-critical">ULTIMATE</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 75000 Metal chacun | <strong>Required:</strong> Multiple (varie selon taille planète)</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Propulseurs planétaires. Transforme planète/lune en arme. SMASH dans autre planète = destruction totale.</p>
-                        <h4>💡 Stratégie Halley</h4>
-                        <ul>
-                            <li><strong>Économie:</strong> Nécessite 100+ Mex T2 minimum</li>
-                            <li><strong>Timing:</strong> Late game only (35-45min+)</li>
-                            <li><strong>Setup:</strong> Conquérir lune/small planet → Build Halleys → SMASH</li>
-                            <li><strong>Nombre:</strong> Varie (petite lune = 3-5, grosse = 10-15)</li>
-                        </ul>
-                        <div class="success-box">
-                            <h4>🌍 Armageddon</h4>
-                            <p>Réussir un planet smash = victoire instantanée. Ennemi doit destroy Halleys ou évacuer planète.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- UTILITAIRES -->
-                <div class="section-header">
-                    <h2 class="section-title">🔧 Structures Utilitaires</h2>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Radar T1</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-medium">600 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 600 Metal | <strong>Range:</strong> 300m | <strong>Energy:</strong> -300/s</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Vision étendue. Détecte unités ennemies (pas structures). Essentiel pour scouting.</p>
-                        <h4>💡 Coverage Radar</h4>
-                        <ul>
-                            <li><strong>Early:</strong> 1-2 Radar T1 près base = sécurité</li>
-                            <li><strong>Expansion:</strong> Radar aux frontières = early warning raids</li>
-                            <li><strong>Artillery:</strong> Radar + Stump/Sheller/Holkins = bombardement longue portée</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Advanced Radar T2</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-high">3600 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 3600 Metal | <strong>Range:</strong> 600m | <strong>Energy:</strong> -1500/s</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Radar longue portée. Vision massive. Détecte mouvements ennemis early.</p>
-                        <h4>💡 Utilisation</h4>
-                        <ul>
-                            <li><strong>Center Map:</strong> 1 Advanced Radar = vision ~50% map</li>
-                            <li><strong>Strategic:</strong> Placement hauteur = bonus range</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Teleporter</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge cost-very-high">9000 Metal</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <p><strong>Coût:</strong> 9000 Metal EACH | <strong>Energy:</strong> -5000/s | <strong>Linked:</strong> Paires</p>
-                        <h4>🎯 Rôle</h4>
-                        <p>Téléportation instantanée unités entre 2 points. Mobilité stratégique ultime.</p>
-                        <h4>💡 Tactiques Teleporter</h4>
-                        <ul>
-                            <li><strong>Base → Frontline:</strong> Renfort instantané</li>
-                            <li><strong>Flanking:</strong> Téléportez armée derrière lignes ennemies</li>
-                            <li><strong>Commander Snipe:</strong> Téléportez 50 Slammer dans base = kill</li>
-                        </ul>
-                        <div class="tip-box">
-                            <p>💡 <strong>Defense:</strong> Protégez Teleporters avec Walls + Turrets (high-value targets)</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
+
+        <!-- ==================== FACTORIES ==================== -->
+        <section class="section unit-section" id="factories" data-category="factory" data-tier="mixed">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🏭 Factories</h2>
+                    <span class="card-badge tier-t1">T1 / T2</span>
+                </div>
+                <p class="section-subtitle">Usines de production d'unités - le cœur de votre machine de guerre.</p>
+
+                <div class="unit-grid">
+                    <!-- Bot Factory -->
+                    <div class="unit-card" data-category="factory">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Bot Factory</h3><span class="unit-role">Usine Bots T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">600 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">6000</span></div>
+                            <div class="stat"><span class="stat-label">Build Rate</span><span class="stat-value">15/s</span></div>
+                            <div class="stat"><span class="stat-label">Produit</span><span class="stat-value">Bots T1</span></div>
+                            <div class="stat"><span class="stat-label">Taille</span><span class="stat-value">Moyenne</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Produit Dox, Boom, Grenadier, Spark, Stinger, Stitch et Fab Bot.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Avantages</span><div class="matchup-list"><span class="counter-item">Unités rapides</span><span class="counter-item">Raids early</span><span class="counter-item">Bon marché</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Bots fragiles</span><span class="weakness-item">Moins DPS/cost</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🏃</span><p>Idéal pour <strong>harcèlement et raids</strong> économiques.</p></div>
+                    </div>
+
+                    <!-- Vehicle Factory -->
+                    <div class="unit-card" data-category="factory">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Vehicle Factory</h3><span class="unit-role">Usine Véhicules T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">600 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">6000</span></div>
+                            <div class="stat"><span class="stat-label">Build Rate</span><span class="stat-value">15/s</span></div>
+                            <div class="stat"><span class="stat-label">Produit</span><span class="stat-value">Véhicules T1</span></div>
+                            <div class="stat"><span class="stat-label">Taille</span><span class="stat-value">Moyenne</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Produit Ant, Spinner, Inferno, Stryker, Skitter, Drifter et Fab Vehicle.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Avantages</span><div class="matchup-list"><span class="counter-item">Unités robustes</span><span class="counter-item">Meilleur DPS</span><span class="counter-item">Ant spam</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Plus lent</span><span class="weakness-item">Moins mobile</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🛡️</span><p>Go-to pour <strong>armées principales</strong> et pushes.</p></div>
+                    </div>
+
+                    <!-- Air Factory -->
+                    <div class="unit-card" data-category="factory">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Air Factory</h3><span class="unit-role">Usine Air T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">600 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">6000</span></div>
+                            <div class="stat"><span class="stat-label">Build Rate</span><span class="stat-value">15/s</span></div>
+                            <div class="stat"><span class="stat-label">Produit</span><span class="stat-value">Air T1</span></div>
+                            <div class="stat"><span class="stat-label">Taille</span><span class="stat-value">Grande</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Produit Firefly, Hummingbird, Bumblebee, Pelican, Icarus et Fab Aircraft.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Avantages</span><div class="matchup-list"><span class="counter-item">Contrôle map</span><span class="counter-item">Raids aériens</span><span class="counter-item">Scout</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Vulnérable AA</span><span class="weakness-item">Coûteux</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">✈️</span><p>1 Air Factory early pour <strong>Firefly scout</strong>.</p></div>
+                    </div>
+
+                    <!-- Naval Factory -->
+                    <div class="unit-card" data-category="factory">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Naval Factory</h3><span class="unit-role">Usine Naval T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">600 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">6000</span></div>
+                            <div class="stat"><span class="stat-label">Build Rate</span><span class="stat-value">15/s</span></div>
+                            <div class="stat"><span class="stat-label">Produit</span><span class="stat-value">Naval T1</span></div>
+                            <div class="stat"><span class="stat-label">Location</span><span class="stat-value">Eau only</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Produit Piranha, Narwhal, Barracuda, Orca, Barnacle et Fab Ship.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Avantages</span><div class="matchup-list"><span class="counter-item">Contrôle océan</span><span class="counter-item">Bombarde côtes</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Maps avec eau</span><span class="weakness-item">Situationnel</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🌊</span><p>Essentiel sur <strong>maps aquatiques</strong>.</p></div>
+                    </div>
+
+                    <!-- Orbital Launcher -->
+                    <div class="unit-card" data-category="factory">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Orbital Launcher</h3><span class="unit-role">Lanceur Orbital T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-high">900 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">5000</span></div>
+                            <div class="stat"><span class="stat-label">Build Rate</span><span class="stat-value">20/s</span></div>
+                            <div class="stat"><span class="stat-label">Produit</span><span class="stat-value">Orbital T1</span></div>
+                            <div class="stat"><span class="stat-label">Special</span><span class="stat-value">Lance en orbite</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Produit Hermes, ARKYD, Astraeus et Orbital Fab Bot. Porte d'entrée vers l'espace.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Avantages</span><div class="matchup-list"><span class="counter-item">Expansion planètes</span><span class="counter-item">Vision orbitale</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Coûteux</span><span class="weakness-item">Multi-planet only</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🚀</span><p>Rush si <strong>multiple planètes</strong> dans le système.</p></div>
+                    </div>
+
+                    <!-- Advanced Bot Factory -->
+                    <div class="unit-card" data-category="factory">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Adv. Bot Factory</h3><span class="unit-role">Usine Bots T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">3600 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">18000</span></div>
+                            <div class="stat"><span class="stat-label">Build Rate</span><span class="stat-value">45/s</span></div>
+                            <div class="stat"><span class="stat-label">Produit</span><span class="stat-value">Bots T1 + T2</span></div>
+                            <div class="stat"><span class="stat-label">Taille</span><span class="stat-value">Grande</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Produit tous les bots T1 + Slammer, Gil-E, Bluehawk, Locusts, Mend, Colonel.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Avantages</span><div class="matchup-list"><span class="counter-item">Slammer rush</span><span class="counter-item">Gil-E sniper</span><span class="counter-item">Build 3x</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Coûteux</span><span class="weakness-item">Long à build</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🦾</span><p><strong>Slammer spam</strong> pour snipes Commander.</p></div>
+                    </div>
+
+                    <!-- Advanced Vehicle Factory -->
+                    <div class="unit-card" data-category="factory">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Adv. Vehicle Factory</h3><span class="unit-role">Usine Véhicules T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">3600 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">18000</span></div>
+                            <div class="stat"><span class="stat-label">Build Rate</span><span class="stat-value">45/s</span></div>
+                            <div class="stat"><span class="stat-label">Produit</span><span class="stat-value">Véhicules T1+T2</span></div>
+                            <div class="stat"><span class="stat-label">Taille</span><span class="stat-value">Grande</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Produit tous véhicules T1 + Vanguard, Leveler, Sheller, Storm, Nyx, Manhattan, Ward.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Avantages</span><div class="matchup-list"><span class="counter-item">Vanguard</span><span class="counter-item">Sheller siege</span><span class="counter-item">Manhattan</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Très coûteux</span><span class="weakness-item">Slow build</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">💪</span><p><strong>Vanguard spam</strong> = victoire au sol.</p></div>
+                    </div>
+
+                    <!-- Advanced Air Factory -->
+                    <div class="unit-card" data-category="factory">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Adv. Air Factory</h3><span class="unit-role">Usine Air T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">3600 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">18000</span></div>
+                            <div class="stat"><span class="stat-label">Build Rate</span><span class="stat-value">45/s</span></div>
+                            <div class="stat"><span class="stat-label">Produit</span><span class="stat-value">Air T1 + T2</span></div>
+                            <div class="stat"><span class="stat-label">Taille</span><span class="stat-value">Très Grande</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Produit tout air T1 + Phoenix, Hornet, Kestrel, Horsefly, Wyrm, Angel.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Avantages</span><div class="matchup-list"><span class="counter-item">Kestrel DPS</span><span class="counter-item">Wyrm siege</span><span class="counter-item">Phoenix</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Storm counter</span><span class="weakness-item">Coûteux</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🛩️</span><p><strong>Kestrel spam</strong> détruit les armées sol.</p></div>
+                    </div>
+
+                    <!-- Unit Cannon -->
+                    <div class="unit-card" data-category="factory">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Unit Cannon</h3><span class="unit-role">Canon à Unités</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-very-high">9000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">10000</span></div>
+                            <div class="stat"><span class="stat-label">Build Rate</span><span class="stat-value">60/s</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">Interplanétaire</span></div>
+                            <div class="stat"><span class="stat-label">Special</span><span class="stat-value">Lance unités</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Construit ET lance des unités sur autre planète ! Produit bots et véhicules légers.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Avantages</span><div class="matchup-list"><span class="counter-item">Invasion rapide</span><span class="counter-item">Bypass défenses</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Très cher</span><span class="weakness-item">Unités légères</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🎯</span><p><strong>Dox rain</strong> sur base ennemie = chaos.</p></div>
+                    </div>
+
+                    <!-- Orbital Factory -->
+                    <div class="unit-card" data-category="factory">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Orbital Factory</h3><span class="unit-role">Usine Orbitale T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">2400 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">3000</span></div>
+                            <div class="stat"><span class="stat-label">Build Rate</span><span class="stat-value">45/s</span></div>
+                            <div class="stat"><span class="stat-label">Produit</span><span class="stat-value">Orbital T2</span></div>
+                            <div class="stat"><span class="stat-label">Location</span><span class="stat-value">Orbite</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Construit en orbite. Produit Avenger, Anchor, SXX, Artemis, Solar Array, Adv Radar Sat.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Avantages</span><div class="matchup-list"><span class="counter-item">Anchor spam</span><span class="counter-item">SXX lasers</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Limitations</span><div class="matchup-list"><span class="weakness-item">Umbrella</span><span class="weakness-item">Orbital only</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🛰️</span><p><strong>Anchor grid</strong> = défense planétaire.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ÉCONOMIE ==================== -->
+        <section class="section unit-section" id="economie" data-category="economy" data-tier="mixed">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">💰 Économie</h2>
+                    <span class="card-badge tier-t1">T1 / T2</span>
+                </div>
+                <p class="section-subtitle">Production de ressources - la base de toute victoire.</p>
+
+                <div class="unit-grid">
+                    <!-- Metal Extractor -->
+                    <div class="unit-card" data-category="economy">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Metal Extractor</h3><span class="unit-role">Extracteur Metal T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-low">200 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">1500</span></div>
+                            <div class="stat"><span class="stat-label">Metal</span><span class="stat-value">+7/s</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">-660/s</span></div>
+                            <div class="stat"><span class="stat-label">Location</span><span class="stat-value">Metal Spot</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Extrait du metal des spots. BASE de toute économie. Priority #1 early game.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Priorité</span><div class="matchup-list"><span class="counter-item">Early expand</span><span class="counter-item">Map control</span><span class="counter-item">Éco base</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Spots limités</span><span class="weakness-item">Cible raids</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">⭐</span><p><strong>Plus de mex = plus d'armée = victoire.</strong></p></div>
+                    </div>
+
+                    <!-- Energy Plant -->
+                    <div class="unit-card" data-category="economy">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Energy Plant</h3><span class="unit-role">Centrale Énergie T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-low">450 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">1500</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">+660/s</span></div>
+                            <div class="stat"><span class="stat-label">Metal</span><span class="stat-value">0</span></div>
+                            <div class="stat"><span class="stat-label">Taille</span><span class="stat-value">Petite</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Produit de l'énergie. 1 Energy Plant = 1 Metal Extractor alimenté.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Notes</span><div class="matchup-list"><span class="counter-item">Ratio 1:1 avec Mex</span><span class="counter-item">Spam safe</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Attention</span><div class="matchup-list"><span class="weakness-item">Energy stall = GG</span><span class="weakness-item">Surveillez barre</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">⚡</span><p>Règle : <strong>1 Pgen par Mex</strong> minimum.</p></div>
+                    </div>
+
+                    <!-- Metal Storage -->
+                    <div class="unit-card" data-category="economy">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Metal Storage</h3><span class="unit-role">Stockage Metal</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-low">300 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">1000</span></div>
+                            <div class="stat"><span class="stat-label">Storage</span><span class="stat-value">+3000</span></div>
+                            <div class="stat"><span class="stat-label">Production</span><span class="stat-value">0</span></div>
+                            <div class="stat"><span class="stat-label">Taille</span><span class="stat-value">Petite</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Augmente capacité de stockage metal. Utile si éco overflow.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Absorbe surplus</span><span class="counter-item">Late game</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Rarement utile</span><span class="weakness-item">Préférez dépenser</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">📦</span><p>Si overflow : <strong>construisez plus</strong>, pas stockage.</p></div>
+                    </div>
+
+                    <!-- Energy Storage -->
+                    <div class="unit-card" data-category="economy">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Energy Storage</h3><span class="unit-role">Stockage Énergie</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-low">300 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">1000</span></div>
+                            <div class="stat"><span class="stat-label">Storage</span><span class="stat-value">+100000</span></div>
+                            <div class="stat"><span class="stat-label">Production</span><span class="stat-value">0</span></div>
+                            <div class="stat"><span class="stat-label">Taille</span><span class="stat-value">Petite</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Stocke l'énergie. Buffer contre spikes de consommation.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Buffer Zeus/SXX</span><span class="counter-item">Anti-stall</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Late game only</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🔋</span><p>Utile avant <strong>Titans energy-hungry</strong>.</p></div>
+                    </div>
+
+                    <!-- Advanced Metal Extractor -->
+                    <div class="unit-card" data-category="economy">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Adv. Metal Extractor</h3><span class="unit-role">Extracteur Metal T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">1800 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">4500</span></div>
+                            <div class="stat"><span class="stat-label">Metal</span><span class="stat-value">+21/s</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">-1980/s</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Upgrade</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">3x production du T1. Upgrade les Mex existants. Nécessite Adv Fabber.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Avantages</span><div class="matchup-list"><span class="counter-item">3x metal</span><span class="counter-item">Même spot</span><span class="counter-item">Late eco</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Après expansion</span><span class="weakness-item">3x energy need</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">⬆️</span><p><strong>Expand first</strong>, upgrade après saturation map.</p></div>
+                    </div>
+
+                    <!-- Advanced Energy Plant -->
+                    <div class="unit-card" data-category="economy">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Adv. Energy Plant</h3><span class="unit-role">Centrale T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">2700 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">7500</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">+5000/s</span></div>
+                            <div class="stat"><span class="stat-label">Metal</span><span class="stat-value">0</span></div>
+                            <div class="stat"><span class="stat-label">Taille</span><span class="stat-value">Grande</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">~8x production T1. Alimente Adv Mex et unités energy-hungry.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Avantages</span><div class="matchup-list"><span class="counter-item">Énergie massive</span><span class="counter-item">Compact</span><span class="counter-item">Feed Titans</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Cible prioritaire</span><span class="weakness-item">Cher</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">⚡</span><p><strong>2-3 Adv Pgen</strong> avant Zeus ou SXX.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DÉFENSE T1 ==================== -->
+        <section class="section unit-section" id="defense-t1" data-category="defense" data-tier="t1">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🛡️ Défense T1</h2>
+                    <span class="card-badge tier-t1">TIER 1</span>
+                </div>
+                <p class="section-subtitle">Protégez votre base et vos extracteurs des raids early game.</p>
+
+                <div class="unit-grid">
+                    <!-- Wall -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Wall</h3><span class="unit-role">Mur</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-low">25 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">500</span></div>
+                            <div class="stat"><span class="stat-label">Arme</span><span class="stat-value">Aucune</span></div>
+                            <div class="stat"><span class="stat-label">Build</span><span class="stat-value">Instant</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Segment</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Bloque le passage. Très bon marché. Ralentit raids et protège structures.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Anti-Boom</span><span class="counter-item">Choke points</span><span class="counter-item">Protège turrets</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Contres</span><div class="matchup-list"><span class="weakness-item">Grenadier (arc)</span><span class="weakness-item">Air</span><span class="weakness-item">Artillery</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🧱</span><p><strong>Wall + Turret</strong> = défense solide.</p></div>
+                    </div>
+
+                    <!-- Mine -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Mine</h3><span class="unit-role">Mine Terrestre</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T0</span><span class="unit-badge cost-low">25 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">10</span></div>
+                            <div class="stat"><span class="stat-label">Dmg</span><span class="stat-value">500</span></div>
+                            <div class="stat"><span class="stat-label">AoE</span><span class="stat-value">Petit</span></div>
+                            <div class="stat"><span class="stat-label">Stealth</span><span class="stat-value">Invisible</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Mine invisible qui explose au passage. Place autour des Mex et chokes.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Raiders</span><span class="counter-item">Dox rush</span><span class="counter-item">Sneak attacks</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Contres</span><div class="matchup-list"><span class="weakness-item">Stitch détecte</span><span class="weakness-item">Tanks lourds</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">💣</span><p>Spam autour des <strong>Mex isolés</strong>.</p></div>
+                    </div>
+
+                    <!-- Laser Defense Tower -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Laser Defense Tower</h3><span class="unit-role">Tourelle Laser</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">450 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">1500</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Laser</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Tourelle laser T1 standard. Bon DPS, portée correcte. Défense de base.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Raids T1</span><span class="counter-item">Dox</span><span class="counter-item">Light units</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Contres</span><div class="matchup-list"><span class="weakness-item">Artillery</span><span class="weakness-item">Bombers</span><span class="weakness-item">Tanks masse</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🔫</span><p>Placez avec <strong>walls devant</strong> pour survie.</p></div>
+                    </div>
+
+                    <!-- Single Laser Defense -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Single Laser Defense</h3><span class="unit-role">Tourelle Légère</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-low">150 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">750</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">40</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">80</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Laser</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Tourelle mini bon marché. Moins puissante mais spam-able.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Mex defense</span><span class="counter-item">Cheap spam</span><span class="counter-item">Early raids</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Contres</span><div class="matchup-list"><span class="weakness-item">Tout T2</span><span class="weakness-item">Ant mass</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🎯</span><p><strong>1 par Mex</strong> exposé = anti-raid.</p></div>
+                    </div>
+
+                    <!-- Galata Turret -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Galata Turret</h3><span class="unit-role">AA T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">450 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">1500</span></div>
+                            <div class="stat"><span class="stat-label">DPS Air</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">Target</span><span class="stat-value">Air only</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Tourelle AA T1. Protège base des bombers et fighters.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Bumblebee</span><span class="counter-item">Hummingbird</span><span class="counter-item">Air T1</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Sol = 0</span><span class="weakness-item">Air T2 masse</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🚀</span><p><strong>2-3 Galata</strong> autour factories = safe.</p></div>
+                    </div>
+
+                    <!-- Pelter -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Pelter</h3><span class="unit-role">Artillery T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">500 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">1000</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">60</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Arc AoE</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Artillery T1 défensive. Longue portée, tire en arc.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Armées approche</span><span class="counter-item">Groupes</span><span class="counter-item">Zone denial</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Contres</span><div class="matchup-list"><span class="weakness-item">Air</span><span class="weakness-item">Rush rapide</span><span class="weakness-item">Sheller</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🎯</span><p><strong>Radar + Pelter</strong> = defense longue portée.</p></div>
+                    </div>
+
+                    <!-- Torpedo Launcher -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Torpedo Launcher</h3><span class="unit-role">Défense Navale T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">350 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">1500</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">80</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">150</span></div>
+                            <div class="stat"><span class="stat-label">Target</span><span class="stat-value">Naval + Sub</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Lance torpilles. Défend côtes et détecte sous-marins.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Barracuda</span><span class="counter-item">Naval T1</span><span class="counter-item">Côtes</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Naval only</span><span class="weakness-item">Leviathan</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🌊</span><p>Spam sur côtes = <strong>anti-naval</strong>.</p></div>
+                    </div>
+
+                    <!-- Umbrella -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Umbrella</h3><span class="unit-role">Anti-Orbital</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-medium">600 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">2500</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">150</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Target</span><span class="stat-value">Orbital only</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Défense anti-orbitale. ESSENTIEL contre Anchor, SXX et Astraeus.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Anchor</span><span class="counter-item">SXX</span><span class="counter-item">Astraeus drop</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Orbital only</span><span class="weakness-item">Sol = 0</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">☂️</span><p><strong>Coverage Umbrella</strong> = protection orbitale.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DÉFENSE T2 ==================== -->
+        <section class="section unit-section" id="defense-t2" data-category="defense" data-tier="t2">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🏰 Défense T2</h2>
+                    <span class="card-badge tier-t2">TIER 2</span>
+                </div>
+                <p class="section-subtitle">Défenses avancées pour stopper les assauts massifs.</p>
+
+                <div class="unit-grid">
+                    <!-- Advanced Laser Defense -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Adv. Laser Defense</h3><span class="unit-role">Tourelle T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">1500 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">4500</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">300</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">130</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Double Laser</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Tourelle double laser T2. DPS massif, stoppe même Vanguards.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Tanks T2</span><span class="counter-item">Slammer rush</span><span class="counter-item">Armées</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Contres</span><div class="matchup-list"><span class="weakness-item">Sheller</span><span class="weakness-item">Air</span><span class="weakness-item">Gil-E</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">💪</span><p><strong>3-4 Adv Laser</strong> = choke point imprenable.</p></div>
+                    </div>
+
+                    <!-- Flak Cannon -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Flak Cannon</h3><span class="unit-role">AA T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">1200 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">3000</span></div>
+                            <div class="stat"><span class="stat-label">DPS Air</span><span class="stat-value">400</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">120</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Flak AoE</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Flak AA T2 avec dégâts de zone. Détruit flottes aériennes.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Kestrel</span><span class="counter-item">Hornet</span><span class="counter-item">Zeus</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Sol = 0</span><span class="weakness-item">Wyrm tanky</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🛡️</span><p><strong>Anti-Zeus</strong> essentiel pour base.</p></div>
+                    </div>
+
+                    <!-- Catapult -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Catapult</h3><span class="unit-role">Missile Launcher T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">1800 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">3000</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">400</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Tactical Missile</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Lance missiles tactiques longue portée. Zone denial massive.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Armées approche</span><span class="counter-item">Bases</span><span class="counter-item">Groupes</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Contres</span><div class="matchup-list"><span class="weakness-item">Rush rapide</span><span class="weakness-item">Air</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🚀</span><p><strong>Radar + Catapult</strong> = siege défensif.</p></div>
+                    </div>
+
+                    <!-- Holkins -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Holkins</h3><span class="unit-role">Heavy Artillery T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-very-high">9600 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">6000</span></div>
+                            <div class="stat"><span class="stat-label">Dmg</span><span class="stat-value">2000</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">900</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Artillery AoE</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Artillerie lourde MASSIVE. Portée énorme, détruit bases à distance.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Bases</span><span class="counter-item">Structures</span><span class="counter-item">Groupes statiques</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Contres</span><div class="matchup-list"><span class="weakness-item">Rush</span><span class="weakness-item">Air</span><span class="weakness-item">Imprécis</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🎯</span><p><strong>Adv Radar + Holkins</strong> = siege ultime.</p></div>
+                    </div>
+
+                    <!-- Advanced Torpedo Launcher -->
+                    <div class="unit-card" data-category="defense">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Adv. Torpedo Launcher</h3><span class="unit-role">Défense Navale T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">1500 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">4500</span></div>
+                            <div class="stat"><span class="stat-label">DPS</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">200</span></div>
+                            <div class="stat"><span class="stat-label">Target</span><span class="stat-value">Naval + Sub</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Torpilles T2. Stoppe Leviathan et détecte Kraken.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Leviathan</span><span class="counter-item">Kraken</span><span class="counter-item">Naval T2</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Naval only</span><span class="weakness-item">Air safe</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🌊</span><p><strong>Anti-Leviathan</strong> essentiel sur eau.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== INTEL & RADAR ==================== -->
+        <section class="section unit-section" id="intel" data-category="intel" data-tier="mixed">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">📡 Intel & Radar</h2>
+                    <span class="card-badge tier-t1">T1 / T2</span>
+                </div>
+                <p class="section-subtitle">L'information c'est le pouvoir. Voyez l'ennemi avant qu'il ne vous voie.</p>
+
+                <div class="unit-grid">
+                    <!-- Radar -->
+                    <div class="unit-card" data-category="intel">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Radar</h3><span class="unit-role">Radar T1</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-low">300 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Radar Range</span><span class="stat-value">600</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">-500/s</span></div>
+                            <div class="stat"><span class="stat-label">Vision</span><span class="stat-value">Blips</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Radar basique. Détecte unités comme blips. ESSENTIEL pour artillery.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Détection approche</span><span class="counter-item">Pelter targeting</span><span class="counter-item">Map awareness</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Contres</span><div class="matchup-list"><span class="weakness-item">Radar jammer</span><span class="weakness-item">Stealth units</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">📡</span><p><strong>1 Radar</strong> par zone défensive.</p></div>
+                    </div>
+
+                    <!-- Advanced Radar -->
+                    <div class="unit-card" data-category="intel">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Advanced Radar</h3><span class="unit-role">Radar T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">1200 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Radar Range</span><span class="stat-value">1200</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">-1500/s</span></div>
+                            <div class="stat"><span class="stat-label">Vision</span><span class="stat-value">Blips</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Radar T2 portée double. Obligatoire pour Holkins et Sheller.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Holkins range</span><span class="counter-item">Sheller targeting</span><span class="counter-item">Map control</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Contres</span><div class="matchup-list"><span class="weakness-item">Vanguard jammer</span><span class="weakness-item">Nyx stealth</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🔭</span><p><strong>Adv Radar + Holkins</strong> = combo siege.</p></div>
+                    </div>
+
+                    <!-- Radar Jammer -->
+                    <div class="unit-card" data-category="intel">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Radar Jammer</h3><span class="unit-role">Brouilleur T2</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-high">900 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">100</span></div>
+                            <div class="stat"><span class="stat-label">Jam Range</span><span class="stat-value">400</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">-1000/s</span></div>
+                            <div class="stat"><span class="stat-label">Effect</span><span class="stat-value">Cache unités</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Brouille radar ennemi. Vos unités deviennent invisibles au radar.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Cache armées</span><span class="counter-item">Anti-artillery</span><span class="counter-item">Surprise attacks</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Vision directe</span><span class="weakness-item">Energy cost</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">👻</span><p><strong>Jammer + armée</strong> = approche invisible.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== NUCLÉAIRE ==================== -->
+        <section class="section unit-section" id="nucleaire" data-category="nuke" data-tier="t2">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">☢️ Nucléaire</h2>
+                    <span class="card-badge tier-t2">TIER 2</span>
+                </div>
+                <p class="section-subtitle">L'option nucléaire - destruction massive ou défense absolue.</p>
+
+                <div class="unit-grid">
+                    <!-- Nuclear Missile Launcher -->
+                    <div class="unit-card" data-category="nuke">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Nuclear Missile Launcher</h3><span class="unit-role">Silo Nucléaire</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-titan">NUKE</span><span class="unit-badge cost-very-high">14400 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">7500</span></div>
+                            <div class="stat"><span class="stat-label">Missile Cost</span><span class="stat-value">32400 Metal</span></div>
+                            <div class="stat"><span class="stat-label">Nuke Dmg</span><span class="stat-value">45000</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">Planète</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Lance missiles nucléaires. Détruit bases, Commander, tout. Interceptable par Anti-Nuke.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Fort contre</span><div class="matchup-list"><span class="counter-item">Bases</span><span class="counter-item">Commander</span><span class="counter-item">Sans Anti-Nuke</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Contres</span><div class="matchup-list"><span class="weakness-item">Anti-Nuke</span><span class="weakness-item">Très cher</span><span class="weakness-item">Long build</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">☢️</span><p><strong>Scout d'abord</strong> pour vérifier Anti-Nuke !</p></div>
+                    </div>
+
+                    <!-- Anti-Nuke Launcher -->
+                    <div class="unit-card" data-category="nuke">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Anti-Nuke Launcher</h3><span class="unit-role">Défense Nucléaire</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t2">T2</span><span class="unit-badge cost-very-high">7200 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">6000</span></div>
+                            <div class="stat"><span class="stat-label">Missile Cost</span><span class="stat-value">4800 Metal</span></div>
+                            <div class="stat"><span class="stat-label">Intercept</span><span class="stat-value">1 Nuke</span></div>
+                            <div class="stat"><span class="stat-label">Range</span><span class="stat-value">300</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Intercepte nukes. 1 missile anti-nuke = 1 nuke stoppé. Couvre zone limitée.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Stoppe nukes</span><span class="counter-item">Protège Commander</span><span class="counter-item">Base safe</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Coverage limitée</span><span class="weakness-item">Stock missiles</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🛡️</span><p><strong>Toujours 2+ missiles</strong> stockés = safe.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SPÉCIAL ==================== -->
+        <section class="section unit-section" id="special" data-category="special" data-tier="late">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">⭐ Structures Spéciales</h2>
+                    <span class="card-badge tier-titan">LATE GAME</span>
+                </div>
+                <p class="section-subtitle">Téléportation, moteurs planétaires et armes de destruction massive.</p>
+
+                <div class="unit-grid">
+                    <!-- Teleporter -->
+                    <div class="unit-card" data-category="special">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Teleporter</h3><span class="unit-role">Portail</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-t1">T1</span><span class="unit-badge cost-high">1800 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">5000</span></div>
+                            <div class="stat"><span class="stat-label">Link</span><span class="stat-value">2 Teleporters</span></div>
+                            <div class="stat"><span class="stat-label">Energy</span><span class="stat-value">-500/unit</span></div>
+                            <div class="stat"><span class="stat-label">Taille</span><span class="stat-value">Grande</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Téléporte unités entre 2 Teleporters liés. Mobilité instantanée sur planète.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Défense rapide</span><span class="counter-item">Renforts instant</span><span class="counter-item">Multi-front</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Pas Titans</span><span class="weakness-item">2 requis</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🌀</span><p><strong>Teleporter réseau</strong> = défense globale.</p></div>
+                    </div>
+
+                    <!-- Halley -->
+                    <div class="unit-card" data-category="special">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Halley</h3><span class="unit-role">Planet Engine</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-titan">ANNIHILATION</span><span class="unit-badge cost-very-high">40000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">50000</span></div>
+                            <div class="stat"><span class="stat-label">Effect</span><span class="stat-value">Déplace planète</span></div>
+                            <div class="stat"><span class="stat-label">Nombre</span><span class="stat-value">1-5 selon taille</span></div>
+                            <div class="stat"><span class="stat-label">Target</span><span class="stat-value">Autre planète</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Moteur planétaire. Propulse une lune/planète pour ÉCRASER une autre planète !</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Fin de partie</span><span class="counter-item">Détruit planète</span><span class="counter-item">Victory condition</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Très long</span><span class="weakness-item">Très cher</span><span class="weakness-item">Lune requise</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">🌍💥</span><p><strong>Smash planète</strong> = victoire totale.</p></div>
+                    </div>
+
+                    <!-- Catalyst -->
+                    <div class="unit-card" data-category="special">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Catalyst</h3><span class="unit-role">Metal Planet Laser</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-titan">ANNIHILATION</span><span class="unit-badge cost-very-high">40000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">50000</span></div>
+                            <div class="stat"><span class="stat-label">Effect</span><span class="stat-value">Détruit planète</span></div>
+                            <div class="stat"><span class="stat-label">Location</span><span class="stat-value">Metal Planet</span></div>
+                            <div class="stat"><span class="stat-label">Charge</span><span class="stat-value">60s</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Active le laser de planète métal. 5 Catalysts = laser prêt. Détruit N'IMPORTE QUELLE planète.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Instant kill planète</span><span class="counter-item">Multi-tirs</span><span class="counter-item">Victory</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">Metal planet only</span><span class="weakness-item">5 Catalysts</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">⚡</span><p>Rush <strong>Metal Planet</strong> si présent = GG.</p></div>
+                    </div>
+
+                    <!-- Delta-V Thruster / Ragnarok reminder -->
+                    <div class="unit-card" data-category="special">
+                        <div class="unit-header">
+                            <div class="unit-title-row"><h3 class="unit-name">Ragnarok</h3><span class="unit-role">Planet Killer Titan</span></div>
+                            <div class="unit-badges"><span class="unit-badge tier-titan">TITAN</span><span class="unit-badge cost-very-high">40000 Metal</span></div>
+                        </div>
+                        <div class="unit-stats">
+                            <div class="stat"><span class="stat-label">HP</span><span class="stat-value">50000</span></div>
+                            <div class="stat"><span class="stat-label">Effect</span><span class="stat-value">DÉTRUIT PLANÈTE</span></div>
+                            <div class="stat"><span class="stat-label">Charge</span><span class="stat-value">60s</span></div>
+                            <div class="stat"><span class="stat-label">Type</span><span class="stat-value">Structure Titan</span></div>
+                        </div>
+                        <div class="unit-content">
+                            <p class="unit-description">Alternative aux Halley. Construit une foreuse qui détruit la planète de l'intérieur.</p>
+                            <div class="unit-matchups">
+                                <div class="matchup-section"><span class="matchup-title strong">✅ Utilité</span><div class="matchup-list"><span class="counter-item">Pas besoin lune</span><span class="counter-item">Self-destruct</span><span class="counter-item">Planète ennemie</span></div></div>
+                                <div class="matchup-section"><span class="matchup-title weak">❌ Notes</span><div class="matchup-list"><span class="weakness-item">60s vulnérable</span><span class="weakness-item">Vous mourrez aussi</span></div></div>
+                            </div>
+                        </div>
+                        <div class="unit-tip"><span class="tip-icon">💀</span><p><strong>Défendez 60 secondes</strong> après activation !</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <button id="scrollTopBtn" title="Retour en haut">↑</button>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3 class="footer-title">Guide PA:Titans</h3>
+                <p class="footer-text">Guide complet créé par la communauté pour la communauté.</p>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="raccourcis.html">Raccourcis</a></li>
+                    <li><a href="unites.html">Unités</a></li>
+                    <li><a href="structures.html">Structures</a></li>
+                    <li><a href="strategies.html">Stratégies</a></li>
+                    <li><a href="lexique.html">Lexique</a></li>
+                </ul>
+                <div class="footer-bottom"><p>© 2026 Guide PA:Titans 🎮</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" aria-label="Retour en haut">↑</button>
     <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const sections = document.querySelectorAll('.unit-section');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    if (filter === 'all') {
+                        sections.forEach(s => { s.style.display = 'block'; setTimeout(() => s.style.opacity = '1', 50); });
+                    } else {
+                        sections.forEach(s => {
+                            if (s.dataset.category === filter || s.dataset.tier === filter) {
+                                s.style.display = 'block'; setTimeout(() => s.style.opacity = '1', 50);
+                            } else { s.style.opacity = '0'; setTimeout(() => s.style.display = 'none', 300); }
+                        });
+                    }
+                });
+            });
+            document.querySelectorAll('.toc-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

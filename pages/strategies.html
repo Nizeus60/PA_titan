@@ -3,22 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guide des Stratégies - PA:Titans</title>
+    <title>Guide Stratégique - PA:Titans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .strategy-card {
+            background: linear-gradient(135deg, rgba(30, 35, 60, 0.9), rgba(20, 25, 45, 0.95));
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        .strategy-card:hover {
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
+        }
+        .strategy-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            color: #00d4ff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .strategy-content { color: #c0c0c0; line-height: 1.7; }
+        .strategy-content strong { color: #ffffff; }
+        .strategy-content em { color: #ffd700; font-style: normal; }
+        
+        .build-order {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid #00d4ff;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .build-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .build-step:last-child { border-bottom: none; }
+        .step-number {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: #000;
+            font-weight: bold;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+        .step-text { color: #e0e0e0; }
+        .step-note { color: #888; font-size: 0.85rem; margin-left: auto; }
+        
+        .counter-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .counter-table th {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            padding: 12px;
+            text-align: left;
+            font-family: 'Orbitron', monospace;
+        }
+        .counter-table td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #c0c0c0;
+        }
+        .counter-table tr:hover td {
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.05));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 15px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .tip-box .tip-icon { font-size: 1.5rem; }
+        .tip-box .tip-text { color: #e0e0e0; }
+        
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 50, 50, 0.1), rgba(200, 0, 0, 0.05));
+            border: 1px solid rgba(255, 50, 50, 0.3);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+        .warning-box strong { color: #ff6b6b; }
+        
+        .phase-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .phase-early { background: #2ecc71; color: #000; }
+        .phase-mid { background: #f39c12; color: #000; }
+        .phase-late { background: #e74c3c; color: #fff; }
+        
+        .army-comp {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .army-unit {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+        .army-unit-percent {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+        .army-unit-name {
+            color: #c0c0c0;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1 class="page-title">Guide des Stratégies</h1>
-            <p class="page-subtitle">Ouvertures, Build Orders & Tactiques Avancées</p>
+            <h1 class="site-title">Guide Stratégique</h1>
+            <p class="site-subtitle">Dominez le Champ de Bataille</p>
+            <p class="site-description">Des fondamentaux aux stratégies avancées : tout pour écraser vos adversaires.</p>
         </div>
     </header>
 
     <nav>
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">PA:TITANS</a>
-            <button class="nav-toggle"><span></span><span></span><span></span></button>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
             <ul class="nav-menu">
                 <li><a href="../index.html">Accueil</a></li>
                 <li><a href="raccourcis.html">Raccourcis</a></li>
@@ -31,638 +167,1217 @@
     </nav>
 
     <main>
-        <section class="section">
+        <section class="section" style="padding-bottom: 40px;">
             <div class="container">
-                <div class="info-box">
-                    <h3>📈 Philosophie Stratégique</h3>
-                    <p>PA:Titans récompense <strong>l'économie agressive</strong> et le <strong>multi-tasking</strong>. 
-                    Celui qui expande le plus vite tout en harcelant l'adversaire gagne. L'objectif : maximiser votre économie 
-                    tout en minimisant celle de l'ennemi.</p>
-                </div>
-
-                <!-- EARLY GAME -->
-                <div class="section-header">
-                    <h2 class="section-title">⏱️ Early Game (0-5min)</h2>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Opening Standard - Vehicle Rush</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge priority-high">RECOMMANDÉ</span>
-                            <span class="unit-badge cost-medium">Équilibré</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <h4>📋 Build Order (Première Minute)</h4>
-                        <ol>
-                            <li><strong>0:00-0:30</strong> - Commander: Build 5-6 Mex (metal spots proches)</li>
-                            <li><strong>0:30</strong> - Commander: Build Vehicle Factory</li>
-                            <li><strong>0:35</strong> - Commander: Build 2 Energy Plants près Factory</li>
-                            <li><strong>0:50</strong> - Factory: 1 Fabber (pour expansion éco)</li>
-                            <li><strong>1:00</strong> - Factory: 5 Ant</li>
-                        </ol>
-
-                        <h4>📋 Suite (Min 2-5)</h4>
-                        <ul>
-                            <li><strong>2:00</strong> - Fabber: Expand Mex (10+ total) + 2 Energy</li>
-                            <li><strong>2:30</strong> - Factory: 3 Spinner (AA coverage)</li>
-                            <li><strong>3:00</strong> - Factory: 10+ Ant (build army)</li>
-                            <li><strong>3:30</strong> - Commander: Build 2nd Vehicle Factory</li>
-                            <li><strong>4:00</strong> - Both Factories: Spam Ant + Spinner (ratio 3:1)</li>
-                            <li><strong>4:30</strong> - Fabber: Build Radar T1 (vision)</li>
-                            <li><strong>5:00</strong> - Attack avec 20+ Ant, 5+ Spinner</li>
-                        </ul>
-
-                        <h4>🎯 Objectifs</h4>
-                        <ul>
-                            <li>✅ Économie solide (15 Mex à 5min)</li>
-                            <li>✅ Armée équilibrée (Ant + AA)</li>
-                            <li>✅ Pression constante sur ennemi</li>
-                            <li>✅ Flexibilité (peut s'adapter selon scouting)</li>
-                        </ul>
-
-                        <div class="tip-box">
-                            <p>💡 <strong>Clé du succès:</strong> Ne JAMAIS stopper production units. Queue 10+ unités dans Factory.</p>
-                            <p>💡 <strong>Micro:</strong> Gardez Commander en mouvement (build Mex) pendant que Factory produit.</p>
-                        </div>
+                <div class="toc-container">
+                    <h3 class="toc-title">📑 Navigation Rapide</h3>
+                    <div class="toc-grid">
+                        <a href="#fondamentaux" class="toc-item"><span class="toc-icon">🎯</span><span class="toc-text">Fondamentaux</span></a>
+                        <a href="#build-orders" class="toc-item"><span class="toc-icon">🏁</span><span class="toc-text">Build Orders</span></a>
+                        <a href="#compositions" class="toc-item"><span class="toc-icon">⚔️</span><span class="toc-text">Compositions</span></a>
+                        <a href="#map-control" class="toc-item"><span class="toc-icon">🗺️</span><span class="toc-text">Contrôle Map</span></a>
+                        <a href="#multi-planete" class="toc-item"><span class="toc-icon">🌍</span><span class="toc-text">Multi-Planète</span></a>
+                        <a href="#win-conditions" class="toc-item"><span class="toc-icon">🏆</span><span class="toc-text">Win Conditions</span></a>
+                        <a href="#defense" class="toc-item"><span class="toc-icon">🛡️</span><span class="toc-text">Défense</span></a>
+                        <a href="#counters" class="toc-item"><span class="toc-icon">📊</span><span class="toc-text">Counters</span></a>
+                        <a href="#erreurs" class="toc-item"><span class="toc-icon">❌</span><span class="toc-text">Erreurs à Éviter</span></a>
                     </div>
                 </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Cheese - Boom Bot All-In</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge priority-medium">RISQUÉ</span>
-                            <span class="unit-badge cost-low">All-In</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <h4>📋 Build Order</h4>
-                        <ol>
-                            <li><strong>0:00</strong> - Commander: 3-4 Mex (minimum économie)</li>
-                            <li><strong>0:20</strong> - Commander: Bot Factory</li>
-                            <li><strong>0:30</strong> - Commander: 1 Energy Plant</li>
-                            <li><strong>0:45</strong> - Factory: 20-30 Boom Bot (non-stop)</li>
-                            <li><strong>3:00</strong> - Send all Boom vers Commander/Mex ennemi</li>
-                        </ol>
-
-                        <h4>🎯 Targets Priority</h4>
-                        <ol>
-                            <li><strong>Commander</strong> (15-20 Boom = kill)</li>
-                            <li><strong>Factories</strong> (stoppe production)</li>
-                            <li><strong>Mex clusters</strong> (cripple economy)</li>
-                        </ol>
-
-                        <h4>✅ Conditions de Succès</h4>
-                        <ul>
-                            <li>Ennemi n'a pas scout votre base</li>
-                            <li>Pas de Walls/Turrets défensives early</li>
-                            <li>Commander ennemi exposé</li>
-                        </ul>
-
-                        <h4>❌ Hard-Countered Par</h4>
-                        <ul>
-                            <li>Walls préventifs autour Commander</li>
-                            <li>Micro intensif (kill Boom avant impact)</li>
-                            <li>Scout early (ennemi voit et prepare)</li>
-                        </ul>
-
-                        <div class="warning-box">
-                            <h4>⚠️ Attention</h4>
-                            <p>Si le rush Boom échoue, vous êtes probablement mort (économie minimale, pas d'armée défensive).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Opening - Dox Harass</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge priority-medium">AGRESSIF</span>
-                            <span class="unit-badge cost-low">Mobile</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <h4>📋 Build Order</h4>
-                        <ol>
-                            <li><strong>0:00</strong> - Commander: 4-5 Mex</li>
-                            <li><strong>0:25</strong> - Commander: Bot Factory</li>
-                            <li><strong>0:35</strong> - Commander: 2 Energy</li>
-                            <li><strong>0:50</strong> - Factory: 20-30 Dox (constant production)</li>
-                            <li><strong>2:30</strong> - Send Dox squads (groupes de 10) vers Mex ennemis</li>
-                        </ol>
-
-                        <h4>🎯 Tactique</h4>
-                        <ul>
-                            <li><strong>Multi-prong:</strong> Attaquez 2-3 endroits simultanément</li>
-                            <li><strong>Hit & Run:</strong> Détruisez 1-2 Mex, retirez-vous</li>
-                            <li><strong>Force Reaction:</strong> Ennemi doit defender = ralentit expansion</li>
-                            <li><strong>Économie Behind:</strong> Pendant harass, expand Mex dans votre base</li>
-                        </ul>
-
-                        <div class="tip-box">
-                            <p>💡 <strong>Micro:</strong> Utilisez <kbd>Shift+Click</kbd> pour patrol routes entre Mex ennemis</p>
-                            <p>💡 <strong>Transition:</strong> Vers 5-6min, transition vers Vehicle/T2 avec économie avantage</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Opening - Air First</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge priority-medium">RISQUÉ</span>
-                            <span class="unit-badge cost-high">Mobile</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <h4>📋 Build Order</h4>
-                        <ol>
-                            <li><strong>0:00</strong> - Commander: 5 Mex</li>
-                            <li><strong>0:30</strong> - Commander: Air Factory</li>
-                            <li><strong>0:40</strong> - Commander: 3 Energy (air consomme beaucoup)</li>
-                            <li><strong>1:00</strong> - Factory: 10 Hummingbird (air superiority)</li>
-                            <li><strong>3:00</strong> - Factory: 10-15 Bumblebee (bombers)</li>
-                            <li><strong>5:00</strong> - Bombing runs sur Mex/Factories</li>
-                        </ol>
-
-                        <h4>🎯 Win Condition</h4>
-                        <p>Ennemi n'a PAS build AA (Stinger/Spinner). Si AA détecté, retreat immédiatement.</p>
-
-                        <h4>✅ Avantages</h4>
-                        <ul>
-                            <li>Mobilité totale (ignore terrain)</li>
-                            <li>Raids dévastateurs si pas AA</li>
-                            <li>Peut snipe Commander exposé</li>
-                        </ul>
-
-                        <h4>❌ Désavantages</h4>
-                        <ul>
-                            <li>Coûteux (énergie + metal)</li>
-                            <li>Hard-countered par mass AA</li>
-                            <li>Vulnérable raids terrestres</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- MID GAME -->
-                <div class="section-header">
-                    <h2 class="section-title">⚡ Mid Game (5-15min)</h2>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Stratégie - Domination T1</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge priority-high">STANDARD</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <h4>🎯 Objectifs (5-10min)</h4>
-                        <ul>
-                            <li><strong>Économie:</strong> Expand à 20-25 Mex T1</li>
-                            <li><strong>Production:</strong> 3-4 Factories T1 (mix Vehicle/Bot)</li>
-                            <li><strong>Armée:</strong> 50-80 unités T1 (Ant, Spinner, Slammer si Bot)</li>
-                            <li><strong>Map Control:</strong> Sécurisez 50-60% map</li>
-                        </ul>
-
-                        <h4>📋 Composition Armée</h4>
-                        <ul>
-                            <li><strong>70% Ant/Slammer</strong> - Backbone armée</li>
-                            <li><strong>25% Spinner</strong> - AA coverage</li>
-                            <li><strong>5% Inferno/Stump</strong> - Situational</li>
-                        </ul>
-
-                        <h4>💡 Tactiques</h4>
-                        <ul>
-                            <li><strong>Constant Pressure:</strong> Attaquez dès 30-40 unités, ne waitez pas "perfect army"</li>
-                            <li><strong>Multi-tasking:</strong> Armée principale attack, Fabbers expand eco</li>
-                            <li><strong>Deny Expansion:</strong> Détruisez Mex ennemis avancés</li>
-                            <li><strong>Scout:</strong> Repérez sa composition pour counter (Air → build AA, etc)</li>
-                        </ul>
-
-                        <div class="tip-box">
-                            <p>💡 <strong>Timing Attack:</strong> 50+ unités à 8min = pic de puissance T1</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Stratégie - Fast T2</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge priority-high">TECH RUSH</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <h4>📋 Build Order (8-12min)</h4>
-                        <ol>
-                            <li><strong>8:00</strong> - Économie: 20 Mex T1, 6-8 Energy T1</li>
-                            <li><strong>8:30</strong> - Commander: Build Advanced Factory (Bot ou Vehicle)</li>
-                            <li><strong>10:00</strong> - Factory T2: Production non-stop (Slammer ou Leveler)</li>
-                            <li><strong>10:30</strong> - Fabber T2: Upgrade 5-10 Mex vers T2</li>
-                            <li><strong>12:00</strong> - Attack avec 15-20 unités T2</li>
-                        </ol>
-
-                        <h4>🎯 Win Condition</h4>
-                        <p>Timing attack avec T2 avant que ennemi ait T2 ou masse suffisante T1. 
-                        15 Slammer < 50 Ant, mais 15 Slammer > 30 Ant.</p>
-
-                        <h4>✅ Avantages</h4>
-                        <ul>
-                            <li>Tech advantage = domination temporaire</li>
-                            <li>Force spike important</li>
-                            <li>Transition smooth vers late game</li>
-                        </ul>
-
-                        <h4>❌ Risques</h4>
-                        <ul>
-                            <li>Vulnérable early T1 all-in</li>
-                            <li>Économie investie (pas de backup army)</li>
-                            <li>Si ennemi aussi T2, advantage perdu</li>
-                        </ul>
-
-                        <div class="tip-box">
-                            <p>💡 <strong>Defense:</strong> Build 5-10 Walls + 2-3 Turrets pour survivre early pressure</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Tactique - Commander Snipe</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge priority-critical">HIGH RISK</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <h4>🎯 Méthodes</h4>
-                        
-                        <h5>1. Dox/Slammer Rush</h5>
-                        <ul>
-                            <li><strong>Nombre:</strong> 30 Dox OU 10-15 Slammer</li>
-                            <li><strong>Timing:</strong> Commander exposé (expanding, building)</li>
-                            <li><strong>Exécution:</strong> Attack-move direct sur Commander, ignorez autres unités</li>
-                        </ul>
-
-                        <h5>2. Boom Bot Cheese</h5>
-                        <ul>
-                            <li><strong>Nombre:</strong> 15-20 Boom</li>
-                            <li><strong>Path:</strong> Utilisez <kbd>Alt</kbd> pour éviter defenses</li>
-                            <li><strong>Surprise:</strong> Attaquez angle inattendu</li>
-                        </ul>
-
-                        <h5>3. Air Snipe (Bumblebee/Kestrel)</h5>
-                        <ul>
-                            <li><strong>Bumblebee:</strong> 10-15 si pas AA</li>
-                            <li><strong>Kestrel:</strong> 2-3 suffisent (late game)</li>
-                            <li><strong>Timing:</strong> Commander déplacé hors AA coverage</li>
-                        </ul>
-
-                        <h5>4. Teleporter Drop</h5>
-                        <ul>
-                            <li><strong>Setup:</strong> Build Teleporter caché → Teleporter près Commander ennemi</li>
-                            <li><strong>Drop:</strong> 50 Slammer/Vanguard instantanément</li>
-                            <li><strong>Result:</strong> Commander dead en 5-10s</li>
-                        </ul>
-
-                        <div class="warning-box">
-                            <h4>⚠️ Si Snipe Échoue</h4>
-                            <p>Vous avez sacrifié ressources/position. Retraite immédiate et rebuild economy.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- LATE GAME -->
-                <div class="section-header">
-                    <h2 class="section-title">🏆 Late Game (15min+)</h2>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Stratégie - Vanguard Spam</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge priority-high">STANDARD</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <h4>📋 Requirements</h4>
-                        <ul>
-                            <li><strong>Économie:</strong> 25-30 Mex T2 minimum</li>
-                            <li><strong>Production:</strong> 3-4 Advanced Vehicle Factories</li>
-                            <li><strong>Support:</strong> 10-15 Spinner (AA mobile)</li>
-                        </ul>
-
-                        <h4>🎯 Exécution</h4>
-                        <ol>
-                            <li><strong>Build Phase:</strong> Spam Vanguard jusqu'à 15-20</li>
-                            <li><strong>Support:</strong> 1 Spinner pour 3 Vanguard (AA obligatoire)</li>
-                            <li><strong>Attack:</strong> Move armée en formation serrée</li>
-                            <li><strong>Focus:</strong> Détruisez Factories T2, puis Mex T2, puis base</li>
-                        </ol>
-
-                        <h4>💡 Micro Tips</h4>
-                        <ul>
-                            <li><strong>Formation:</strong> <kbd>Ctrl+Click</kbd> attack-move pour spread damage</li>
-                            <li><strong>AA Coverage:</strong> Gardez Spinner au centre de l'armée</li>
-                            <li><strong>Retreat:</strong> Si bombers massifs, retreat sous Umbrella</li>
-                        </ul>
-
-                        <div class="tip-box">
-                            <p>💡 <strong>Snowball:</strong> 20 Vanguard = quasi-unstoppable. Poussez advantage sans mercy.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Stratégie - Air Dominance (Kestrel)</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge priority-critical">GAME-CHANGER</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <h4>📋 Build Path</h4>
-                        <ol>
-                            <li><strong>15:00</strong> - Build Advanced Air Factory</li>
-                            <li><strong>16:00</strong> - Production: 5-8 Hornet (protection)</li>
-                            <li><strong>17:00</strong> - Production: 5-8 Kestrel (bombers)</li>
-                            <li><strong>19:00</strong> - Attack avec full air fleet</li>
-                        </ol>
-
-                        <h4>🎯 Targets Priority</h4>
-                        <ol>
-                            <li><strong>Commander</strong> (3 Kestrel = instant kill)</li>
-                            <li><strong>Umbrella</strong> (destroy AA avant main attack)</li>
-                            <li><strong>Mex T2 clusters</strong> (cripple economy)</li>
-                            <li><strong>Advanced Factories</strong> (stoppe production)</li>
-                        </ol>
-
-                        <h4>💡 Tactiques Avancées</h4>
-                        <ul>
-                            <li><strong>Scout:</strong> Repérez AA coverage (Umbrella zones)</li>
-                            <li><strong>Multi-angle:</strong> Attaquez depuis 2-3 directions = hard to defend</li>
-                            <li><strong>Bait:</strong> Sacrifiez 2-3 Hummingbird pour trigger AA, puis Kestrel rush</li>
-                            <li><strong>Saturation:</strong> 8-10 Kestrel simultanément = overwhelm AA</li>
-                        </ul>
-
-                        <div class="warning-box">
-                            <h4>⚠️ Counter: Umbrella</h4>
-                            <p>Umbrella = no-fly zone. Si ennemi a multiple Umbrella, air strat devient inefficace. 
-                            Transition vers Vanguard ou Titans.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Stratégie - Titan Rush</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge priority-critical">END GAME</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <h4>📋 Requirements (Massive)</h4>
-                        <ul>
-                            <li><strong>Économie:</strong> 40-50 Mex T2</li>
-                            <li><strong>Energy:</strong> 15-20 Energy T2</li>
-                            <li><strong>Time:</strong> 25-30min minimum</li>
-                            <li><strong>Map Control:</strong> 60-70% map secured</li>
-                        </ul>
-
-                        <h4>🎯 Build Sequence</h4>
-                        <ol>
-                            <li><strong>22:00</strong> - Build Titan Foundry (10000 Metal)</li>
-                            <li><strong>25:00</strong> - Production: 1 Atlas (15000 Metal, ~3-4min build)</li>
-                            <li><strong>28:00</strong> - Production: 1 Zeus (12000 Metal, AA support)</li>
-                            <li><strong>30:00</strong> - Move Titans avec support armée (20 Vanguard + AA)</li>
-                        </ol>
-
-                        <h4>💡 Utilisation Titans</h4>
-                        <ul>
-                            <li><strong>Atlas:</strong> Frontline tank, absorbe dégâts massifs</li>
-                            <li><strong>Zeus:</strong> Derrière Atlas, fournit AA no-fly zone</li>
-                            <li><strong>Support:</strong> Vanguard/Leveler en backup, Sheller bombarde</li>
-                            <li><strong>Objective:</strong> Push jusqu'à base ennemi, détruisez tout</li>
-                        </ul>
-
-                        <h4>❌ Counters Titans</h4>
-                        <ul>
-                            <li><strong>Nuke:</strong> Atlas = cible lente, facile à nuke</li>
-                            <li><strong>Mass Bombers:</strong> 15+ Kestrel peuvent kill Atlas</li>
-                            <li><strong>Other Titans:</strong> 1v1 Atlas = whoever shoots first wins</li>
-                        </ul>
-
-                        <div class="success-box">
-                            <h4>🏆 Victory</h4>
-                            <p>Si vous sortez 2 Titans avec support adéquat et que ennemi n'a pas Titans/Nuke, 
-                            vous gagnez 95% du temps. Push jusqu'à victoire.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-header">
-                        <h3>Stratégie - Nuke Rush</h3>
-                        <div class="unit-badges">
-                            <span class="unit-badge priority-critical">SUPERWEAPON</span>
-                        </div>
-                    </div>
-                    <div class="unit-content">
-                        <h4>📋 Requirements</h4>
-                        <ul>
-                            <li><strong>Économie:</strong> 50+ Mex T2</li>
-                            <li><strong>Energy:</strong> 20+ Energy T2</li>
-                            <li><strong>Time:</strong> 25-30min</li>
-                            <li><strong>Defense:</strong> Base secured (Walls + Turrets + Umbrella)</li>
-                        </ul>
-
-                        <h4>🎯 Exécution</h4>
-                        <ol>
-                            <li><strong>20:00</strong> - Build Nuke Launcher (18000 Metal)</li>
-                            <li><strong>23:00</strong> - Build 3-5 Nukes simultanément (32000 each)</li>
-                            <li><strong>28:00</strong> - Launch all nukes en <5s (saturation)</li>
-                        </ol>
-
-                        <h4>🎯 Targeting</h4>
-                        <ol>
-                            <li><strong>Nuke 1:</strong> Commander (instant win si hit)</li>
-                            <li><strong>Nuke 2-3:</strong> Mex T2 clusters (économie)</li>
-                            <li><strong>Nuke 4-5:</strong> Advanced Factories (production)</li>
-                        </ol>
-
-                        <h4>💡 Tactiques</h4>
-                        <ul>
-                            <li><strong>Saturation:</strong> Launch multiple nukes <5s pour overwhelm Anti-Nuke</li>
-                            <li><strong>Angles:</strong> Tirez depuis différents angles (force multiple Anti-Nuke)</li>
-                            <li><strong>Fakeout:</strong> Launch 1 nuke sur target faible, ennemi move Anti-Nuke, puis nuke Commander</li>
-                        </ul>
-
-                        <div class="warning-box">
-                            <h4>⚠️ Counter: Anti-Nuke</h4>
-                            <p>Anti-Nuke intercepte 1 nuke par missile. Si ennemi a 3 Anti-Nuke avec 3 missiles chacun = 
-                            peut intercept 9 nukes. Nécessite 10+ nukes pour saturation.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ERREURS COMMUNES -->
-                <div class="section-header">
-                    <h2 class="section-title">❌ Erreurs Fatales à Éviter</h2>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-content">
-                        <h4>1. Économie Négligée</h4>
-                        <p><strong>Erreur:</strong> Build armée sans expand économie.</p>
-                        <p><strong>Conséquence:</strong> Ennemi avec meilleure économie vous overwhelm en mid/late game.</p>
-                        <p><strong>Solution:</strong> Règle d'or: toujours 1-2 Fabbers qui expand Mex constamment.</p>
-
-                        <h4>2. Pas de AA</h4>
-                        <p><strong>Erreur:</strong> Ignorer defenses AA (Spinner, Umbrella).</p>
-                        <p><strong>Conséquence:</strong> 5 Bumblebee ou 2-3 Kestrel détruisent votre base en 2min.</p>
-                        <p><strong>Solution:</strong> TOUJOURS build AA dès que ennemi a Air Factory. Non-négociable.</p>
-
-                        <h4>3. Army Sitting Idle</h4>
-                        <p><strong>Erreur:</strong> Build grosse armée mais ne l'utilise jamais (attend "perfect moment").</p>
-                        <p><strong>Conséquence:</strong> Metal gaspillé dans unités qui ne font rien. Ennemi expand librement.</p>
-                        <p><strong>Solution:</strong> Constant pressure. Attaquez avec 30-40 unités, pas besoin d'attendre 100.</p>
-
-                        <h4>4. Commander Exposé</h4>
-                        <p><strong>Erreur:</strong> Commander seul en frontline ou expanding dans zones dangereuses.</p>
-                        <p><strong>Conséquence:</strong> Snipe = instant loss.</p>
-                        <p><strong>Solution:</strong> Gardez Commander avec armée ou dans base protégée après 10min.</p>
-
-                        <h4>5. Pas de Scouting</h4>
-                        <p><strong>Erreur:</strong> Ne pas scout stratégie ennemie (Air? T2 rush? Boom cheese?).</p>
-                        <p><strong>Conséquence:</strong> Surprise attacks = défaites évitables.</p>
-                        <p><strong>Solution:</strong> 1-2 Fabbers ou Air scouts constamment scouting ennemi. Radar obligatoire.</p>
-
-                        <h4>6. Energy Stall</h4>
-                        <p><strong>Erreur:</strong> Économie metal positive mais energy négative.</p>
-                        <p><strong>Conséquence:</strong> Build speed réduit 50-90%, production quasi-stoppée.</p>
-                        <p><strong>Solution:</strong> Ratio ~3 Energy T1 pour 10 Mex T1. Surveillez barre energy constamment.</p>
-
-                        <h4>7. Fighting Uphill</h4>
-                        <p><strong>Erreur:</strong> Attaquer quand ennemi a tech/number advantage.</p>
-                        <p><strong>Conséquence:</strong> Perdre armée pour rien, tombez encore plus derrière.</p>
-                        <p><strong>Solution:</strong> Si derrière, play defensive (Walls + Turrets) et rush tech (T2/Titans).</p>
-
-                        <h4>8. Overinvestment Defenses</h4>
-                        <p><strong>Erreur:</strong> Build 20 Turrets partout "pour être safe".</p>
-                        <p><strong>Conséquence:</strong> Metal gaspillé dans static defense, ennemi expand et vous overwhelm.</p>
-                        <p><strong>Solution:</strong> Defense minimale (Walls + 3-5 Turrets key points), investissez dans armée mobile.</p>
-
-                        <h4>9. Ignorer Map Control</h4>
-                        <p><strong>Erreur:</strong> Rester dans votre coin, ne pas contest center map.</p>
-                        <p><strong>Conséquence:</strong> Ennemi prend 70% map, économie massive, vous steamroll.</p>
-                        <p><strong>Solution:</strong> Constant expansion. Objectif: contrôler 50-60% map en mid game.</p>
-
-                        <h4>10. Pas de Plan B</h4>
-                        <p><strong>Erreur:</strong> All-in sur une stratégie (ex: Air only), pas de backup si countered.</p>
-                        <p><strong>Conséquence:</strong> Si hard-countered (mass AA vs Air), vous n'avez rien.</p>
-                        <p><strong>Solution:</strong> Toujours avoir diversité: Air + Ground, ou T1 + T2, etc.</p>
-                    </div>
-                </div>
-
-                <!-- MIND GAMES -->
-                <div class="section-header">
-                    <h2 class="section-title">🧠 Mind Games & Psychologie</h2>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-content">
-                        <h4>1. Fake Pressure</h4>
-                        <p>Envoyez petite armée (10 Dox) attaquer de face pendant que vraie armée (50 Ant) flanque. 
-                        Ennemi focus defends front, ignorant le vrai danger.</p>
-
-                        <h4>2. Hidden Tech</h4>
-                        <p>Build Advanced Factory dans coin caché de map. Ennemi pense vous êtes full T1, soudain 
-                        20 Slammer apparaissent = panic.</p>
-
-                        <h4>3. Fake Cheese</h4>
-                        <p>Build Bot Factory visible, ennemi assume Boom rush et overinvest Walls. Vous faites 
-                        Vehicle standard = économie advantage.</p>
-
-                        <h4>4. Bait & Punish</h4>
-                        <p>Envoyez petite armée attaquer, retreat quand ennemi engage. Ennemi overextend, 
-                        vous counter-attack avec armée principale = wipe.</p>
-
-                        <h4>5. Commander Bait</h4>
-                        <p>Placez Commander "exposé" près frontline. Ennemi all-in pour snipe. C'est un piège: 
-                        20 Boom ou 50 Dox cachés nearby = reverse snipe.</p>
-
-                        <h4>6. Fake Expand</h4>
-                        <p>Envoyez Fabber construire Mex en zone neutre, très visible. Ennemi raid = vous 
-                        expand VRAIE direction pendant qu'il perd temps.</p>
-
-                        <h4>7. Timing Manipulation</h4>
-                        <p>Constant small attacks toutes les 2min = ennemi stress, fait erreurs, gaspille 
-                        ressources en reactive defenses.</p>
-
-                        <h4>8. Sound Cues</h4>
-                        <p>Lancez nuke sur location vide juste pour sound effect. Ennemi panic, build Anti-Nuke 
-                        partout = metal gaspillé. Vous avez aucun nuke, c'était bluff.</p>
-                    </div>
-                </div>
-
-                <!-- TIMINGS CRITIQUES -->
-                <div class="section-header">
-                    <h2 class="section-title">⏰ Timings Critiques</h2>
-                </div>
-
-                <div class="unit-card">
-                    <div class="unit-content">
-                        <h4>0-5min: Economy Foundation</h4>
-                        <ul>
-                            <li><strong>Objectif:</strong> 15 Mex, 1-2 Factories, 20-30 unités T1</li>
-                            <li><strong>Focus:</strong> Expansion > Army</li>
-                            <li><strong>Danger:</strong> Vulnérable cheese (Boom rush)</li>
-                        </ul>
-
-                        <h4>5-10min: Army Building</h4>
-                        <ul>
-                            <li><strong>Objectif:</strong> 20-25 Mex, 3 Factories, 50-80 unités</li>
-                            <li><strong>Focus:</strong> Pressure constante, map control</li>
-                            <li><strong>Power Spike:</strong> 8min avec 50 Ant = dominant T1</li>
-                        </ul>
-
-                        <h4>10-15min: Tech Transition</h4>
-                        <ul>
-                            <li><strong>Objectif:</strong> Décider T2 ou stay T1 mass</li>
-                            <li><strong>Focus:</strong> Si T2: build Advanced Factory. Si T1: spam more Factories</li>
-                            <li><strong>Critical:</strong> Build AA (Umbrella si ennemi Air T2)</li>
-                        </ul>
-
-                        <h4>15-20min: T2 Dominance</h4>
-                        <ul>
-                            <li><strong>Objectif:</strong> 15-20 Mex T2, production T2 constante</li>
-                            <li><strong>Power Spike:</strong> 15-20 Vanguard ou 5-8 Kestrel = game-changing</li>
-                            <li><strong>Win Condition:</strong> Push advantage, ne laissez pas ennemi catch up</li>
-                        </ul>
-
-                        <h4>20-30min: Late Game Weapons</h4>
-                        <ul>
-                            <li><strong>Objectif:</strong> Titans, Nukes, ou Halleys</li>
-                            <li><strong>Économie:</strong> 40-50 Mex T2 minimum</li>
-                            <li><strong>Endgame:</strong> Premier à superweapon avec support = win</li>
-                        </ul>
-
-                        <h4>30min+: Attrition Warfare</h4>
-                        <ul>
-                            <li><strong>Situation:</strong> Stalemate, bases fortifiées</li>
-                            <li><strong>Strategy:</strong> Orbital control + Artillery spam + Nuke saturation</li>
-                            <li><strong>Win:</strong> Superior economy overwhelm défenses</li>
-                        </ul>
-                    </div>
-                </div>
-
             </div>
         </section>
+
+        <!-- ==================== FONDAMENTAUX ==================== -->
+        <section class="section" id="fondamentaux">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🎯 Les Fondamentaux</h2>
+                </div>
+                <p class="section-subtitle">Les 3 règles d'or que tout joueur doit maîtriser.</p>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">📈 Règle #1 : L'Économie est TOUT</h3>
+                    <div class="strategy-content">
+                        <p><strong>Plus de Metal = Plus d'Armée = Victoire.</strong> C'est aussi simple que ça.</p>
+                        <p>L'économie est la fondation de votre jeu. Sans ressources, pas d'unités. Sans unités, pas de victoire.</p>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                <strong>Objectif :</strong> Gardez votre <em>"Metal Used"</em> au-dessus de 90% en fin de partie. Les meilleurs joueurs atteignent ~100%. Si vous stockez du metal, vous perdez du temps !
+                            </div>
+                        </div>
+                        
+                        <p><strong>Principes clés :</strong></p>
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li>Ne jamais arrêter d'expand - la moitié du metal de la map est à vous</li>
+                            <li>1-2 fabbers doivent TOUJOURS travailler sur l'éco</li>
+                            <li>Dépenser > Stocker (ajoutez des factories si vous overflow)</li>
+                            <li>Ratio : ~1 Energy Plant par Metal Extractor</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">🏭 Règle #2 : Production Continue</h3>
+                    <div class="strategy-content">
+                        <p><strong>Vos factories ne doivent JAMAIS être idle.</strong></p>
+                        <p>Si vous avez du metal qui rentre et que vos factories ne produisent pas, vous perdez la partie.</p>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                <strong>Le Commander</strong> doit construire des <em>factories</em>, pas des structures éco. Minimisez son temps de marche entre les constructions pour maximiser votre armée.
+                            </div>
+                        </div>
+                        
+                        <p><strong>Principes clés :</strong></p>
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li>Mettez vos factories en production continue (mode boucle)</li>
+                            <li>Ajoutez des factories tant que votre éco le permet</li>
+                            <li>Jamais dans le rouge (stall), jamais dans le bleu (overflow) → toujours vert</li>
+                            <li>Plus de factories = plus d'unités = victoire</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">🔄 Règle #3 : Tout a un Counter</h3>
+                    <div class="strategy-content">
+                        <p><strong>Il n'y a pas d'unité "meilleure".</strong> Chaque unité a des forces et des faiblesses.</p>
+                        <p>Le secret : <em>scouter</em> ce que fait l'ennemi et adapter votre composition.</p>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                <strong>Scout early !</strong> Un Firefly en début de partie vous montre ce que l'ennemi prépare. Cette info vaut de l'or.
+                            </div>
+                        </div>
+                        
+                        <p><strong>Exemples de counters basiques :</strong></p>
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li><strong>Dox</strong> → Inferno, Spark, Grenadier</li>
+                            <li><strong>Tanks (Ant)</strong> → Bombers, Gil-E</li>
+                            <li><strong>Air</strong> → Spinner, Storm, Galata, Flak</li>
+                            <li><strong>Titans</strong> → Air, Orbital, Artillery</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><em>Voir la section <a href="#counters" style="color: #00d4ff;">Tableau des Counters</a> pour la liste complète.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== BUILD ORDERS ==================== -->
+        <section class="section" id="build-orders">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🏁 Build Orders</h2>
+                </div>
+                <p class="section-subtitle">Ordres de construction optimaux pour bien démarrer.</p>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">⭐ Opening Standard (Recommandé)</h3>
+                    <div class="strategy-content">
+                        <p>L'opening le plus polyvalent, utilisé par les joueurs de haut niveau. Tech T2 vers 5-6 minutes.</p>
+                        
+                        <div class="build-order">
+                            <div class="build-step">
+                                <span class="step-number">1</span>
+                                <span class="step-text"><strong>Bot Factory</strong></span>
+                                <span class="step-note">Commander construit</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">2</span>
+                                <span class="step-text"><strong>2-3 Fabbers</strong> → puis Dox en continu</span>
+                                <span class="step-note">Depuis Bot Factory</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">3</span>
+                                <span class="step-text"><strong>Metal Extractors</strong> (expand)</span>
+                                <span class="step-note">Fabbers travaillent</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">4</span>
+                                <span class="step-text"><strong>Energy Plant</strong></span>
+                                <span class="step-note">Commander</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">5</span>
+                                <span class="step-text"><strong>Air Factory</strong> → Firefly → Hummingbird</span>
+                                <span class="step-note">Commander</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">6</span>
+                                <span class="step-text"><strong>Energy Plant</strong></span>
+                                <span class="step-note">Commander</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">7</span>
+                                <span class="step-text"><strong>Vehicle Factory</strong> → Ants + Spinners</span>
+                                <span class="step-note">Commander</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">8</span>
+                                <span class="step-text"><strong>Tech T2</strong> (Adv Vehicle ou Bot Factory)</span>
+                                <span class="step-note">~5-6 min</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                Le <strong>Firefly</strong> en étape 5 est crucial : il vous permet de voir la base ennemie et d'adapter votre stratégie.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">🚀 Variante : Rush Agressif</h3>
+                    <div class="strategy-content">
+                        <p>Pour les petites maps ou quand vous voulez punir un ennemi greedy.</p>
+                        
+                        <div class="build-order">
+                            <div class="build-step">
+                                <span class="step-number">1</span>
+                                <span class="step-text"><strong>Bot Factory</strong> → 1 Fabber → Dox spam</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">2</span>
+                                <span class="step-text"><strong>2-3 Mex</strong> (juste assez pour spam)</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">3</span>
+                                <span class="step-text"><strong>2ème Bot Factory</strong> → Dox + Boom</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">4</span>
+                                <span class="step-text"><strong>Rush Commander ennemi</strong></span>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <strong>⚠️ Attention :</strong> Si le rush échoue, vous serez en retard économiquement. Commit uniquement si vous sentez une ouverture.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">🌍 Variante : Multi-Planète</h3>
+                    <div class="strategy-content">
+                        <p>Quand vous êtes seul sur une planète ou que le système a plusieurs planètes.</p>
+                        
+                        <div class="build-order">
+                            <div class="build-step">
+                                <span class="step-number">1</span>
+                                <span class="step-text"><strong>Bot Factory</strong> → Fabbers</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">2</span>
+                                <span class="step-text"><strong>Expand agressif</strong> (contrôlez votre planète)</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">3</span>
+                                <span class="step-text"><strong>Orbital Launcher</strong> → Astraeus + Fabber</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">4</span>
+                                <span class="step-text"><strong>Drop Fabber</strong> sur 2ème planète</span>
+                            </div>
+                            <div class="build-step">
+                                <span class="step-number">5</span>
+                                <span class="step-text"><strong>Établir base</strong> + Teleporter</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                Arriver <strong>premier sur une 2ème planète</strong> = avantage économique massif. La planète sera plus petite et facile à défendre.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== COMPOSITIONS ==================== -->
+        <section class="section" id="compositions">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">⚔️ Compositions d'Armées</h2>
+                </div>
+                <p class="section-subtitle">Quelles unités mélanger pour une armée équilibrée.</p>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title"><span class="phase-badge phase-early">EARLY</span> Composition T1 Standard</h3>
+                    <div class="strategy-content">
+                        <p>L'armée de base pour le early-mid game. Équilibrée et polyvalente.</p>
+                        
+                        <div class="army-comp">
+                            <div class="army-unit">
+                                <div class="army-unit-percent">60%</div>
+                                <div class="army-unit-name">Ants</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">20%</div>
+                                <div class="army-unit-name">Spinners</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">10%</div>
+                                <div class="army-unit-name">Infernos</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">10%</div>
+                                <div class="army-unit-name">Dox (raids)</div>
+                            </div>
+                        </div>
+                        
+                        <p><strong>Pourquoi ça marche :</strong></p>
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li><strong>Ants</strong> : DPS principal, bonne range, tanky</li>
+                            <li><strong>Spinners</strong> : Protection AA indispensable</li>
+                            <li><strong>Infernos</strong> : Tanks de front, AoE contre bots</li>
+                            <li><strong>Dox</strong> : Raids séparés sur l'éco ennemie</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title"><span class="phase-badge phase-early">EARLY</span> Composition Bot Rush</h3>
+                    <div class="strategy-content">
+                        <p>Armée rapide et agressive pour rush ou harcèlement constant.</p>
+                        
+                        <div class="army-comp">
+                            <div class="army-unit">
+                                <div class="army-unit-percent">70%</div>
+                                <div class="army-unit-name">Dox</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">20%</div>
+                                <div class="army-unit-name">Booms</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">10%</div>
+                                <div class="army-unit-name">Stingers</div>
+                            </div>
+                        </div>
+                        
+                        <p><strong>Utilisation :</strong></p>
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li>Envoyez les Booms en premier pour exploser sur les défenses</li>
+                            <li>Dox suivent pour finir le travail</li>
+                            <li>Stingers pour l'AA de protection</li>
+                            <li>Rapide et cheap, mais fragile contre Infernos/Sparks</li>
+                        </ul>
+                        
+                        <div class="warning-box">
+                            <strong>⚠️ Counter :</strong> Inferno et Spark détruisent cette composition. Scout avant de commit !
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title"><span class="phase-badge phase-mid">MID</span> Composition T2 Véhicules</h3>
+                    <div class="strategy-content">
+                        <p>Armée mid-late game pour écraser les défenses et dominer au sol.</p>
+                        
+                        <div class="army-comp">
+                            <div class="army-unit">
+                                <div class="army-unit-percent">40%</div>
+                                <div class="army-unit-name">Vanguard</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">25%</div>
+                                <div class="army-unit-name">Leveler</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">20%</div>
+                                <div class="army-unit-name">Storm</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">15%</div>
+                                <div class="army-unit-name">Sheller</div>
+                            </div>
+                        </div>
+                        
+                        <p><strong>Synergie :</strong></p>
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li><strong>Vanguard</strong> : Tanks ultra-lourds + radar jam !</li>
+                            <li><strong>Leveler</strong> : DPS rapide en support</li>
+                            <li><strong>Storm</strong> : Flak AA contre Zeus/Kestrel</li>
+                            <li><strong>Sheller</strong> : Artillerie mobile, détruit bases à distance</li>
+                        </ul>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                <strong>10-15 Vanguard</strong> forment une armée quasi-imbattable au sol. Ajoutez des Storm pour l'AA !
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title"><span class="phase-badge phase-mid">MID</span> Composition Air Dominance</h3>
+                    <div class="strategy-content">
+                        <p>Contrôlez le ciel pour détruire l'économie et snipe Commander.</p>
+                        
+                        <div class="army-comp">
+                            <div class="army-unit">
+                                <div class="army-unit-percent">40%</div>
+                                <div class="army-unit-name">Kestrel</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">30%</div>
+                                <div class="army-unit-name">Phoenix</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">20%</div>
+                                <div class="army-unit-name">Hornet</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">10%</div>
+                                <div class="army-unit-name">Angel</div>
+                            </div>
+                        </div>
+                        
+                        <p><strong>Utilisation :</strong></p>
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li><strong>Kestrel</strong> : Gunships qui stationnent et détruisent tout</li>
+                            <li><strong>Phoenix</strong> : Escorte contre air ennemi</li>
+                            <li><strong>Hornet</strong> : Carpet bombing sur lignes</li>
+                            <li><strong>Angel</strong> : Heal vos avions en vol</li>
+                        </ul>
+                        
+                        <div class="warning-box">
+                            <strong>⚠️ Counter :</strong> Storm et Flak Cannon détruisent cette composition. Évitez les zones avec AA T2 !
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title"><span class="phase-badge phase-late">LATE</span> Composition Snipe Commander</h3>
+                    <div class="strategy-content">
+                        <p>Armée spécialisée pour assassiner le Commander ennemi.</p>
+                        
+                        <div class="army-comp">
+                            <div class="army-unit">
+                                <div class="army-unit-percent">50%</div>
+                                <div class="army-unit-name">Slammer</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">30%</div>
+                                <div class="army-unit-name">Boom</div>
+                            </div>
+                            <div class="army-unit">
+                                <div class="army-unit-percent">20%</div>
+                                <div class="army-unit-name">Stinger (AA)</div>
+                            </div>
+                        </div>
+                        
+                        <p><strong>Méthodes de livraison :</strong></p>
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li><strong>Unit Cannon</strong> : Tire Slammers directement sur le Commander</li>
+                            <li><strong>Teleporter</strong> : Armée prête → téléport → rush</li>
+                            <li><strong>Helios</strong> : Drop massif depuis l'orbite</li>
+                        </ul>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                Les <strong>Slammers</strong> ont un DPS énorme. 10 Slammers tuent un Commander en quelques secondes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MAP CONTROL ==================== -->
+        <section class="section" id="map-control">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🗺️ Contrôle de Map</h2>
+                </div>
+                <p class="section-subtitle">Dominez le terrain pour dominer la partie.</p>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">📍 Principes de Base</h3>
+                    <div class="strategy-content">
+                        <p><strong>La map est une ressource.</strong> Chaque Mex non capturé est du metal perdu.</p>
+                        
+                        <p><strong>Règle d'or :</strong> En 1v1, <em>la moitié du metal de la map vous appartient</em>. Allez le prendre !</p>
+                        
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li><strong>Expand vers le centre</strong> : Les Mex au milieu sont contestés - prenez-les en premier</li>
+                            <li><strong>Identifiez les choke points</strong> : Passages étroits = positions défensives fortes</li>
+                            <li><strong>Défendez vos expansions</strong> : 1 turret par Mex exposé</li>
+                            <li><strong>Ne turtle pas</strong> : Une base fortifiée sans expand = défaite lente</li>
+                        </ul>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                Placez vos <strong>factories près des choke points</strong>, pas au centre de votre base. Les unités sortent directement en position défensive.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">🏃 Raids Économiques</h3>
+                    <div class="strategy-content">
+                        <p><strong>Détruire l'éco ennemie est aussi important que construire la vôtre.</strong></p>
+                        
+                        <p>Types de raids efficaces :</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; border-left: 3px solid #2ecc71;">
+                                <strong style="color: #2ecc71;">🤖 Dox Raid</strong>
+                                <p style="color: #c0c0c0; font-size: 0.9rem; margin-top: 8px;">5-10 Dox en groupe séparé. Envoyez-les sur les Mex isolés. Rapide, cheap, efficace.</p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; border-left: 3px solid #3498db;">
+                                <strong style="color: #3498db;">✈️ Bumblebee Raid</strong>
+                                <p style="color: #c0c0c0; font-size: 0.9rem; margin-top: 8px;">5 Bombers = 3-4 Mex détruits par passage. Ciblez les zones sans AA.</p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; border-left: 3px solid #9b59b6;">
+                                <strong style="color: #9b59b6;">💥 Boom Drop</strong>
+                                <p style="color: #c0c0c0; font-size: 0.9rem; margin-top: 8px;">Pelican + Boom. Drop derrière les lignes pour exploser sur les Fabbers/Pgen.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                Les raids <strong>divisent l'attention</strong> de l'ennemi. Pendant qu'il chasse vos Dox, votre armée principale peut push !
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">📡 Information = Pouvoir</h3>
+                    <div class="strategy-content">
+                        <p><strong>Un joueur qui scout gagne contre un joueur qui ne scout pas.</strong></p>
+                        
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li><strong>Firefly early</strong> : Scout la base ennemie dès que possible</li>
+                            <li><strong>Skitter</strong> : Laissez-en aux choke points pour voir les mouvements</li>
+                            <li><strong>Radar</strong> : 1 par zone défensive (Pelter + Radar = combo)</li>
+                            <li><strong>ARKYD satellite</strong> : Vision orbitale permanente sur zone</li>
+                        </ul>
+                        
+                        <p style="margin-top: 15px;"><strong>Que chercher :</strong></p>
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li>Quel type de factory construit-il ? (Bots, Véhicules, Air ?)</li>
+                            <li>Tech-t-il T2 ? (Adv Factory visible)</li>
+                            <li>Où est son Commander ? (Cible de snipe potentielle)</li>
+                            <li>A-t-il de l'AA ? (Opportunité pour bombers)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">⚔️ Quand Attaquer vs Défendre</h3>
+                    <div class="strategy-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                            <div>
+                                <h4 style="color: #2ecc71; margin-bottom: 10px;">✅ Attaquez si...</h4>
+                                <ul style="color: #c0c0c0; margin-left: 20px;">
+                                    <li>Vous avez plus d'unités</li>
+                                    <li>L'ennemi expand sans défense</li>
+                                    <li>Son Commander est exposé</li>
+                                    <li>Il n'a pas d'AA et vous avez des bombers</li>
+                                    <li>Il tech T2 trop tôt (il est vulnérable)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: #e74c3c; margin-bottom: 10px;">🛡️ Défendez si...</h4>
+                                <ul style="color: #c0c0c0; margin-left: 20px;">
+                                    <li>Vous êtes en retard économiquement</li>
+                                    <li>L'ennemi a un avantage d'armée</li>
+                                    <li>Vous attendez un power spike (Titan, T2)</li>
+                                    <li>Vous préparez un game-ender (Nuke, Halley)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                <strong>Défendre ≠ Turtle.</strong> Défendez tout en continuant d'expand et de produire. L'inaction = la mort.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MULTI-PLANÈTE ==================== -->
+        <section class="section" id="multi-planete">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🌍 Stratégies Multi-Planète</h2>
+                </div>
+                <p class="section-subtitle">Conquérir et défendre à l'échelle du système solaire.</p>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">🚀 Quand Aller Orbital ?</h3>
+                    <div class="strategy-content">
+                        <p>L'orbital est <strong>situationnel</strong>. Ne rushez pas orbital si vous partagez la planète avec l'ennemi !</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid rgba(46, 204, 113, 0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #2ecc71; margin-bottom: 10px;">✅ Rush Orbital si...</h4>
+                                <ul style="color: #c0c0c0; margin-left: 15px; font-size: 0.9rem;">
+                                    <li>Vous êtes seul sur votre planète</li>
+                                    <li>Il y a une lune proche (opportunité Halley)</li>
+                                    <li>Il y a un Metal Planet dans le système</li>
+                                    <li>Il y a une Gas Giant (Jigs = éco massive)</li>
+                                </ul>
+                            </div>
+                            <div style="background: rgba(231, 76, 60, 0.1); border: 1px solid rgba(231, 76, 60, 0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #e74c3c; margin-bottom: 10px;">❌ Évitez Orbital si...</h4>
+                                <ul style="color: #c0c0c0; margin-left: 15px; font-size: 0.9rem;">
+                                    <li>L'ennemi est sur la même planète (focus ground)</li>
+                                    <li>Vous perdez la guerre terrestre</li>
+                                    <li>Votre éco ne peut pas supporter les 2 fronts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">🛸 Méthodes d'Invasion</h3>
+                    <div class="strategy-content">
+                        <p>Plusieurs façons d'envahir une planète ennemie :</p>
+                        
+                        <div style="margin: 20px 0;">
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 3px solid #00d4ff;">
+                                <h4 style="color: #00d4ff;">1. Astraeus + Fabber (Early Invasion)</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem; margin-top: 8px;">
+                                    Drop un Fabber → Construisez une base → Teleporter → Envoyez l'armée.
+                                    <br><strong>Pro :</strong> Cheap, discret. <strong>Con :</strong> Lent, vulnérable au début.
+                                </p>
+                            </div>
+                            
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 3px solid #ffd700;">
+                                <h4 style="color: #ffd700;">2. Helios Titan (Mass Teleport)</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem; margin-top: 8px;">
+                                    Préparez une armée → Helios en orbite → Téléportez tout d'un coup.
+                                    <br><strong>Pro :</strong> Invasion massive instantanée. <strong>Con :</strong> Coûteux, ONE WAY !
+                                </p>
+                                <div class="warning-box" style="margin-top: 10px; padding: 10px;">
+                                    <strong>⚠️ Helios = ONE WAY.</strong> Les unités ne peuvent pas revenir sans Teleporter au sol !
+                                </div>
+                            </div>
+                            
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 3px solid #e74c3c;">
+                                <h4 style="color: #e74c3c;">3. Unit Cannon (Dox/Slammer Rain)</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem; margin-top: 8px;">
+                                    Construit et lance des unités sur une autre planète. Spam Dox ou Slammer pour chaos.
+                                    <br><strong>Pro :</strong> Contourne les défenses orbitales. <strong>Con :</strong> Unités légères seulement.
+                                </p>
+                            </div>
+                            
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 3px solid #9b59b6;">
+                                <h4 style="color: #9b59b6;">4. SXX Laser (Snipe)</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem; margin-top: 8px;">
+                                    Laser orbital qui snipe structures ou Commander depuis l'espace.
+                                    <br><strong>Pro :</strong> Précis, longue portée. <strong>Con :</strong> Countered par Umbrella.
+                                </p>
+                            </div>
+                            
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; border-left: 3px solid #f39c12;">
+                                <h4 style="color: #f39c12;">5. Nuke Opening (Beachhead)</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem; margin-top: 8px;">
+                                    Nuke pour détruire les défenses → Invasion derrière.
+                                    <br><strong>Pro :</strong> Ouvre une brèche. <strong>Con :</strong> Countered par Anti-Nuke.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">🛡️ Défense Planétaire</h3>
+                    <div class="strategy-content">
+                        <p>Comment protéger votre planète d'une invasion :</p>
+                        
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li><strong>Umbrella Grid</strong> : Couvrez votre base d'Umbrellas (anti-orbital)</li>
+                            <li><strong>Anti-Nuke</strong> : Toujours avoir 2+ missiles stockés</li>
+                            <li><strong>Catapult</strong> : Contre Unit Cannon (missiles longue portée)</li>
+                            <li><strong>Avenger patrols</strong> : Chasseurs orbitaux pour détruire les Astraeus</li>
+                            <li><strong>Anchor grid</strong> : Satellites de défense qui tirent sol + orbital</li>
+                        </ul>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                <strong>Scout orbital ennemi !</strong> Si vous voyez des Astraeus ou un Helios en construction, préparez vos défenses.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== WIN CONDITIONS ==================== -->
+        <section class="section" id="win-conditions">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🏆 Win Conditions</h2>
+                </div>
+                <p class="section-subtitle">Comment gagner à chaque phase du jeu.</p>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title"><span class="phase-badge phase-early">0-10 MIN</span> Victoires Early Game</h3>
+                    <div class="strategy-content">
+                        <p>Gagner tôt = punir les erreurs de l'ennemi.</p>
+                        
+                        <div style="margin: 15px 0;">
+                            <h4 style="color: #2ecc71; margin-bottom: 10px;">🎯 Dox Rush</h4>
+                            <p style="color: #c0c0c0;">Spam Dox depuis 2 Bot Factories. Rush le Commander ennemi avant qu'il ait des défenses. Fonctionne contre les joueurs greedy qui expand trop sans armée.</p>
+                        </div>
+                        
+                        <div style="margin: 15px 0;">
+                            <h4 style="color: #2ecc71; margin-bottom: 10px;">💣 Bomber Snipe</h4>
+                            <p style="color: #c0c0c0;">Si l'ennemi n'a pas d'AA, 10-15 Bumblebee peuvent tuer le Commander. Scout d'abord pour vérifier les Galata/Spinners.</p>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <strong>⚠️ Risque :</strong> Si le rush échoue, vous serez très en retard. Commit uniquement si vous êtes sûr de l'ouverture.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title"><span class="phase-badge phase-mid">10-20 MIN</span> Victoires Mid Game</h3>
+                    <div class="strategy-content">
+                        <p>Le mid game est le moment des power spikes et des snipes.</p>
+                        
+                        <div style="margin: 15px 0;">
+                            <h4 style="color: #f39c12; margin-bottom: 10px;">🦾 Slammer Rush</h4>
+                            <p style="color: #c0c0c0;">Dès que vous avez une Adv Bot Factory, spam Slammer. Leur DPS énorme peut snipe un Commander en secondes. Utilisez Unit Cannon pour les drop directement sur la cible.</p>
+                        </div>
+                        
+                        <div style="margin: 15px 0;">
+                            <h4 style="color: #f39c12; margin-bottom: 10px;">🚁 Kestrel Swarm</h4>
+                            <p style="color: #c0c0c0;">8-10 Kestrel + Phoenix escort. Les gunships détruisent tout au sol. Évitez les zones avec Storm/Flak.</p>
+                        </div>
+                        
+                        <div style="margin: 15px 0;">
+                            <h4 style="color: #f39c12; margin-bottom: 10px;">☢️ Nuke</h4>
+                            <p style="color: #c0c0c0;">Si l'ennemi n'a pas d'Anti-Nuke, une nuke = victoire. Scout pour vérifier ! Coût total : ~47k metal (launcher + missile).</p>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                <strong>Scout l'Anti-Nuke !</strong> Un joueur prudent en aura. Mais s'il n'a pas de missile stocké, votre nuke passera.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title"><span class="phase-badge phase-late">20+ MIN</span> Victoires Late Game</h3>
+                    <div class="strategy-content">
+                        <p>Le late game est l'ère des Titans et des super-armes.</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #e74c3c;">⚡ Zeus</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem;">Titan aérien. Éclairs sur tout. Tue Commander en ~20s. Counter : Storm masse.</p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #e74c3c;">🦶 Atlas</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem;">Titan terrestre. Attaque sismique AoE. Tue Commander en 2 coups. Counter : Air.</p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #e74c3c;">🏰 Ares</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem;">Forteresse roulante. 50k HP. Portée énorme. Lent mais inarrêtable. Counter : Air.</p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #e74c3c;">🌀 Helios</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem;">Téléporteur orbital. Drop armée entière n'importe où. Counter : Umbrella.</p>
+                            </div>
+                        </div>
+                        
+                        <h4 style="color: #ffd700; margin: 20px 0 15px;">🌍 Planet Killers</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                            <div style="background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #ffd700;">☄️ Halley (Planet Smash)</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem;">Propulse une lune/astéroïde sur une planète. 1-5 Halleys selon la taille. <strong>Victoire totale.</strong></p>
+                            </div>
+                            <div style="background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #ffd700;">💀 Ragnarok</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem;">Construit sur planète ennemie. 60s de charge → planète détruite. Vous mourrez aussi si vous êtes dessus !</p>
+                            </div>
+                            <div style="background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #ffd700;">⚡ Catalyst (Death Star)</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem;">5 Catalysts sur Metal Planet = laser qui détruit n'importe quelle planète. Rechargeable !</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DÉFENSE ==================== -->
+        <section class="section" id="defense">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🛡️ Stratégies Défensives</h2>
+                </div>
+                <p class="section-subtitle">Protéger votre économie et votre Commander.</p>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title"><span class="phase-badge phase-early">EARLY</span> Défense Early Game</h3>
+                    <div class="strategy-content">
+                        <p>Protégez vos Mex et votre Commander contre les raids.</p>
+                        
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li><strong>1 Single Laser</strong> par Mex exposé (cheap, anti-Dox)</li>
+                            <li><strong>Walls</strong> autour des structures importantes</li>
+                            <li><strong>Mines</strong> aux choke points et autour des Mex isolés</li>
+                            <li><strong>2-3 Galata</strong> près de vos factories (anti-bomber)</li>
+                            <li><strong>Spinners</strong> avec votre armée mobile</li>
+                        </ul>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                <strong>Wall + Turret</strong> est le combo de base. Les walls bloquent les Boom et ralentissent les rushes pendant que la turret tire.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title"><span class="phase-badge phase-mid">MID</span> Défense Mid Game</h3>
+                    <div class="strategy-content">
+                        <p>Contrer les pushes T2 et les raids aériens.</p>
+                        
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li><strong>Adv Laser Defense</strong> aux choke points (stoppe Vanguard)</li>
+                            <li><strong>Flak Cannon</strong> pour AA T2 (détruit Kestrel/Zeus)</li>
+                            <li><strong>Catapult</strong> pour zone denial longue portée</li>
+                            <li><strong>Holkins + Adv Radar</strong> = artillery siege défensive</li>
+                            <li><strong>Teleporter</strong> pour renforcer rapidement n'importe quelle zone</li>
+                        </ul>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                <strong>3-4 Adv Laser</strong> à un choke point = quasi-infranchissable. Mais attention à l'artillerie (Sheller, Holkins) qui les outrange.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title"><span class="phase-badge phase-late">LATE</span> Défense Late Game</h3>
+                    <div class="strategy-content">
+                        <p>Contrer les super-armes et les Titans.</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #e74c3c;">☢️ Anti-Nuke</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem;"><strong>TOUJOURS</strong> avoir 2+ missiles stockés. Un seul Anti-Nuke avec missiles vides = mort.</p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #00d4ff;">☂️ Umbrella Grid</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem;">Couvrez votre base d'Umbrellas. Counter SXX, Anchor, Astraeus drop, et même Helios.</p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #f39c12;">⚡ Anti-Zeus</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem;"><strong>5-8 Storm</strong> = no-fly zone même pour Zeus. Ajoutez des Flak pour coverage totale.</p>
+                            </div>
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #9b59b6;">🛰️ Anchor Grid</h4>
+                                <p style="color: #c0c0c0; font-size: 0.9rem;">Satellites de défense. Tirent sur sol ET orbital. Plusieurs Anchors = zone sécurisée.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <strong>⚠️ Défense vs Halley :</strong> Vous ne pouvez PAS stopper un Halley. Seule option : détruire les moteurs avant qu'ils soient terminés, ou évacuer la planète.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">🔒 Protéger le Commander</h3>
+                    <div class="strategy-content">
+                        <p><strong>Le Commander meurt = vous perdez.</strong> Gardez-le en sécurité !</p>
+                        
+                        <ul style="color: #c0c0c0; margin-left: 20px;">
+                            <li><strong>Ne l'exposez pas</strong> en première ligne de combat</li>
+                            <li><strong>Gardez-le près d'AA</strong> (Galata, Storm)</li>
+                            <li><strong>Anti-Nuke</strong> dans la zone du Commander</li>
+                            <li><strong>Umbrella</strong> au-dessus de lui (anti-SXX)</li>
+                            <li><strong>Bougez-le</strong> si vous voyez des scouts ennemis le repérer</li>
+                        </ul>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-text">
+                                Le Commander peut <strong>se défendre</strong> (il a un uber-cannon !), mais ne comptez pas dessus. Mieux vaut éviter le combat.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== COUNTERS ==================== -->
+        <section class="section" id="counters">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">📊 Tableau des Counters</h2>
+                </div>
+                <p class="section-subtitle">Référence rapide : quoi construire contre quoi.</p>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">🤖 Counters Unités Terrestres</h3>
+                    <div class="strategy-content">
+                        <table class="counter-table">
+                            <thead>
+                                <tr>
+                                    <th>Menace</th>
+                                    <th>Counters Efficaces</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Dox mass</strong></td>
+                                    <td>Inferno, Spark, Grenadier</td>
+                                    <td>AoE détruit les groupes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Boom rush</strong></td>
+                                    <td>Walls, Stinger, distance</td>
+                                    <td>Les walls bloquent les Boom</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ant mass</strong></td>
+                                    <td>Bombers, Gil-E, Slammer</td>
+                                    <td>Bombers si pas d'AA</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Inferno</strong></td>
+                                    <td>Ant (range), Gil-E, Air</td>
+                                    <td>Kite avec range supérieure</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Vanguard</strong></td>
+                                    <td>Gil-E (kite), Locusts, Air</td>
+                                    <td>Évitez le combat direct</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Slammer</strong></td>
+                                    <td>Vanguard, Leveler, Storm</td>
+                                    <td>Tanks lourds les battent</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sheller</strong></td>
+                                    <td>Rush (fragile), Air, Slammer</td>
+                                    <td>Tuez-les avant qu'ils tirent</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">✈️ Counters Unités Aériennes</h3>
+                    <div class="strategy-content">
+                        <table class="counter-table">
+                            <thead>
+                                <tr>
+                                    <th>Menace</th>
+                                    <th>Counters Efficaces</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Bumblebee</strong></td>
+                                    <td>Spinner, Galata, Hummingbird</td>
+                                    <td>N'importe quel AA</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hummingbird</strong></td>
+                                    <td>Phoenix, plus de Hummingbird</td>
+                                    <td>Nombres > qualité</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Kestrel</strong></td>
+                                    <td>Storm, Flak, Phoenix</td>
+                                    <td>Storm est le meilleur</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hornet</strong></td>
+                                    <td>Phoenix, Flak, Storm</td>
+                                    <td>Interceptez avant le bombing</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wyrm</strong></td>
+                                    <td>Storm masse, Flak, Phoenix</td>
+                                    <td>Très tanky, besoin de beaucoup d'AA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">🛰️ Counters Orbital & Titans</h3>
+                    <div class="strategy-content">
+                        <table class="counter-table">
+                            <thead>
+                                <tr>
+                                    <th>Menace</th>
+                                    <th>Counters Efficaces</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>SXX Laser</strong></td>
+                                    <td>Umbrella, Avenger</td>
+                                    <td>Umbrella = hard counter</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Anchor</strong></td>
+                                    <td>Umbrella, Artemis, SXX</td>
+                                    <td>Umbrella depuis le sol</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Helios</strong></td>
+                                    <td>Umbrella, Omega battleship</td>
+                                    <td>Plusieurs Umbrellas nécessaires</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Astraeus drop</strong></td>
+                                    <td>Umbrella, Avenger, Catapult</td>
+                                    <td>Détruisez-le en orbite</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Zeus</strong></td>
+                                    <td>Storm masse, Flak, Anchor</td>
+                                    <td>5-8 Storm = Zeus mort</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Atlas</strong></td>
+                                    <td>Air, Orbital (SXX), Holkins</td>
+                                    <td>Pas d'anti-air !</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ares</strong></td>
+                                    <td>Air mass, SXX, Locusts</td>
+                                    <td>Lent = kitable</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">☢️ Counters Super-Armes</h3>
+                    <div class="strategy-content">
+                        <table class="counter-table">
+                            <thead>
+                                <tr>
+                                    <th>Menace</th>
+                                    <th>Counters Efficaces</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Nuke</strong></td>
+                                    <td>Anti-Nuke (2+ missiles)</td>
+                                    <td>Un seul counter possible</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Halley</strong></td>
+                                    <td>Détruire avant completion</td>
+                                    <td>Invasion ou nuke les moteurs</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Catalyst</strong></td>
+                                    <td>Nuke, Invasion, Slammer drop</td>
+                                    <td>Détruire les 5 catalysts</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ragnarok</strong></td>
+                                    <td>Détruire en 60s, Evacuer</td>
+                                    <td>60s entre fin de build et boom</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Unit Cannon spam</strong></td>
+                                    <td>Catapult, Umbrella, Défenses</td>
+                                    <td>Catapult intercepte les unités</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ERREURS À ÉVITER ==================== -->
+        <section class="section" id="erreurs">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">❌ Erreurs à Éviter</h2>
+                </div>
+                <p class="section-subtitle">Les pièges classiques qui font perdre les parties.</p>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">🔴 Les 10 Erreurs Fatales</h3>
+                    <div class="strategy-content">
+                        <div style="display: grid; gap: 15px;">
+                            
+                            <div style="background: rgba(231, 76, 60, 0.1); border-left: 3px solid #e74c3c; padding: 15px; border-radius: 0 8px 8px 0;">
+                                <h4 style="color: #e74c3c; margin-bottom: 8px;">1. ❌ Fabbers en Boucle Infinie</h4>
+                                <p style="color: #c0c0c0; font-size: 0.95rem;">Mettre votre première factory en mode "fabbers infinis" = pas d'armée = mort certaine. <strong>2-3 fabbers max</strong>, puis unités de combat !</p>
+                            </div>
+                            
+                            <div style="background: rgba(231, 76, 60, 0.1); border-left: 3px solid #e74c3c; padding: 15px; border-radius: 0 8px 8px 0;">
+                                <h4 style="color: #e74c3c; margin-bottom: 8px;">2. ❌ Stocker au Lieu de Dépenser</h4>
+                                <p style="color: #c0c0c0; font-size: 0.95rem;">Si votre barre de metal est pleine, vous perdez des ressources. <strong>Ajoutez des factories</strong> ou des unités en queue !</p>
+                            </div>
+                            
+                            <div style="background: rgba(231, 76, 60, 0.1); border-left: 3px solid #e74c3c; padding: 15px; border-radius: 0 8px 8px 0;">
+                                <h4 style="color: #e74c3c; margin-bottom: 8px;">3. ❌ Pas de Scout</h4>
+                                <p style="color: #c0c0c0; font-size: 0.95rem;">Jouer à l'aveugle = se faire surprendre. <strong>Un Firefly early</strong> vous sauve la partie. Scout, scout, scout !</p>
+                            </div>
+                            
+                            <div style="background: rgba(231, 76, 60, 0.1); border-left: 3px solid #e74c3c; padding: 15px; border-radius: 0 8px 8px 0;">
+                                <h4 style="color: #e74c3c; margin-bottom: 8px;">4. ❌ Ignorer l'Anti-Air</h4>
+                                <p style="color: #c0c0c0; font-size: 0.95rem;">Une armée sans AA = cible facile pour bombers. Toujours avoir des <strong>Spinners/Galata</strong> !</p>
+                            </div>
+                            
+                            <div style="background: rgba(231, 76, 60, 0.1); border-left: 3px solid #e74c3c; padding: 15px; border-radius: 0 8px 8px 0;">
+                                <h4 style="color: #e74c3c; margin-bottom: 8px;">5. ❌ Turtle Sans Expand</h4>
+                                <p style="color: #c0c0c0; font-size: 0.95rem;">Se fortifier dans un coin = perdre lentement. L'ennemi prend tout le metal et vous écrase. <strong>Expand ou mourir.</strong></p>
+                            </div>
+                            
+                            <div style="background: rgba(231, 76, 60, 0.1); border-left: 3px solid #e74c3c; padding: 15px; border-radius: 0 8px 8px 0;">
+                                <h4 style="color: #e74c3c; margin-bottom: 8px;">6. ❌ Tech T2 Trop Tôt</h4>
+                                <p style="color: #c0c0c0; font-size: 0.95rem;">Rush T2 sans éco = stall + vulnérabilité. <strong>Tech vers 5-6 min</strong> quand votre éco le permet.</p>
+                            </div>
+                            
+                            <div style="background: rgba(231, 76, 60, 0.1); border-left: 3px solid #e74c3c; padding: 15px; border-radius: 0 8px 8px 0;">
+                                <h4 style="color: #e74c3c; margin-bottom: 8px;">7. ❌ Commander Exposé</h4>
+                                <p style="color: #c0c0c0; font-size: 0.95rem;">Votre Commander en première ligne = snipe facile. <strong>Gardez-le en sécurité</strong> derrière vos lignes.</p>
+                            </div>
+                            
+                            <div style="background: rgba(231, 76, 60, 0.1); border-left: 3px solid #e74c3c; padding: 15px; border-radius: 0 8px 8px 0;">
+                                <h4 style="color: #e74c3c; margin-bottom: 8px;">8. ❌ Oublier l'Anti-Nuke</h4>
+                                <p style="color: #c0c0c0; font-size: 0.95rem;">Pas d'Anti-Nuke en late game = mort instantanée. <strong>Toujours 2+ missiles stockés.</strong></p>
+                            </div>
+                            
+                            <div style="background: rgba(231, 76, 60, 0.1); border-left: 3px solid #e74c3c; padding: 15px; border-radius: 0 8px 8px 0;">
+                                <h4 style="color: #e74c3c; margin-bottom: 8px;">9. ❌ Une Seule Composition</h4>
+                                <p style="color: #c0c0c0; font-size: 0.95rem;">Spam une seule unité = facilement counter. <strong>Adaptez votre composition</strong> à ce que fait l'ennemi.</p>
+                            </div>
+                            
+                            <div style="background: rgba(231, 76, 60, 0.1); border-left: 3px solid #e74c3c; padding: 15px; border-radius: 0 8px 8px 0;">
+                                <h4 style="color: #e74c3c; margin-bottom: 8px;">10. ❌ Factories Idle</h4>
+                                <p style="color: #c0c0c0; font-size: 0.95rem;">Factories qui ne produisent pas = gaspillage. <strong>Production continue</strong> ou vous perdez !</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="strategy-title">✅ Checklist du Bon Joueur</h3>
+                    <div class="strategy-content">
+                        <p>Vérifiez régulièrement ces points pendant la partie :</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+                            <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid rgba(46, 204, 113, 0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #2ecc71; margin-bottom: 10px;">📊 Économie</h4>
+                                <ul style="color: #c0c0c0; margin-left: 15px; font-size: 0.9rem;">
+                                    <li>Metal dans le vert ? (pas rouge, pas overflow)</li>
+                                    <li>Energy stable ?</li>
+                                    <li>Fabbers qui expand ?</li>
+                                </ul>
+                            </div>
+                            <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid rgba(46, 204, 113, 0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #2ecc71; margin-bottom: 10px;">🏭 Production</h4>
+                                <ul style="color: #c0c0c0; margin-left: 15px; font-size: 0.9rem;">
+                                    <li>Factories en production ?</li>
+                                    <li>Assez de factories ?</li>
+                                    <li>Bonne composition ?</li>
+                                </ul>
+                            </div>
+                            <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid rgba(46, 204, 113, 0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #2ecc71; margin-bottom: 10px;">👁️ Information</h4>
+                                <ul style="color: #c0c0c0; margin-left: 15px; font-size: 0.9rem;">
+                                    <li>Je sais où est l'ennemi ?</li>
+                                    <li>Je connais sa composition ?</li>
+                                    <li>J'ai des scouts/radars ?</li>
+                                </ul>
+                            </div>
+                            <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid rgba(46, 204, 113, 0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #2ecc71; margin-bottom: 10px;">🛡️ Sécurité</h4>
+                                <ul style="color: #c0c0c0; margin-left: 15px; font-size: 0.9rem;">
+                                    <li>Commander en sécurité ?</li>
+                                    <li>AA en place ?</li>
+                                    <li>Anti-Nuke (late game) ?</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">🏆</span>
+                            <div class="tip-text">
+                                <strong>Le secret des pros :</strong> Ils font toutes ces vérifications automatiquement, plusieurs fois par minute. C'est l'habitude qui fait la différence !
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <button id="scrollTopBtn" title="Retour en haut">↑</button>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3 class="footer-title">Guide PA:Titans</h3>
+                <p class="footer-text">Guide complet créé par la communauté pour la communauté.</p>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="raccourcis.html">Raccourcis</a></li>
+                    <li><a href="unites.html">Unités</a></li>
+                    <li><a href="structures.html">Structures</a></li>
+                    <li><a href="strategies.html">Stratégies</a></li>
+                    <li><a href="lexique.html">Lexique</a></li>
+                </ul>
+                <div class="footer-bottom"><p>© 2026 Guide PA:Titans 🎮</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" aria-label="Retour en haut">↑</button>
     <script src="../js/main.js"></script>
+    <script>
+        document.querySelectorAll('.toc-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
 </body>
 </html>
