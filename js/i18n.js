@@ -8,11 +8,11 @@ const i18n = {
     
     // Langues disponibles avec drapeaux
     languages: {
-        'fr': { name: 'Français', flag: '🇫🇷' },
-        'en': { name: 'English', flag: '🇬🇧' },
-        'es': { name: 'Español', flag: '🇪🇸' },
-        'pt': { name: 'Português', flag: '🇵🇹' },
-        'de': { name: 'Deutsch', flag: '🇩🇪' }
+        'fr': { name: 'Français', flag: '🇫🇷', complete: true },
+        'en': { name: 'English', flag: '🇬🇧', complete: true },
+        'es': { name: 'Español', flag: '🇪🇸', complete: true },
+        'pt': { name: 'Português', flag: '🇵🇹', complete: true },
+        'de': { name: 'Deutsch', flag: '🇩🇪', complete: true }
     },
     
     // Initialisation
@@ -203,9 +203,10 @@ const i18n = {
             </button>
             <div class="lang-dropdown">
                 ${Object.entries(this.languages).map(([code, data]) => `
-                    <div class="lang-option ${code === this.currentLang ? 'active' : ''}" data-lang="${code}">
+                    <div class="lang-option ${code === this.currentLang ? 'active' : ''} ${!data.complete ? 'incomplete' : ''}" data-lang="${code}" ${!data.complete ? 'title="Translation in progress"' : ''}>
                         <span class="lang-flag">${data.flag}</span>
                         <span class="lang-name">${data.name}</span>
+                        ${!data.complete ? '<span class="lang-status">🚧</span>' : ''}
                     </div>
                 `).join('')}
             </div>
@@ -237,6 +238,12 @@ const i18n = {
         selector.querySelectorAll('.lang-option').forEach(option => {
             option.addEventListener('click', (e) => {
                 e.stopPropagation();
+
+                // Empêcher le changement si la langue est incomplète
+                if (option.classList.contains('incomplete')) {
+                    return;
+                }
+
                 const lang = option.getAttribute('data-lang');
                 this.setLanguage(lang);
                 dropdown.classList.remove('active');

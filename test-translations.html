@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Traductions - PA:Titans</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00d4ff;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .test-section {
+            background: rgba(30, 35, 60, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .test-section h2 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .lang-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-card:hover {
+            border-color: #00d4ff;
+            transform: translateY(-3px);
+        }
+
+        .lang-card.selected {
+            border-color: #2ecc71;
+            background: rgba(46, 204, 113, 0.1);
+        }
+
+        .lang-flag {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .lang-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .lang-status {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .status-complete {
+            color: #2ecc71;
+        }
+
+        .status-incomplete {
+            color: #ff6b35;
+        }
+
+        .results {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-key {
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .result-value {
+            color: #c0c0c0;
+        }
+
+        .button {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            border: none;
+            color: #000;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .page-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .page-link {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #00d4ff;
+            transition: all 0.3s;
+        }
+
+        .page-link:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+        }
+
+        .error {
+            color: #e74c3c;
+            background: rgba(231, 76, 60, 0.1);
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        .success {
+            color: #2ecc71;
+            background: rgba(46, 204, 113, 0.1);
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Testeur de Traductions</h1>
+
+        <!-- Sélection de langue -->
+        <div class="test-section">
+            <h2>1️⃣ Sélectionnez une langue</h2>
+            <div class="lang-grid" id="lang-grid"></div>
+        </div>
+
+        <!-- Résultats JSON -->
+        <div class="test-section">
+            <h2>2️⃣ Contenu du fichier JSON</h2>
+            <button class="button" id="load-json" disabled>Charger translations/{lang}.json</button>
+            <div class="results" id="json-results" style="display: none;"></div>
+        </div>
+
+        <!-- Pages disponibles -->
+        <div class="test-section">
+            <h2>3️⃣ Pages traduites</h2>
+            <div id="pages-container">
+                <p style="opacity: 0.6;">Sélectionnez une langue pour voir les pages disponibles</p>
+            </div>
+        </div>
+
+        <!-- Tests automatiques -->
+        <div class="test-section">
+            <h2>4️⃣ Tests automatiques</h2>
+            <button class="button" id="run-tests" disabled>Lancer les tests</button>
+            <div id="test-results"></div>
+        </div>
+    </div>
+
+    <script>
+        const languages = {
+            'fr': { name: 'Français', flag: '🇫🇷', complete: true },
+            'en': { name: 'English', flag: '🇬🇧', complete: true },
+            'es': { name: 'Español', flag: '🇪🇸', complete: true },
+            'pt': { name: 'Português', flag: '🇵🇹', complete: true },
+            'de': { name: 'Deutsch', flag: '🇩🇪', complete: true }
+        };
+
+        const pages = [
+            { file: 'beginner.html', fr: 'debutant.html', name: 'Beginner Guide' },
+            { file: 'shortcuts.html', fr: 'raccourcis.html', name: 'Shortcuts' },
+            { file: 'units.html', fr: 'unites.html', name: 'Units' },
+            { file: 'structures.html', fr: 'structures.html', name: 'Structures' },
+            { file: 'strategies.html', fr: 'strategies.html', name: 'Strategies' },
+            { file: 'glossary.html', fr: 'lexique.html', name: 'Glossary' }
+        ];
+
+        let selectedLang = null;
+        let translationData = null;
+
+        // Initialisation
+        const langGrid = document.getElementById('lang-grid');
+        const loadJsonBtn = document.getElementById('load-json');
+        const jsonResults = document.getElementById('json-results');
+        const pagesContainer = document.getElementById('pages-container');
+        const runTestsBtn = document.getElementById('run-tests');
+        const testResults = document.getElementById('test-results');
+
+        // Créer les cartes de langues
+        for (const [code, data] of Object.entries(languages)) {
+            const card = document.createElement('div');
+            card.className = 'lang-card';
+            card.innerHTML = `
+                <div class="lang-flag">${data.flag}</div>
+                <div class="lang-name">${data.name}</div>
+                <div class="lang-status ${data.complete ? 'status-complete' : 'status-incomplete'}">
+                    ${data.complete ? '✅ Complet' : '🚧 En cours'}
+                </div>
+            `;
+            card.addEventListener('click', () => selectLanguage(code, card));
+            langGrid.appendChild(card);
+        }
+
+        function selectLanguage(code, cardElement) {
+            selectedLang = code;
+
+            // Mettre à jour l'interface
+            document.querySelectorAll('.lang-card').forEach(c => c.classList.remove('selected'));
+            cardElement.classList.add('selected');
+
+            loadJsonBtn.disabled = false;
+            loadJsonBtn.textContent = `Charger translations/${code}.json`;
+            runTestsBtn.disabled = false;
+
+            // Afficher les pages disponibles
+            showPages(code);
+        }
+
+        function showPages(lang) {
+            const folder = lang === 'fr' ? 'pages/' : `pages/${lang}/`;
+            pagesContainer.innerHTML = '<div class="page-links">';
+
+            pages.forEach(page => {
+                const fileName = lang === 'fr' ? page.fr : page.file;
+                const link = document.createElement('a');
+                link.className = 'page-link';
+                link.href = folder + fileName;
+                link.target = '_blank';
+                link.textContent = `${page.name} →`;
+                pagesContainer.querySelector('.page-links').appendChild(link);
+            });
+
+            pagesContainer.innerHTML += '</div>';
+        }
+
+        // Charger le JSON
+        loadJsonBtn.addEventListener('click', async () => {
+            try {
+                const response = await fetch(`translations/${selectedLang}.json`);
+                if (!response.ok) throw new Error('Fichier non trouvé');
+
+                translationData = await response.json();
+                displayJSON(translationData);
+
+            } catch (error) {
+                jsonResults.innerHTML = `<div class="error">❌ Erreur : ${error.message}</div>`;
+                jsonResults.style.display = 'block';
+            }
+        });
+
+        function displayJSON(data) {
+            let html = '';
+
+            function renderObject(obj, prefix = '') {
+                for (const [key, value] of Object.entries(obj)) {
+                    const fullKey = prefix ? `${prefix}.${key}` : key;
+
+                    if (typeof value === 'object' && !Array.isArray(value)) {
+                        html += `<div class="result-item"><div class="result-key">${fullKey}</div><div class="result-value">{ ... }</div></div>`;
+                        renderObject(value, fullKey);
+                    } else {
+                        html += `<div class="result-item"><div class="result-key">${fullKey}</div><div class="result-value">${value}</div></div>`;
+                    }
+                }
+            }
+
+            renderObject(data);
+            jsonResults.innerHTML = html;
+            jsonResults.style.display = 'block';
+        }
+
+        // Tests automatiques
+        runTestsBtn.addEventListener('click', async () => {
+            testResults.innerHTML = '<p>🔄 Tests en cours...</p>';
+
+            const results = [];
+
+            // Test 1 : Fichier JSON existe
+            try {
+                const response = await fetch(`translations/${selectedLang}.json`);
+                if (response.ok) {
+                    results.push('✅ Fichier JSON existe et est accessible');
+                } else {
+                    results.push('❌ Fichier JSON introuvable');
+                }
+            } catch (e) {
+                results.push(`❌ Erreur chargement JSON : ${e.message}`);
+            }
+
+            // Test 2 : Pages HTML existent
+            const folder = selectedLang === 'fr' ? 'pages/' : `pages/${selectedLang}/`;
+            for (const page of pages) {
+                const fileName = selectedLang === 'fr' ? page.fr : page.file;
+                try {
+                    const response = await fetch(folder + fileName, { method: 'HEAD' });
+                    if (response.ok) {
+                        results.push(`✅ ${page.name} existe`);
+                    } else {
+                        results.push(`❌ ${page.name} introuvable`);
+                    }
+                } catch (e) {
+                    results.push(`❌ ${page.name} : Erreur`);
+                }
+            }
+
+            // Test 3 : Vérifier les clés obligatoires
+            if (translationData) {
+                const requiredKeys = ['lang', 'lang_name', 'nav', 'footer', 'home'];
+                requiredKeys.forEach(key => {
+                    if (translationData[key]) {
+                        results.push(`✅ Clé "${key}" présente`);
+                    } else {
+                        results.push(`❌ Clé "${key}" manquante`);
+                    }
+                });
+            }
+
+            // Afficher les résultats
+            testResults.innerHTML = results.map(r => `<div style="padding: 5px; ${r.startsWith('✅') ? 'color: #2ecc71' : 'color: #e74c3c'}">${r}</div>`).join('');
+        });
+    </script>
+</body>
+</html>

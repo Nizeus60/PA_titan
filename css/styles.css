@@ -1886,6 +1886,27 @@ header.header-home .site-description {
     font-weight: 500;
 }
 
+.lang-status {
+    margin-left: auto;
+    font-size: 0.8rem;
+}
+
+.lang-option.incomplete {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.lang-option.incomplete:hover {
+    background: rgba(255, 107, 53, 0.05);
+}
+
+.lang-option.incomplete .lang-name::after {
+    content: ' (WIP)';
+    font-size: 0.75rem;
+    color: #ff6b35;
+    margin-left: 5px;
+}
+
 /* Mobile */
 @media (max-width: 900px) {
     .lang-selector {
